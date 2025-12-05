@@ -15,7 +15,7 @@ const Header = () => {
             src="/logo.png"
             alt="Mango Labs"
             width={60}
-            height={40}
+            height={60}
             className="-mt-4"
           />
           Mango Labs
