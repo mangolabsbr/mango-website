@@ -1,0 +1,7 @@
+.backdrop-button {
+  transition: background-color ease-out 0.3s;
+}
+
+.side-panel {
+  transition: margin-right ease-out 0.3s;
+}

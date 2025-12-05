@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.markdown ul {
+  list-style: disc;
+  margin-left: 28px;
+  padding-top: 6px;
+}
+
+.strong-border {
+  border: 6px solid #10100e;
+  box-shadow: 12px 12px 0px #10100e;
+}
+
+.shadow-2 {
+  box-shadow: 2px 2px 0px #10100e;
+}
+
+body {
+  @apply bg-orange-50;
+}
+
+header.print-hidden,
+.print-container.print-hidden {
+  display: none;
+}
+
+.resume-outside.print-hidden {
+  padding: 0;
+  margin: 0;
+  box-shadow: none;
+  border: 0 none;
+  width: 100%;
+  max-width: unset;
+}
+
+a:focus-visible {
+  @apply outline-orange-700 outline-2 border-orange-700;
+}
+
+.text-shadow-orange-50 {
+  text-shadow: 2px 2px rgb(255 247 237);
+}
+
+.page-layout {
+  @apply container mx-auto px-8 lg:max-w-[1280px];
+}
