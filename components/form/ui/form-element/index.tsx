@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import { PropsWithChildren } from "react"
+import { PropsWithChildren } from "react";
 
 type Props = PropsWithChildren<{
-  label: string,
-  htmlFor?: string,
-  error?: string
-}>
+  label: string;
+  htmlFor?: string;
+  error?: string;
+}>;
 
 const FormElement = ({ children, label, htmlFor, error }: Props) => (
   <div>
@@ -18,6 +18,6 @@ const FormElement = ({ children, label, htmlFor, error }: Props) => (
       {error}
     </span>
   </div>
-)
+);
 
-export default FormElement
+export default FormElement;

@@ -20,7 +20,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
         {...inputProps}
       />
     </FormElement>
-  )
+  ),
 );
 
 Input.displayName = "Input";
