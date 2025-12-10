@@ -12,7 +12,7 @@ const Header = () => {
           href="/"
         >
           <Image
-            src="/logo.png"
+            src="/logo-transparent.png"
             alt="Mango Labs"
             width={60}
             height={60}
