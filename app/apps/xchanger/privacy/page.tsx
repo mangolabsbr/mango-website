@@ -590,7 +590,15 @@ const XchangerPrivacyPage = () => {
             <p className="mt-4">
               <strong>Mango Labs</strong>
               <br />
-              Email: [contact email]
+              Email:{" "}
+              <Link
+                href="mailto:hello@mangolabs.com.br"
+                className="text-orange-700 hover:text-orange-900 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                hello@mangolabs.com.br
+              </Link>
               <br />
               Website:{" "}
               <Link
