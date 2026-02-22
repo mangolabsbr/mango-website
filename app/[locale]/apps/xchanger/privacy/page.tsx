@@ -13,17 +13,17 @@ export default async function XchangerPrivacyPage({
   return (
     <main className="page-layout pt-20 pb-20">
       <article className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-serif font-medium text-orange-900 mb-4">
+        <h1 className="text-4xl font-serif font-medium text-black mb-4">
           Xchanger - Privacy Policy
         </h1>
 
-        <p className="text-lg text-orange-900 mb-8">
+        <p className="text-lg text-black mb-8">
           <strong>
             Last Updated: {format(new Date(1768142163077), "MM/dd/yyyy")}
           </strong>
         </p>
 
-        <div className="prose prose-lg max-w-none text-orange-900 space-y-6">
+        <div className="prose prose-lg max-w-none text-black space-y-6">
           <section>
             <h2 className="text-2xl font-serif font-medium mt-8 mb-4">
               1. Introduction
@@ -700,7 +700,7 @@ export default async function XchangerPrivacyPage({
           </section>
 
           <div className="mt-12 pt-8 border-t border-orange-300">
-            <p className="text-center font-medium">
+            <p className="text-center text-orange-900 font-medium">
               <strong>
                 By using Xchanger, you acknowledge that you have read and
                 understood this Privacy Policy and consent to the collection and
