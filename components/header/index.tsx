@@ -3,6 +3,7 @@ import { Shape1 } from "../shapes";
 import SideNav from "../side-nav";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import LocaleSwitcher from "../locale-switcher";
 
 const Header = () => {
   const t = useTranslations("header");
@@ -23,18 +24,21 @@ const Header = () => {
           />
           Mango Labs
         </Link>
-        <nav className="hidden md:block">
-          <ul className="flex space-x-6 items-center">
-            <li>
-              <Link
-                className="hover:underline text-lg font-medium font-serif text-orange-900 bg-orange-50"
-                href="/contact"
-              >
-                {t("contact")}
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <div className="flex justify-end items-center space-x-4">
+          <nav className="hidden md:block">
+            <ul className="flex space-x-6 items-center">
+              <li>
+                <Link
+                  className="hover:underline text-lg font-medium font-serif text-orange-900 bg-orange-50"
+                  href="/contact"
+                >
+                  {t("contact")}
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <LocaleSwitcher />
+        </div>
         <Shape1 className="absolute top-[-78px] left-[-49px] text-[#fde7ac] -z-10 h-auto w-[350px]" />
       </div>
       <SideNav className="md:hidden absolute top-4 right-6" />

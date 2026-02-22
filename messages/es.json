@@ -1,6 +1,14 @@
 {
   "header": {
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "localeSwitcher": {
+      "label": "🇪🇸",
+      "options": {
+        "en": "🇺🇸 Inglés",
+        "es": "🇪🇸 Español",
+        "pt": "🇧🇷 Portugués"
+      }
+    }
   },
   "layout": {
     "title": "Mango Labs",

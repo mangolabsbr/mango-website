@@ -18,7 +18,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, Props>(
       htmlFor={textAreaProps.name}
     >
       <textarea
-        className="bg-white w-full rounded-md border-2 border-black shadow-2 px-2 py-1 block focus-visible:outline-none focus-visible:border-orange-700"
+        className="bg-white placeholder:text-gray-400 w-full rounded-md border-2 border-black shadow-2 px-2 py-1 block focus-visible:outline-none focus-visible:border-orange-700"
         id={textAreaProps.name}
         ref={ref}
         {...textAreaProps}
