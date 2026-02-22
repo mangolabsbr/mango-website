@@ -1,9 +1,12 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { Shape1 } from "../shapes";
 import SideNav from "../side-nav";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const Header = () => {
+  const t = useTranslations("header");
+
   return (
     <header className="py-4">
       <div className="flex justify-between relative page-layout">
@@ -27,7 +30,7 @@ const Header = () => {
                 className="hover:underline text-lg font-medium font-serif text-orange-900 bg-orange-50"
                 href="/contact"
               >
-                Contact
+                {t("contact")}
               </Link>
             </li>
           </ul>

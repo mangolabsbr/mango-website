@@ -1,28 +1,34 @@
 import Button from "@/components/form/ui/button";
 import PortfolioUpdate from "@/components/shapes/portfolio-update";
-import Link from "next/link";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import { FiMail } from "react-icons/fi";
 
-export default async function Home() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations("home");
+
   return (
     <main className="py-4 mb-20 page-layout">
       <div className="flex">
         <div className="pt-[120px] max-w-[500px]">
           <span className="font-serif text-5xl text-orange-900 text-shadow-orange-50 block">
-            Apps for daily life.
+            {t("title1")}
           </span>
           <span className="font-serif text-5xl text-orange-900 text-shadow-orange-50 block">
-            Trusted by millions.
+            {t("title2")}
           </span>
           <span className="font-serif text-5xl text-orange-900 text-shadow-orange-50 block">
-            Crafted by humans.
+            {t("title3")}
           </span>
           <span className="text-xl bg-orange-50 mt-10 block">
-            At Mango Labs, we create applications that millions of users trust
-            and enjoy. From intelligent tools and wellness companions to
-            entertaining mobile experiences, our PURPOSE is to transform
-            everyday necessities into digital products that are user-friendly,
-            reliable, and designed to deliver.
+            {t("description")}
           </span>
         </div>
         <div className="grow lg:relative">
@@ -37,7 +43,7 @@ export default async function Home() {
         <Link href="/contact">
           <Button type="button">
             <FiMail className="inline mr-2" />
-            Get in touch
+            {t("contact")}
           </Button>
         </Link>
       </div>

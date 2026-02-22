@@ -1,7 +1,15 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { setRequestLocale } from "next-intl/server";
 import { format } from "date-fns";
 
-const SunRouterTermsPage = () => {
+export default async function SunRouterTermsPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <main className="page-layout pt-20 pb-20">
       <article className="max-w-4xl mx-auto">
@@ -613,6 +621,4 @@ const SunRouterTermsPage = () => {
       </article>
     </main>
   );
-};
-
-export default SunRouterTermsPage;
+}

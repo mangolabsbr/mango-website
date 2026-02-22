@@ -1,0 +1,29 @@
+{
+  "header": {
+    "contact": "Contact"
+  },
+  "layout": {
+    "title": "Mango Labs",
+    "description": "Welcome to Mango Labs website"
+  },
+  "home": {
+    "title1": "Apps for daily life.",
+    "title2": "Trusted by millions.",
+    "title3": "Crafted by humans.",
+    "description": "At Mango Labs, we create applications that millions of users trust and enjoy. From intelligent tools and wellness companions to entertaining mobile experiences, our PURPOSE is to transform everyday necessities into digital products that are user-friendly, reliable, and designed to deliver.",
+    "contact": "Get in touch"
+  },
+  "contact": {
+    "title": "Send us a message!",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "emailPlaceholder": "How can I contact you back?",
+    "messagePlaceholder": "Be as descriptive as possible.",
+    "nameRequired": "Name required",
+    "emailRequired": "Email required",
+    "emailInvalid": "Invalid format",
+    "messageRequired": "Message content required"
+  }
+}

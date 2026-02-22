@@ -1,0 +1,29 @@
+{
+  "header": {
+    "contact": "Contato"
+  },
+  "layout": {
+    "title": "Mango Labs",
+    "description": "Bem-vindo ao site da Mango Labs"
+  },
+  "home": {
+    "title1": "Aplicativos para o dia a dia.",
+    "title2": "Confiança de milhões.",
+    "title3": "Feitos por humanos.",
+    "description": "Na Mango Labs, criamos aplicativos que milhões de usuários confiam e aproveitam. De ferramentas inteligentes e companheiros de bem-estar a experiências móveis divertidas, nosso PROPÓSITO é transformar necessidades do cotidiano em produtos digitais que sejam fáceis de usar, confiáveis e projetados para entregar resultados.",
+    "contact": "Entre em contato"
+  },
+  "contact": {
+    "title": "Envie-nos uma mensagem!",
+    "name": "Nome",
+    "email": "E-mail",
+    "message": "Mensagem",
+    "send": "Enviar",
+    "emailPlaceholder": "Como posso entrar em contato com você?",
+    "messagePlaceholder": "Seja o mais descritivo possível.",
+    "nameRequired": "Nome obrigatório",
+    "emailRequired": "E-mail obrigatório",
+    "emailInvalid": "Formato inválido",
+    "messageRequired": "Conteúdo da mensagem obrigatório"
+  }
+}

@@ -1,17 +1,25 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { setRequestLocale } from "next-intl/server";
 import { format } from "date-fns";
 
-const XchangerPrivacyPage = () => {
+export default async function SunRouterPrivacyPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <main className="page-layout pt-20 pb-20">
       <article className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-serif font-medium text-orange-900 mb-4">
-          Xchanger - Privacy Policy
+          SunRouter - Privacy Policy
         </h1>
 
         <p className="text-lg text-orange-900 mb-8">
           <strong>
-            Last Updated: {format(new Date(1768142163077), "MM/dd/yyyy")}
+            Last Updated: {format(new Date(1770508800000), "MM/dd/yyyy")}
           </strong>
         </p>
 
@@ -21,10 +29,11 @@ const XchangerPrivacyPage = () => {
               1. Introduction
             </h2>
             <p>
-              Mango Labs ("we," "us," or "our") respects your privacy and is
-              committed to protecting your personal data. This Privacy Policy
-              explains how we collect, use, store, and protect your information
-              when you use the Xchanger mobile application ("App").
+              Mango Labs (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+              &ldquo;our&rdquo;) respects your privacy and is committed to
+              protecting your personal data. This Privacy Policy explains how we
+              collect, use, store, and protect your information when you use the
+              SunRouter mobile application (&ldquo;App&rdquo;).
             </p>
             <p>
               By using the App, you agree to the collection and use of
@@ -69,11 +78,24 @@ const XchangerPrivacyPage = () => {
               2.2 Information Collected Automatically
             </h3>
 
-            <p className="font-medium">App Usage Data</p>
+            <p className="font-medium">
+              Route and Navigation Data (Stored Locally)
+            </p>
             <ul className="markdown">
-              <li>Recently used currencies and their timestamps</li>
-              <li>Last selected currency pairs (from/to currencies)</li>
+              <li>
+                Routes you create (name, origin, destination, stops, vehicle
+                type, route preferences)
+              </li>
+              <li>Route details (distance, duration, polyline data)</li>
+              <li>Places you save (name, address, coordinates)</li>
+              <li>Stop tracking status (visited/unvisited) and timestamps</li>
               <li>Subscription status cache (stored locally)</li>
+            </ul>
+
+            <p className="font-medium mt-4">App Usage Data</p>
+            <ul className="markdown">
+              <li>App preferences (theme, default navigation app)</li>
+              <li>Recently used places and timestamps</li>
             </ul>
 
             <p className="font-medium mt-4">Device and Technical Information</p>
@@ -89,15 +111,6 @@ const XchangerPrivacyPage = () => {
               <li>IP addresses are explicitly removed from error reports</li>
             </ul>
 
-            <p className="font-medium mt-4">Local Storage</p>
-            <ul className="markdown">
-              <li>
-                Exchange rate data (downloaded and stored locally for offline
-                use)
-              </li>
-              <li>Currency information (downloaded and stored locally)</li>
-            </ul>
-
             <h3 className="text-xl font-serif font-medium mt-6 mb-3">
               2.3 Information We Do NOT Collect
             </h3>
@@ -107,13 +120,16 @@ const XchangerPrivacyPage = () => {
                 Personal identification information (names, email addresses,
                 phone numbers)
               </li>
-              <li>Location data</li>
               <li>Contact lists or device contacts</li>
               <li>Photos, videos, or other media files</li>
               <li>Browsing history or web activity outside the App</li>
               <li>
                 IP addresses (these are explicitly removed from any data we
                 might receive)
+              </li>
+              <li>
+                Your real-time location for tracking purposes (location is used
+                only for map display and route creation within the App)
               </li>
             </ul>
           </section>
@@ -125,18 +141,18 @@ const XchangerPrivacyPage = () => {
             <p>We use the information we collect to:</p>
             <ul className="markdown">
               <li>
-                <strong>Provide and Maintain the App</strong>: Deliver currency
-                conversion services, exchange rate information, and App
-                functionality
+                <strong>Provide and Maintain the App</strong>: Deliver route
+                planning, multi-stop navigation, and place search functionality
               </li>
               <li>
-                <strong>Improve User Experience</strong>: Remember your currency
-                preferences and recently used currencies to provide personalized
-                features
+                <strong>Improve User Experience</strong>: Remember your saved
+                places, route preferences, and app settings to provide a
+                personalized experience
               </li>
               <li>
                 <strong>Support Premium Features</strong>: Manage subscription
-                status and provide premium functionality
+                status and provide premium functionality such as route
+                optimization
               </li>
               <li>
                 <strong>Error Tracking and Debugging</strong>: Identify and fix
@@ -160,18 +176,18 @@ const XchangerPrivacyPage = () => {
 
             <p className="font-medium">Your Data Stays on Your Device</p>
             <p>
-              The majority of your data is stored locally on your device in
-              encrypted storage:
+              The majority of your data is stored locally on your device:
             </p>
 
             <ul className="markdown">
               <li>
                 <strong>Secure Storage</strong>: We use Expo SecureStore, which
-                provides encrypted local storage on your device
+                provides encrypted local storage on your device for preferences
+                and settings
               </li>
               <li>
-                <strong>SQLite Database</strong>: Exchange rates and currency
-                data are stored in a local SQLite database on your device
+                <strong>SQLite Database</strong>: Routes, places, stops, and
+                related data are stored in a local SQLite database on your device
               </li>
               <li>
                 <strong>No Cloud Sync</strong>: We do not synchronize your data
@@ -181,12 +197,15 @@ const XchangerPrivacyPage = () => {
 
             <p className="font-medium mt-4">Data Stored Locally:</p>
             <ul className="markdown">
-              <li>Recently used currencies and timestamps</li>
-              <li>Last selected currency pairs</li>
+              <li>
+                Routes (origin, destination, stops, vehicle type, preferences,
+                distance, duration)
+              </li>
+              <li>Places (name, address, coordinates, saved status)</li>
+              <li>Stop tracking data (visited status, timestamps)</li>
               <li>Your consent preferences</li>
+              <li>App preferences (theme, default navigation app)</li>
               <li>Subscription status cache</li>
-              <li>Exchange rate data (for offline functionality)</li>
-              <li>Currency information</li>
             </ul>
 
             <h3 className="text-xl font-serif font-medium mt-6 mb-3">
@@ -195,15 +214,15 @@ const XchangerPrivacyPage = () => {
             <ul className="markdown">
               <li>
                 All locally stored preferences and settings are encrypted using
-                your device's secure storage capabilities
+                your device&apos;s secure storage capabilities
               </li>
               <li>
-                Exchange rate data stored in SQLite is accessible only within
+                Route and place data stored in SQLite is accessible only within
                 the App
               </li>
               <li>
                 We use industry-standard encryption methods provided by your
-                device's operating system
+                device&apos;s operating system
               </li>
             </ul>
 
@@ -213,7 +232,7 @@ const XchangerPrivacyPage = () => {
             <ul className="markdown">
               <li>
                 <strong>Local Data</strong>: Data stored on your device remains
-                there until you uninstall the App or manually clear the App's
+                there until you uninstall the App or manually clear the App&apos;s
                 data
               </li>
               <li>
@@ -239,7 +258,49 @@ const XchangerPrivacyPage = () => {
             </p>
 
             <h3 className="text-xl font-serif font-medium mt-6 mb-3">
-              5.1 Error Tracking (Sentry)
+              5.1 Google Maps Platform
+            </h3>
+            <p className="font-medium">Purpose:</p>
+            <p>To provide place search and route computation</p>
+
+            <p className="font-medium mt-4">Services Used:</p>
+            <ul className="markdown">
+              <li>
+                Google Places API (place search, autocomplete, place details)
+              </li>
+              <li>
+                Google Routes API (route computation, route optimization,
+                directions)
+              </li>
+            </ul>
+
+            <p className="font-medium mt-4">Data Shared:</p>
+            <ul className="markdown">
+              <li>Search queries when you search for places</li>
+              <li>
+                Origin, destination, and stop coordinates when computing routes
+              </li>
+              <li>
+                Vehicle type and route preferences (avoid tolls, ferries,
+                highways)
+              </li>
+            </ul>
+
+            <p className="mt-4">
+              <strong>Note</strong>: Data sent to Google Maps Platform is subject
+              to Google&apos;s Privacy Policy:{" "}
+              <Link
+                href="https://policies.google.com/privacy"
+                className="text-orange-700 hover:text-orange-900 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://policies.google.com/privacy
+              </Link>
+            </p>
+
+            <h3 className="text-xl font-serif font-medium mt-6 mb-3">
+              5.2 Error Tracking (Sentry)
             </h3>
             <p className="font-medium">Purpose:</p>
             <p>
@@ -287,7 +348,7 @@ const XchangerPrivacyPage = () => {
             </p>
 
             <h3 className="text-xl font-serif font-medium mt-6 mb-3">
-              5.2 Subscription Management (RevenueCat)
+              5.3 Subscription Management (RevenueCat)
             </h3>
             <p className="font-medium">Purpose:</p>
             <p>To manage subscriptions and premium features</p>
@@ -326,7 +387,7 @@ const XchangerPrivacyPage = () => {
             </p>
 
             <h3 className="text-xl font-serif font-medium mt-6 mb-3">
-              5.3 Payment Processing (App Store / Google Play)
+              5.4 Payment Processing (App Store / Google Play)
             </h3>
             <p className="font-medium">Purpose:</p>
             <p>To process subscription payments</p>
@@ -370,21 +431,49 @@ const XchangerPrivacyPage = () => {
             </p>
 
             <h3 className="text-xl font-serif font-medium mt-6 mb-3">
-              5.4 Exchange Rate Data
+              5.5 Navigation Apps
             </h3>
             <p className="font-medium">Purpose:</p>
-            <p>To provide current and historical exchange rate information</p>
+            <p>To provide turn-by-turn navigation</p>
 
-            <p className="font-medium mt-4">Data Source:</p>
-            <p>
-              Exchange rate data is obtained from third-party financial data
-              providers
+            <p className="mt-4">
+              When you choose to navigate to a stop, the App opens your selected
+              navigation app (Google Maps, Apple Maps, or Waze) with the
+              destination coordinates. We do not control the data practices of
+              these navigation apps.
             </p>
 
+            <h3 className="text-xl font-serif font-medium mt-6 mb-3">
+              5.6 Analytics (Vexo)
+            </h3>
+            <p className="font-medium">Purpose:</p>
             <p>
-              <strong>Note</strong>: We are not responsible for the accuracy,
-              timeliness, or privacy practices of these third-party data
-              providers.
+              To understand App usage patterns and improve the App experience
+            </p>
+
+            <p className="font-medium mt-4">Data Collected:</p>
+            <ul className="markdown">
+              <li>Anonymous usage events</li>
+              <li>App interaction data</li>
+            </ul>
+
+            <p className="font-medium mt-4">Privacy Measures:</p>
+            <ul className="markdown">
+              <li>No personally identifiable information is collected</li>
+              <li>Data is aggregated and anonymized</li>
+            </ul>
+
+            <p className="mt-4">
+              <strong>Service Provider</strong>: Vexo (
+              <Link
+                href="https://vexo.co/"
+                className="text-orange-700 hover:text-orange-900 underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                https://vexo.co/
+              </Link>
+              )
             </p>
           </section>
 
@@ -418,7 +507,8 @@ const XchangerPrivacyPage = () => {
             <p>Since most data is stored locally on your device:</p>
             <ul className="markdown">
               <li>
-                You can access your locally stored preferences through the App
+                You can access your locally stored routes, places, and
+                preferences through the App
               </li>
               <li>
                 You can clear App data at any time through your device settings
@@ -434,10 +524,16 @@ const XchangerPrivacyPage = () => {
             </h3>
             <p className="font-medium">Local Data:</p>
             <ul className="markdown">
-              <li>Uninstalling the App will delete all locally stored data</li>
+              <li>
+                Uninstalling the App will delete all locally stored data
+                (routes, places, preferences)
+              </li>
               <li>
                 You can also clear App data through your device settings without
                 uninstalling
+              </li>
+              <li>
+                You can delete individual routes and places within the App
               </li>
             </ul>
 
@@ -524,7 +620,7 @@ const XchangerPrivacyPage = () => {
 
           <section>
             <h2 className="text-2xl font-serif font-medium mt-8 mb-4">
-              7. Children's Privacy
+              7. Children&apos;s Privacy
             </h2>
             <p>
               The App is not intended for children under the age of 13. We do
@@ -545,10 +641,11 @@ const XchangerPrivacyPage = () => {
             </h2>
             <p>
               Your data is primarily stored locally on your device. However,
-              some third-party services we use (such as Sentry and RevenueCat)
-              may process data outside your country of residence. These services
-              have implemented appropriate safeguards to protect your data in
-              accordance with applicable data protection laws.
+              some third-party services we use (such as Google Maps Platform,
+              Sentry, and RevenueCat) may process data outside your country of
+              residence. These services have implemented appropriate safeguards
+              to protect your data in accordance with applicable data protection
+              laws.
             </p>
           </section>
 
@@ -562,7 +659,8 @@ const XchangerPrivacyPage = () => {
             </p>
             <ul className="markdown">
               <li>
-                Updating the "Last Updated" date at the top of this policy
+                Updating the &ldquo;Last Updated&rdquo; date at the top of this
+                policy
               </li>
               <li>Posting a notice in the App (for significant changes)</li>
               <li>
@@ -634,12 +732,15 @@ const XchangerPrivacyPage = () => {
             </h2>
 
             <h3 className="text-xl font-serif font-medium mt-6 mb-3">
-              12.1 Offline Functionality
+              12.1 Location Data
             </h3>
             <p>
-              When using the App in offline mode (Premium feature), the App uses
-              previously downloaded exchange rate data stored locally on your
-              device. This data may become outdated when used offline.
+              The App may request access to your device&apos;s location services
+              to display your current position on the map and assist with route
+              creation. Location data is used only within the App and is not
+              transmitted to our servers or stored remotely. You can revoke
+              location access at any time through your device settings; the App
+              will continue to function but some features may be limited.
             </p>
 
             <h3 className="text-xl font-serif font-medium mt-6 mb-3">
@@ -667,8 +768,12 @@ const XchangerPrivacyPage = () => {
             <p>The App may request the following permissions:</p>
             <ul className="markdown">
               <li>
-                <strong>Internet Access</strong>: Required to download exchange
-                rate data and manage subscriptions
+                <strong>Location Services</strong>: Used to display your current
+                position on the map and assist with route planning
+              </li>
+              <li>
+                <strong>Internet Access</strong>: Required to search for places,
+                compute routes, and manage subscriptions
               </li>
               <li>
                 <strong>Network State</strong>: Required to determine
@@ -682,7 +787,6 @@ const XchangerPrivacyPage = () => {
 
             <p className="mt-4">The App does not request access to:</p>
             <ul className="markdown">
-              <li>Location services</li>
               <li>Contacts</li>
               <li>Camera or microphone</li>
               <li>Photo library</li>
@@ -694,7 +798,7 @@ const XchangerPrivacyPage = () => {
           <div className="mt-12 pt-8 border-t border-orange-300">
             <p className="text-center font-medium">
               <strong>
-                By using Xchanger, you acknowledge that you have read and
+                By using SunRouter, you acknowledge that you have read and
                 understood this Privacy Policy and consent to the collection and
                 use of your information as described herein.
               </strong>
@@ -704,6 +808,4 @@ const XchangerPrivacyPage = () => {
       </article>
     </main>
   );
-};
-
-export default XchangerPrivacyPage;
+}

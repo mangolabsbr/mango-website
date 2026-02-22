@@ -7,11 +7,22 @@ import Input from "../ui/input";
 import TextArea from "../ui/textarea";
 import Button from "../ui/button";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
+
+enum FormErrors {
+  NAME_REQUIRED = "nameRequired",
+  EMAIL_REQUIRED = "emailRequired",
+  EMAIL_INVALID = "emailInvalid",
+  MESSAGE_REQUIRED = "messageRequired",
+}
 
 const schema = z.object({
-  name: z.string().nonempty("Name required"),
-  email: z.string().nonempty("Email required").email("Invalid format"),
-  message: z.string().nonempty("Message content required"),
+  name: z.string().nonempty(FormErrors.NAME_REQUIRED),
+  email: z
+    .string()
+    .nonempty(FormErrors.EMAIL_REQUIRED)
+    .email(FormErrors.EMAIL_INVALID),
+  message: z.string().nonempty(FormErrors.MESSAGE_REQUIRED),
 });
 
 export type FormData = z.infer<typeof schema>;
@@ -21,6 +32,7 @@ type Props = {
 };
 
 const SendEmailForm = ({ className }: Props) => {
+  const t = useTranslations("contact");
   const {
     register,
     handleSubmit,
@@ -48,22 +60,53 @@ const SendEmailForm = ({ className }: Props) => {
 
   return (
     <form className={className} onSubmit={handleSubmit(onSubmit)}>
-      <Input label="Name" error={errors.name} {...register("name")} />
       <Input
-        label="Email"
-        error={errors.email}
-        placeholder="How can I contact you back?"
+        label={t("name")}
+        error={
+          errors.name
+            ? {
+                ...errors.name,
+                message: errors.name.message
+                  ? t(errors.name.message)
+                  : errors.name.message,
+              }
+            : undefined
+        }
+        {...register("name")}
+      />
+      <Input
+        label={t("email")}
+        error={
+          errors.email
+            ? {
+                ...errors.email,
+                message: errors.email.message
+                  ? t(errors.email.message)
+                  : errors.email.message,
+              }
+            : undefined
+        }
+        placeholder={t("emailPlaceholder")}
         {...register("email")}
       />
       <TextArea
-        label="Message"
-        placeholder="Be as descriptive as possible."
-        error={errors.message}
+        label={t("message")}
+        placeholder={t("messagePlaceholder")}
+        error={
+          errors.message
+            ? {
+                ...errors.message,
+                message: errors.message.message
+                  ? t(errors.message.message)
+                  : errors.message.message,
+              }
+            : undefined
+        }
         {...register("message")}
       />
       <div className="text-center">
         <Button className="mt-4 min-w-[200px]" disabled={sending}>
-          Send
+          {t("send")}
         </Button>
       </div>
     </form>

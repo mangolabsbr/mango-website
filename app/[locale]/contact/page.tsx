@@ -1,13 +1,20 @@
 import SendEmailForm from "@/components/form/send-email-form";
-import Link from "next/link";
-import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
-import { AiOutlineWhatsApp } from "react-icons/ai";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-const ContactPage = () => {
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  const t = await getTranslations("contact");
+
   return (
     <main className="page-layout pt-20">
       <h1 className="text-3xl font-medium font-serif text-center mb-8">
-        Send us a message!
+        {t("title")}
       </h1>
       <SendEmailForm className="container mx-auto px-8 max-w-[600px]" />
       {/* <h1 className="text-3xl font-medium font-serif text-center mt-20 mb-8">Or find me on social media:</h1>
@@ -51,6 +58,4 @@ const ContactPage = () => {
       </ul> */}
     </main>
   );
-};
-
-export default ContactPage;
+}
