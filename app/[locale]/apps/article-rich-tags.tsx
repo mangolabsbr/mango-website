@@ -127,4 +127,14 @@ export const appsArticleRichTags = {
       {chunks}
     </Link>
   ),
+  linkVexoPrivacy: (chunks: ReactNode) => (
+    <Link
+      href="https://vexo.io/privacy"
+      className="text-orange-700 hover:text-orange-900 underline"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {chunks}
+    </Link>
+  ),
 } as const;
