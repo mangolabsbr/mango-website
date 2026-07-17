@@ -1,5 +1,7 @@
 {
   "header": {
+    "home": "Home",
+    "apps": "Apps",
     "contact": "Contact",
     "localeSwitcher": {
       "label": "🇺🇸",
@@ -12,14 +14,56 @@
   },
   "layout": {
     "title": "Mango Labs",
-    "description": "Welcome to Mango Labs website"
+    "description": "Mango Labs builds mobile apps and digital services for daily life — crafted with care in Brazil."
   },
   "home": {
-    "title1": "Apps for daily life.",
-    "title2": "Trusted by millions.",
-    "title3": "Crafted by humans.",
-    "description": "At Mango Labs, we create applications that millions of users trust and enjoy. From intelligent tools and wellness companions to entertaining mobile experiences, our PURPOSE is to transform everyday necessities into digital products that are user-friendly, reliable, and designed to deliver.",
-    "contact": "Get in touch"
+    "hero": {
+      "badge": "Independent app studio",
+      "title": "Apps for daily life. Crafted by humans.",
+      "subtitle": "Mango Labs builds mobile apps and digital services that turn everyday necessities into simple, reliable products — from currency conversion to route planning and bill splitting.",
+      "ctaApps": "Explore our apps",
+      "ctaContact": "Get in touch"
+    },
+    "metrics": {
+      "title": "Our numbers tell the story",
+      "subtitle": "A small studio with products people actually use, every day.",
+      "items": {
+        "downloads": "Downloads & counting",
+        "rating": "Average store rating",
+        "activeUsers": "Monthly active users",
+        "apps": "Apps & services"
+      }
+    },
+    "showcase": {
+      "title": "Our apps & services",
+      "subtitle": "Focused tools that do one thing really well.",
+      "viewAll": "View all apps"
+    },
+    "services": {
+      "title": "How we work",
+      "items": {
+        "craft": {
+          "title": "Design with care",
+          "description": "Clean, intuitive interfaces that make everyday tasks feel effortless. Every detail is considered."
+        },
+        "speed": {
+          "title": "Ship fast, everywhere",
+          "description": "Cross-platform development that gets polished products to iOS, Android, and the web quickly."
+        },
+        "trust": {
+          "title": "Private & reliable",
+          "description": "Products built to respect your data and keep working when you need them — no surprises."
+        }
+      }
+    },
+    "techStack": {
+      "title": "Technologies we work with"
+    },
+    "cta": {
+      "title": "Have a project in mind?",
+      "subtitle": "We are available for development work — from mobile apps to full-stack web products. Let's build something together.",
+      "button": "Contact us"
+    }
   },
   "contact": {
     "title": "Send us a message!",
@@ -32,7 +76,14 @@
     "nameRequired": "Name required",
     "emailRequired": "Email required",
     "emailInvalid": "Invalid format",
-    "messageRequired": "Message content required"
+    "messageRequired": "Message content required",
+    "subtitle": "Have a question, a project, or feedback about one of our apps? We usually reply within a business day.",
+    "meta": {
+      "title": "Contact",
+      "description": "Get in touch with Mango Labs — questions, projects, and app feedback."
+    },
+    "success": "Message sent! We'll get back to you soon.",
+    "error": "Something went wrong. Please try again."
   },
   "apps": {
     "xchanger": {
@@ -73,6 +124,156 @@
       "privacy": {
         "content": "<h1>Splitte - Privacy Policy</h1><p><strong>Last Updated: March 12, 2026</strong></p><section><h2>1. Introduction</h2><p>Mango Labs (\"we,\" \"us,\" or \"our\") respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, store, and protect your information when you use the Splitte mobile application (\"App\"). Splitte is free to use.</p><p>By using the App, you agree to the collection and use of information in accordance with this Privacy Policy. If you do not agree with this policy, please do not use the App.</p></section><section><h2>2. Information We Collect</h2><h3>2.1 Information You Provide</h3><pBold>Bill and Split Data</pBold><ul><li>Bills you create (name, establishment name, tax percentage, tip)</li><li>Bill items (name, quantity, unit price)</li><li>Participants (names you assign to split bills)</li><li>Item assignments (which items are assigned to which participants)</li></ul><h3>2.2 Information Collected Automatically</h3><pBold>Bill and Split Data (Stored Locally)</pBold><ul><li>Bills, bill items, participants, and item assignments</li><li>Theme preference (light, dark, or system)</li></ul><pBoldMt4>Bill Image Processing</pBoldMt4><p>When you scan a bill or receipt using the camera, the image is sent to Google's Gemini API to extract bill details (establishment name, items, prices). The image is processed for this purpose only and is subject to Google's data processing practices.</p><pBoldMt4>App Usage Data</pBoldMt4><ul><li>App preferences and settings</li></ul><pBoldMt4>Device and Technical Information</pBoldMt4><ul><li>Device type, operating system, and app version (collected through error tracking)</li><li>Crash reports and error logs</li><li>IP addresses are explicitly removed from error reports</li></ul><h3>2.3 Information We Do NOT Collect</h3><p>We do NOT collect:</p><ul><li>Email addresses or phone numbers</li><li>Contact lists or device contacts</li><li>Browsing history or web activity outside the App</li><li>IP addresses (these are explicitly removed from any data we might receive)</li><li>Your location (the App does not use location services)</li></ul></section><section><h2>3. How We Use Your Information</h2><p>We use the information we collect to:</p><ul><li>Provide and Maintain the App: Deliver bill splitting, receipt scanning, and payment plan functionality</li><li>Improve User Experience: Remember your bills, participants, and app settings to provide a personalized experience</li><li>Bill Scanning: Process receipt and bill images through Google's Gemini API to extract items and prices for easier data entry</li><li>Error Tracking and Debugging: Identify and fix technical issues</li><li>Comply with Legal Obligations: Meet legal requirements and respond to lawful requests</li></ul></section><section><h2>4. Data Storage and Security</h2><h3>4.1 Local Storage</h3><pBold>Your Data Stays on Your Device</pBold><p>The majority of your data is stored locally on your device:</p><ul><li>SQLite Database: Bills, bill items, participants, item assignments, and theme preference are stored in a local SQLite database on your device</li><li>No Cloud Sync: We do not synchronize your bill and split data to cloud servers</li></ul><pBoldMt4>Data Stored Locally:</pBoldMt4><ul><li>Bills (name, establishment name, tax, tip, creation date)</li><li>Bill items (name, quantity, unit price)</li><li>Participants (name, creation date)</li><li>Item assignments (which items belong to which participants)</li><li>Theme preference</li></ul><h3>4.2 Encryption</h3><ul><li>Data stored in SQLite is accessible only within the App</li><li>We use industry-standard security methods provided by your device's operating system</li></ul><h3>4.3 Data Retention</h3><ul><li>Local Data: Data stored on your device remains there until you uninstall the App, clear the App's data through settings, or use the \"Clear Data\" option in the App</li><li>Error Tracking Data: Crash reports are retained by Sentry according to their data retention policies (typically 90 days)</li><li>Bill Images: Bill images are sent to Google Gemini for processing only; we do not store the images. Google's data processing is subject to their privacy policy</li></ul></section><section><h2>5. Third-Party Services</h2><p>We use the following third-party services to support App functionality:</p><h3>5.1 Google Gemini API</h3><pBold>Purpose:</pBold><p>To extract bill and receipt data from photos you scan</p><pBoldMt4>Services Used:</pBoldMt4><ul><li>Gemini API (image analysis for receipt/bill parsing)</li></ul><pBoldMt4>Data Shared:</pBoldMt4><ul><li>Bill and receipt images when you use the scan feature</li><li>Images are processed to extract establishment name, items, quantities, and prices</li></ul><p>Note: Data sent to Google Gemini is subject to Google's Privacy Policy: <linkGoogle>https://policies.google.com/privacy</linkGoogle></p><h3>5.2 Error Tracking (Sentry)</h3><pBold>Purpose:</pBold><p>To identify and fix technical issues and improve App stability</p><pBoldMt4>Data Collected:</pBoldMt4><ul><li>Crash reports and error logs</li><li>Device type, operating system, and app version</li><li>Stack traces and error context</li></ul><pBoldMt4>Privacy Measures:</pBoldMt4><ul><li>Personal Identifiable Information (PII) collection is disabled (sendDefaultPii: false)</li><li>IP addresses are explicitly removed from all data</li><li>No user identifiers or personal information is collected</li></ul><p><pBold>Service Provider</pBold>: Sentry, Inc. (<linkSentry>https://sentry.io/</linkSentry>)<br></br>Privacy Policy: <linkSentryPrivacy>https://sentry.io/privacy/</linkSentryPrivacy></p><h3>5.3 Analytics (Vexo)</h3><pBold>Purpose:</pBold><p>To understand App usage patterns and improve the App experience</p><pBoldMt4>Data Collected:</pBoldMt4><ul><li>Anonymous usage events</li><li>App interaction data</li></ul><pBoldMt4>Privacy Measures:</pBoldMt4><ul><li>On iOS, analytics are initialized only after you grant App Tracking Transparency permission</li><li>No personally identifiable information is collected</li><li>Data is aggregated and anonymized</li></ul><p><pBold>Service Provider</pBold>: Vexo (<linkVexo>https://vexo.co/</linkVexo>)</p></section><section><h2>6. Your Privacy Rights and Choices</h2><h3>6.1 Tracking Transparency (iOS)</h3><p>On iOS, you may be prompted to allow or deny tracking for personalized content and analytics. Your choice affects whether Vexo analytics are initialized. The App functions fully regardless of your choice.</p><h3>6.2 Access to Your Data</h3><p>Since most data is stored locally on your device:</p><ul><li>You can access your bills, participants, and preferences through the App</li><li>You can clear all App data at any time through the \"Clear Data\" option in Settings</li><li>For error tracking data, you may request information by contacting us</li></ul><h3>6.3 Data Deletion</h3><pBold>Local Data:</pBold><ul><li>Uninstalling the App will delete all locally stored data (bills, participants, preferences)</li><li>You can use the \"Clear Data\" option in App Settings to delete all data without uninstalling</li><li>You can delete individual bills within the App</li></ul><pBoldMt4>Error Tracking Data:</pBoldMt4><ul><li>If you wish to have your data deleted from Sentry, please contact us</li></ul><h3>6.4 GDPR Rights (European Users)</h3><p>If you are located in the European Economic Area (EEA), you have the following rights:</p><ul><li>Right to Access: Request information about your personal data</li><li>Right to Rectification: Request correction of inaccurate data</li><li>Right to Erasure: Request deletion of your data</li><li>Right to Restrict Processing: Request limitation of data processing</li><li>Right to Data Portability: Request transfer of your data</li><li>Right to Object: Object to processing of your data</li><li>Right to Withdraw Consent: Withdraw consent for data processing at any time</li></ul><p>To exercise these rights, please contact us using the information provided in Section 10.</p><h3>6.5 California Privacy Rights (CCPA)</h3><p>If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA):</p><ul><li>Right to know what personal information is collected</li><li>Right to delete personal information</li><li>Right to opt-out of the sale of personal information (we do not sell personal information)</li><li>Right to non-discrimination for exercising your privacy rights</li></ul></section><section><h2>7. Children's Privacy</h2><p>The App is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.</p><p>If we discover that we have collected information from a child under 13, we will delete that information promptly.</p></section><section><h2>8. International Data Transfers</h2><p>Your data is primarily stored locally on your device. However, some third-party services we use (such as Google Gemini and Sentry) may process data outside your country of residence. These services have implemented appropriate safeguards to protect your data in accordance with applicable data protection laws.</p></section><section><h2>9. Changes to This Privacy Policy</h2><p>We may update this Privacy Policy from time to time. We will notify you of any material changes by:</p><ul><li>Updating the \"Last Updated\" date at the top of this policy</li><li>Posting a notice in the App (for significant changes)</li><li>In some cases, providing additional notice through the App</li></ul><p>Your continued use of the App after changes become effective constitutes acceptance of the updated Privacy Policy.</p><p>We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.</p></section><section><h2>10. Contact Us</h2><p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p><p><strong>Mango Labs</strong><br></br>Email: <linkEmail>hello@mangolabs.com.br</linkEmail><br></br>Website: <linkWebsite>https://mangolabs.com.br</linkWebsite></p><p>We will respond to your inquiry as soon as possible, typically within 30 days.</p></section><section><h2>11. Data Controller</h2><p>Data Controller: Mango Labs</p><p>For questions about data processing or to exercise your privacy rights, please contact us using the information provided in Section 10.</p></section><section><h2>12. Additional Information</h2><h3>12.1 Camera Access</h3><p>The App requests access to your device's camera to scan bills and receipts. Camera access is used only when you choose to scan a bill. Images are sent to Google's Gemini API for processing and are not stored by us. You can revoke camera access at any time through your device settings; the scan feature will not work without it, but you can still manually enter bill data.</p><h3>12.2 Data Minimization</h3><p>We collect and process only the minimum amount of data necessary to provide App functionality and improve user experience.</p><h3>12.3 No Data Sharing</h3><p>We do not sell, rent, or share your personal information with third parties for their marketing purposes. We only share data with service providers necessary for App functionality (as described in Section 5), and only with appropriate privacy protections in place.</p><h3>12.4 App Permissions</h3><p>The App may request the following permissions:</p><ul><li>Camera: Used to scan bills and receipts for automatic data extraction</li><li>Internet Access: Required to scan bills (Gemini API) and send error reports</li><li>Network State: Required to determine online/offline status</li></ul><p>The App does not request access to:</p><ul><li>Location services</li><li>Contacts</li><li>Microphone</li><li>Photo library (beyond camera capture for scanning)</li><li>Calendar</li><li>Other sensitive permissions</li></ul></section><footer><strong>By using Splitte, you acknowledge that you have read and understood this Privacy Policy and consent to the collection and use of your information as described herein.</strong></footer>",
         "lastUpdated": "Last Updated"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Apps for daily life, crafted with 🥭.",
+    "copyright": "© {year} Mango Labs. All rights reserved.",
+    "sections": {
+      "apps": "Apps",
+      "company": "Company"
+    },
+    "contact": "Contact"
+  },
+  "appsPage": {
+    "title": "Our apps & services",
+    "subtitle": "Everything we have shipped so far — mobile apps for daily life and developer services powering them.",
+    "learnMore": "Learn more",
+    "meta": {
+      "title": "Apps",
+      "description": "Explore Mango Labs apps and services: Xchanger, SunRouter, Splitte, and the Xchanger API."
+    }
+  },
+  "appDetail": {
+    "backToApps": "All apps",
+    "aboutTitle": "About",
+    "featuresTitle": "Features",
+    "legalTitle": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfUse": "Terms of Use",
+    "appStore": {
+      "top": "Download on the",
+      "bottom": "App Store"
+    },
+    "playStore": {
+      "top": "Get it on",
+      "bottom": "Google Play"
+    },
+    "visitWebsite": "Visit website",
+    "platform": {
+      "ios": "iOS",
+      "android": "Android",
+      "web": "Web"
+    }
+  },
+  "catalog": {
+    "xchanger": {
+      "name": "Xchanger",
+      "tagline": "Currency & crypto converter with real-time rates.",
+      "description": "Xchanger is a currency converter for travelers, traders, and business professionals. Convert 100+ world currencies and 200+ cryptocurrencies with real-time exchange rates, smart rate alerts, and a clean, focused interface that gets out of your way.",
+      "features": {
+        "0": {
+          "title": "100+ currencies, 200+ cryptos",
+          "description": "Major and regional currencies worldwide, plus 200+ cryptocurrencies for quick, accurate conversion."
+        },
+        "1": {
+          "title": "Real-time rates",
+          "description": "Live exchange rates as you type, with premium updates every 10 minutes."
+        },
+        "2": {
+          "title": "Rate alerts",
+          "description": "Set alerts for any currency or crypto pair and get notified the moment your target rate hits."
+        },
+        "3": {
+          "title": "Simple, focused design",
+          "description": "A beautiful, distraction-free layout that makes converting money feel instant."
+        }
+      },
+      "meta": {
+        "title": "Xchanger — Currency Converter",
+        "description": "Convert 100+ currencies and 200+ cryptos with real-time rates and alerts. Available for iOS and Android."
+      }
+    },
+    "sunrouter": {
+      "name": "SunRouter",
+      "tagline": "The smart route planner for multi-stop days.",
+      "description": "SunRouter is a route planner for delivery drivers, field agents, and anyone juggling multiple stops. Plan, optimize, and navigate your routes with ease — saving time, fuel, and effort every single day.",
+      "features": {
+        "0": {
+          "title": "Route optimization",
+          "description": "Automatically reorder up to 25 stops to find the shortest, fastest route."
+        },
+        "1": {
+          "title": "Multiple vehicle types",
+          "description": "Tailored directions for cars, motorcycles, and more."
+        },
+        "2": {
+          "title": "Route avoidances",
+          "description": "Skip tolls, highways, or ferries based on your preferences."
+        },
+        "3": {
+          "title": "Save your places",
+          "description": "Bookmark frequent addresses and rebuild routes in seconds."
+        }
+      },
+      "meta": {
+        "title": "SunRouter — Route Planner",
+        "description": "Plan and optimize multi-stop routes with up to 25 stops. Available for iOS and Android."
+      }
+    },
+    "splitte": {
+      "name": "Splitte",
+      "tagline": "Split any bill fairly, item by item.",
+      "description": "Splitte is the easiest way to split bills with friends, family, or colleagues. Add items, assign them to the right people, and let Splitte calculate exactly what everyone owes — including tax and tip. No more awkward math, no more overpaying.",
+      "features": {
+        "0": {
+          "title": "Item-by-item splitting",
+          "description": "Assign each item to the people who ordered it, so everyone pays only for what they had."
+        },
+        "1": {
+          "title": "AI receipt scanning",
+          "description": "Snap a photo of any receipt and Splitte reads all items and prices automatically."
+        },
+        "2": {
+          "title": "Instant bill summary",
+          "description": "A clear breakdown of what each person owes, with tax and tip factored in."
+        },
+        "3": {
+          "title": "Saved participants",
+          "description": "Keep your frequent groups handy and split the next bill in seconds."
+        }
+      },
+      "meta": {
+        "title": "Splitte — Bill Splitter",
+        "description": "Split bills item by item with AI receipt scanning and instant summaries. Available for iOS and Android."
+      }
+    },
+    "xchanger-api": {
+      "name": "Xchanger API",
+      "tagline": "Real-time currency & crypto rates via a simple REST API.",
+      "description": "Xchanger API is the service powering Xchanger, available for your own products. Get live currency and cryptocurrency exchange rates through simple, well-documented REST endpoints — built for developers who need dependable data without complexity.",
+      "features": {
+        "0": {
+          "title": "Real-time rates",
+          "description": "Live exchange rates for fiat and crypto, refreshed continuously."
+        },
+        "1": {
+          "title": "Broad coverage",
+          "description": "100+ world currencies and 200+ cryptocurrencies in a single API."
+        },
+        "2": {
+          "title": "Simple REST endpoints",
+          "description": "Clean JSON responses and predictable endpoints you can integrate in minutes."
+        },
+        "3": {
+          "title": "Straightforward access",
+          "description": "API keys and clear plans — start free and scale as you grow."
+        }
+      },
+      "meta": {
+        "title": "Xchanger API — Exchange Rates API",
+        "description": "Real-time currency and crypto exchange rates through a simple REST API."
       }
     }
   }

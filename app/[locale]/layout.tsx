@@ -1,25 +1,25 @@
-import Header from "@/components/header";
-import { Bitter, Lato } from "next/font/google";
-import { hasLocale } from "next-intl";
-import { NextIntlClientProvider } from "next-intl";
+import { Mulish, Poppins } from "next/font/google";
+import { notFound } from "next/navigation";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
-import { notFound } from "next/navigation";
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import "../globals.css";
 import { routing } from "@/i18n/routing";
 
-const bitter = Bitter({
-  weight: ["400", "500"],
+const poppins = Poppins({
+  weight: ["500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-bitter",
+  variable: "--font-poppins",
 });
-const lato = Lato({
-  weight: ["400"],
+const mulish = Mulish({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-lato",
+  variable: "--font-mulish",
 });
 
 export function generateStaticParams() {
@@ -35,8 +35,18 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "layout" });
 
   return {
-    title: t("title"),
+    metadataBase: new URL("https://mangolabs.com.br"),
+    title: {
+      default: t("title"),
+      template: `%s | ${t("title")}`,
+    },
     description: t("description"),
+    openGraph: {
+      siteName: t("title"),
+      type: "website",
+      locale,
+      images: ["/logo-transparent.png"],
+    },
   };
 }
 
@@ -56,10 +66,13 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html lang={locale}>
-      <body className={[bitter.variable, lato.variable, "font-sans"].join(" ")}>
+      <body
+        className={`${poppins.variable} ${mulish.variable} flex min-h-screen flex-col font-sans antialiased`}
+      >
         <NextIntlClientProvider messages={messages}>
           <Header />
-          {children}
+          <div className="flex-1">{children}</div>
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

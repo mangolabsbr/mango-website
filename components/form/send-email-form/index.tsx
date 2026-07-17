@@ -1,13 +1,14 @@
 "use client";
 
-import { z } from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Input from "../ui/input";
-import TextArea from "../ui/textarea";
-import Button from "../ui/button";
-import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 enum FormErrors {
   NAME_REQUIRED = "nameRequired",
@@ -31,83 +32,105 @@ type Props = {
   className?: string;
 };
 
+type Status = "idle" | "sending" | "success" | "error";
+
 const SendEmailForm = ({ className }: Props) => {
   const t = useTranslations("contact");
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
-  const [sending, setSending] = useState<boolean>(false);
+  const [status, setStatus] = useState<Status>("idle");
 
   const onSubmit = async (data: FormData) => {
-    setSending(true);
+    setStatus("sending");
 
     try {
-      await fetch("/api/send-email", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
-    } finally {
-      setSending(false);
+
+      if (!response.ok) {
+        throw new Error("Failed to send email");
+      }
+
+      setStatus("success");
+      reset();
+    } catch {
+      setStatus("error");
     }
   };
 
   return (
-    <form className={className} onSubmit={handleSubmit(onSubmit)}>
-      <Input
-        label={t("name")}
-        error={
-          errors.name
-            ? {
-                ...errors.name,
-                message: errors.name.message
-                  ? t(errors.name.message)
-                  : errors.name.message,
-              }
-            : undefined
-        }
-        {...register("name")}
-      />
-      <Input
-        label={t("email")}
-        error={
-          errors.email
-            ? {
-                ...errors.email,
-                message: errors.email.message
-                  ? t(errors.email.message)
-                  : errors.email.message,
-              }
-            : undefined
-        }
-        placeholder={t("emailPlaceholder")}
-        {...register("email")}
-      />
-      <TextArea
-        label={t("message")}
-        placeholder={t("messagePlaceholder")}
-        error={
-          errors.message
-            ? {
-                ...errors.message,
-                message: errors.message.message
-                  ? t(errors.message.message)
-                  : errors.message.message,
-              }
-            : undefined
-        }
-        {...register("message")}
-      />
-      <div className="text-center">
-        <Button className="mt-4 min-w-[200px]" disabled={sending}>
+    <form className={className} onSubmit={handleSubmit(onSubmit)} noValidate>
+      <div className="space-y-5">
+        <div className="space-y-2">
+          <Label htmlFor="contact-name">{t("name")}</Label>
+          <Input
+            id="contact-name"
+            aria-invalid={!!errors.name}
+            {...register("name")}
+          />
+          {errors.name?.message && (
+            <p className="text-sm text-destructive">{t(errors.name.message)}</p>
+          )}
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="contact-email">{t("email")}</Label>
+          <Input
+            id="contact-email"
+            type="email"
+            placeholder={t("emailPlaceholder")}
+            aria-invalid={!!errors.email}
+            {...register("email")}
+          />
+          {errors.email?.message && (
+            <p className="text-sm text-destructive">
+              {t(errors.email.message)}
+            </p>
+          )}
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="contact-message">{t("message")}</Label>
+          <Textarea
+            id="contact-message"
+            rows={6}
+            placeholder={t("messagePlaceholder")}
+            aria-invalid={!!errors.message}
+            {...register("message")}
+          />
+          {errors.message?.message && (
+            <p className="text-sm text-destructive">
+              {t(errors.message.message)}
+            </p>
+          )}
+        </div>
+        <Button
+          type="submit"
+          size="lg"
+          className="h-11 w-full rounded-full text-base"
+          disabled={status === "sending"}
+        >
           {t("send")}
         </Button>
+        {status === "success" && (
+          <p className="text-center text-sm font-medium text-primary">
+            {t("success")}
+          </p>
+        )}
+        {status === "error" && (
+          <p className="text-center text-sm font-medium text-destructive">
+            {t("error")}
+          </p>
+        )}
       </div>
     </form>
   );

@@ -1,5 +1,7 @@
 {
   "header": {
+    "home": "Inicio",
+    "apps": "Apps",
     "contact": "Contacto",
     "localeSwitcher": {
       "label": "🇪🇸",
@@ -12,14 +14,56 @@
   },
   "layout": {
     "title": "Mango Labs",
-    "description": "Bienvenido al sitio web de Mango Labs"
+    "description": "Mango Labs crea aplicaciones móviles y servicios digitales para la vida diaria, hechos con cuidado en Brasil."
   },
   "home": {
-    "title1": "Aplicaciones para la vida diaria.",
-    "title2": "Confianza de millones.",
-    "title3": "Hechas por humanos.",
-    "description": "En Mango Labs, creamos aplicaciones en las que millones de usuarios confían y disfrutan. Desde herramientas inteligentes y compañeros de bienestar hasta experiencias móviles entretenidas, nuestro PROPÓSITO es transformar las necesidades cotidianas en productos digitales que sean fáciles de usar, confiables y diseñados para cumplir.",
-    "contact": "Contáctanos"
+    "hero": {
+      "badge": "Estudio independiente de apps",
+      "title": "Apps para la vida diaria. Hechas por humanos.",
+      "subtitle": "Mango Labs crea aplicaciones móviles y servicios digitales que transforman necesidades cotidianas en productos simples y confiables: desde conversión de divisas hasta planificación de rutas y división de cuentas.",
+      "ctaApps": "Explora nuestras apps",
+      "ctaContact": "Contáctanos"
+    },
+    "metrics": {
+      "title": "Nuestros números cuentan la historia",
+      "subtitle": "Un estudio pequeño con productos que la gente usa todos los días.",
+      "items": {
+        "downloads": "Descargas y contando",
+        "rating": "Calificación promedio",
+        "activeUsers": "Usuarios activos mensuales",
+        "apps": "Apps y servicios"
+      }
+    },
+    "showcase": {
+      "title": "Nuestras apps y servicios",
+      "subtitle": "Herramientas enfocadas que hacen una cosa realmente bien.",
+      "viewAll": "Ver todas las apps"
+    },
+    "services": {
+      "title": "Cómo trabajamos",
+      "items": {
+        "craft": {
+          "title": "Diseño con cuidado",
+          "description": "Interfaces limpias e intuitivas que hacen que las tareas diarias se sientan sencillas. Cada detalle está pensado."
+        },
+        "speed": {
+          "title": "Lanzamos rápido, en todas partes",
+          "description": "Desarrollo multiplataforma que lleva productos pulidos a iOS, Android y la web rápidamente."
+        },
+        "trust": {
+          "title": "Privado y confiable",
+          "description": "Productos que respetan tus datos y siguen funcionando cuando los necesitas, sin sorpresas."
+        }
+      }
+    },
+    "techStack": {
+      "title": "Tecnologías con las que trabajamos"
+    },
+    "cta": {
+      "title": "¿Tienes un proyecto en mente?",
+      "subtitle": "Estamos disponibles para trabajos de desarrollo, desde apps móviles hasta productos web completos. Construyamos algo juntos.",
+      "button": "Contáctanos"
+    }
   },
   "contact": {
     "title": "¡Envíanos un mensaje!",
@@ -32,7 +76,14 @@
     "nameRequired": "El nombre es obligatorio",
     "emailRequired": "El correo electrónico es obligatorio",
     "emailInvalid": "Formato inválido",
-    "messageRequired": "El contenido del mensaje es obligatorio"
+    "messageRequired": "El contenido del mensaje es obligatorio",
+    "subtitle": "¿Tienes una pregunta, un proyecto o comentarios sobre una de nuestras apps? Normalmente respondemos en un día hábil.",
+    "meta": {
+      "title": "Contacto",
+      "description": "Ponte en contacto con Mango Labs: preguntas, proyectos y comentarios sobre las apps."
+    },
+    "success": "¡Mensaje enviado! Te responderemos pronto.",
+    "error": "Algo salió mal. Inténtalo de nuevo."
   },
   "apps": {
     "xchanger": {
@@ -73,6 +124,156 @@
       "privacy": {
         "content": "<h1>Splitte - Política de Privacidad</h1><p><strong>Última actualización: 12 de marzo de 2026</strong></p><section><h2>1. Introducción</h2><p>Mango Labs (\"nosotros\") respeta tu privacidad y está comprometida en proteger tus datos personales. Esta Política de Privacidad explica cómo recopilamos, usamos, almacenamos y protegemos tu información cuando usas la aplicación móvil Splitte (\"App\"). Splitte es gratuito.</p><p>Al usar la aplicación, aceptas la recopilación y uso de información de acuerdo con esta Política de Privacidad. Si no estás de acuerdo con esta política, no utilices la aplicación.</p></section><section><h2>2. Información que Recopilamos</h2><h3>2.1 Información que Proporcionas</h3><pBold>Datos de Cuentas y División</pBold><ul><li>Cuentas que creas (nombre, nombre del establecimiento, porcentaje de impuesto, propina)</li><li>Artículos de la cuenta (nombre, cantidad, precio unitario)</li><li>Participantes (nombres que asignas para dividir cuentas)</li><li>Asignaciones de artículos (qué artículos se asignan a qué participantes)</li></ul><h3>2.2 Información Recopilada Automáticamente</h3><pBold>Datos de Cuentas y División (Almacenados Localmente)</pBold><ul><li>Cuentas, artículos de la cuenta, participantes y asignaciones de artículos</li><li>Preferencia de tema (claro, oscuro o sistema)</li></ul><pBoldMt4>Procesamiento de Imágenes de Cuentas</pBoldMt4><p>Cuando escaneas una cuenta o recibo usando la cámara, la imagen se envía a la API Gemini de Google para extraer detalles de la cuenta (nombre del establecimiento, artículos, precios). La imagen se procesa solo para este propósito y está sujeta a las prácticas de procesamiento de datos de Google.</p><pBoldMt4>Datos de Uso de la Aplicación</pBoldMt4><ul><li>Preferencias y configuraciones de la aplicación</li></ul><pBoldMt4>Información del Dispositivo y Técnica</pBoldMt4><ul><li>Tipo de dispositivo, sistema operativo y versión de la aplicación (recopilados a través del seguimiento de errores)</li><li>Informes de fallos y registros de error</li><li>Las direcciones IP se eliminan explícitamente de los informes de error</li></ul><h3>2.3 Información que NO Recopilamos</h3><p>NO recopilamos:</p><ul><li>Correos electrónicos o números de teléfono</li><li>Listas de contactos o contactos del dispositivo</li><li>Histórico de navegación o actividad web fuera de la aplicación</li><li>Direcciones IP (estas se eliminan explícitamente de cualquier dato que podamos recibir)</li><li>Tu ubicación (la aplicación no usa servicios de ubicación)</li></ul></section><section><h2>3. Cómo Usamos tu Información</h2><p>Usamos la información que recopilamos para:</p><ul><li>Proporcionar y mantener la aplicación: Entregar funcionalidad de división de cuentas, escaneo de recibos y plan de pagos</li><li>Mejorar la experiencia del usuario: Recordar tus cuentas, participantes y configuraciones de la aplicación para proporcionar una experiencia personalizada</li><li>Escaneo de cuentas: Procesar imágenes de recibos y cuentas a través de la API Gemini de Google para extraer artículos y precios para una entrada de datos más fácil</li><li>Seguimiento de errores y depuración: Identificar y corregir problemas técnicos</li><li>Cumplir obligaciones legales: Atender requisitos legales y responder a solicitudes legales</li></ul></section><section><h2>4. Almacenamiento y Seguridad de Datos</h2><h3>4.1 Almacenamiento Local</h3><pBold>Tus Datos Permanecen en tu Dispositivo</pBold><p>La mayor parte de tus datos se almacena localmente en tu dispositivo:</p><ul><li>Base de datos SQLite: Cuentas, artículos de la cuenta, participantes, asignaciones de artículos y preferencia de tema se almacenan en una base de datos SQLite local en tu dispositivo</li><li>Sin sincronización en la nube: No sincronizamos tus datos de cuentas y división con servidores en la nube</li></ul><pBoldMt4>Datos Almacenados Localmente:</pBoldMt4><ul><li>Cuentas (nombre, nombre del establecimiento, impuesto, propina, fecha de creación)</li><li>Artículos de la cuenta (nombre, cantidad, precio unitario)</li><li>Participantes (nombre, fecha de creación)</li><li>Asignaciones de artículos (qué artículos pertenecen a qué participantes)</li><li>Preferencia de tema</li></ul><h3>4.2 Cifrado</h3><ul><li>Los datos almacenados en SQLite son accesibles solo dentro de la aplicación</li><li>Usamos métodos de seguridad estándar de la industria proporcionados por el sistema operativo de tu dispositivo</li></ul><h3>4.3 Retención de Datos</h3><ul><li>Datos locales: Los datos almacenados en tu dispositivo permanecen allí hasta que desinstales la aplicación, borres los datos de la aplicación a través de la configuración o uses la opción \"Borrar Datos\" en la aplicación</li><li>Datos de seguimiento de errores: Los informes de fallos son retenidos por Sentry según sus políticas de retención (típicamente 90 días)</li><li>Imágenes de cuentas: Las imágenes de cuentas se envían a Google Gemini solo para procesamiento; no almacenamos las imágenes. El procesamiento de datos de Google está sujeto a su política de privacidad</li></ul></section><section><h2>5. Servicios de Terceros</h2><p>Usamos los siguientes servicios de terceros para soportar la funcionalidad de la aplicación:</p><h3>5.1 Google Gemini API</h3><pBold>Propósito:</pBold><p>Extraer datos de cuentas y recibos de fotos que escaneas</p><pBoldMt4>Servicios Utilizados:</pBoldMt4><ul><li>API Gemini (análisis de imágenes para análisis de recibos/cuentas)</li></ul><pBoldMt4>Datos Compartidos:</pBoldMt4><ul><li>Imágenes de cuentas y recibos cuando usas la función de escaneo</li><li>Las imágenes se procesan para extraer nombre del establecimiento, artículos, cantidades y precios</li></ul><p>Nota: Los datos enviados a Google Gemini están sujetos a la Política de Privacidad de Google: <linkGoogle>https://policies.google.com/privacy</linkGoogle></p><h3>5.2 Seguimiento de Errores (Sentry)</h3><pBold>Propósito:</pBold><p>Identificar y corregir problemas técnicos y mejorar la estabilidad de la aplicación</p><pBoldMt4>Datos Recopilados:</pBoldMt4><ul><li>Informes de fallos y registros de error</li><li>Tipo de dispositivo, sistema operativo y versión de la aplicación</li><li>Seguimientos de pila y contexto de error</li></ul><pBoldMt4>Medidas de Privacidad:</pBoldMt4><ul><li>La recopilación de información de identificación personal (PII) está deshabilitada (sendDefaultPii: false)</li><li>Las direcciones IP se eliminan explícitamente de todos los datos</li><li>No se recopila ningún identificador de usuario ni información personal</li></ul><p><pBold>Proveedor de Servicio</pBold>: Sentry, Inc. (<linkSentry>https://sentry.io/</linkSentry>)<br></br>Política de Privacidad: <linkSentryPrivacy>https://sentry.io/privacy/</linkSentryPrivacy></p><h3>5.3 Análisis (Vexo)</h3><pBold>Propósito:</pBold><p>Entender patrones de uso de la aplicación y mejorar la experiencia</p><pBoldMt4>Datos Recopilados:</pBoldMt4><ul><li>Eventos de uso anónimos</li><li>Datos de interacción de la aplicación</li></ul><pBoldMt4>Medidas de Privacidad:</pBoldMt4><ul><li>En iOS, los análisis se inicializan solo después de que concedas permiso de Transparencia de Seguimiento de Apps</li><li>No se recopila información personalmente identificable</li><li>Los datos se agregan y anonimizan</li></ul><p><pBold>Proveedor de Servicio</pBold>: Vexo (<linkVexo>https://vexo.co/</linkVexo>)</p></section><section><h2>6. Tus Derechos y Opciones de Privacidad</h2><h3>6.1 Transparencia de Seguimiento (iOS)</h3><p>En iOS, se te puede solicitar permitir o denegar el seguimiento para contenido personalizado y análisis. Tu elección afecta si los análisis de Vexo se inicializan. La aplicación funciona completamente independientemente de tu elección.</p><h3>6.2 Acceso a tus Datos</h3><p>Dado que la mayoría de los datos se almacenan localmente en tu dispositivo:</p><ul><li>Puedes acceder a tus cuentas, participantes y preferencias a través de la aplicación</li><li>Puedes borrar todos los datos de la aplicación en cualquier momento a través de la opción \"Borrar Datos\" en Configuración</li><li>Para datos de seguimiento de errores, puedes solicitar información contactándonos</li></ul><h3>6.3 Eliminación de Datos</h3><pBold>Datos Locales:</pBold><ul><li>Desinstalar la aplicación eliminará todos los datos almacenados localmente (cuentas, participantes, preferencias)</li><li>Puedes usar la opción \"Borrar Datos\" en Configuración de la aplicación para eliminar todos los datos sin desinstalar</li><li>Puedes eliminar cuentas individuales dentro de la aplicación</li></ul><pBoldMt4>Datos de Seguimiento de Errores:</pBoldMt4><ul><li>Si deseas que tus datos sean eliminados de Sentry, contáctanos</li></ul><h3>6.4 Derechos GDPR (Usuarios Europeos)</h3><p>Si estás ubicado en el Espacio Económico Europeo (EEE), tienes los siguientes derechos:</p><ul><li>Derecho de Acceso: Solicitar información sobre tus datos personales</li><li>Derecho de Rectificación: Solicitar corrección de datos inexactos</li><li>Derecho al Borrado: Solicitar eliminación de tus datos</li><li>Derecho de Restringir el Procesamiento: Solicitar limitación del procesamiento de datos</li><li>Derecho a la Portabilidad: Solicitar transferencia de tus datos</li><li>Derecho de Oposición: Oponerte al procesamiento de tus datos</li><li>Derecho de Retirar el Consentimiento: Retirar el consentimiento para el procesamiento de datos en cualquier momento</li></ul><p>Para ejercer estos derechos, contáctanos usando la información proporcionada en la Sección 10.</p><h3>6.5 Derechos de Privacidad de California (CCPA)</h3><p>Si eres residente de California, tienes derechos adicionales bajo la Ley de Privacidad del Consumidor de California (CCPA):</p><ul><li>Derecho a saber qué información personal se recopila</li><li>Derecho a eliminar información personal</li><li>Derecho a optar por no vender información personal (no vendemos información personal)</li><li>Derecho a no discriminación por ejercer tus derechos de privacidad</li></ul></section><section><h2>7. Privacidad de Menores</h2><p>La aplicación no está destinada a niños menores de 13 años. No recopilamos intencionalmente información personal de niños menores de 13 años. Si eres padre o tutor y crees que tu hijo nos ha proporcionado información personal, contáctanos inmediatamente.</p><p>Si descubrimos que hemos recopilado información de un niño menor de 13 años, eliminaremos esa información de inmediato.</p></section><section><h2>8. Transferencias Internacionales de Datos</h2><p>Tus datos se almacenan principalmente localmente en tu dispositivo. Sin embargo, algunos servicios de terceros que usamos (como Google Gemini y Sentry) pueden procesar datos fuera de tu país de residencia. Estos servicios han implementado salvaguardas apropiadas para proteger tus datos de acuerdo con las leyes de protección de datos aplicables.</p></section><section><h2>9. Cambios en esta Política de Privacidad</h2><p>Podemos actualizar esta Política de Privacidad periódicamente. Te notificaremos sobre cambios importantes por:</p><ul><li>Actualizando la fecha de \"Última actualización\" en la parte superior de esta política</li><li>Publicando un aviso en la aplicación (para cambios significativos)</li><li>En algunos casos, proporcionando aviso adicional a través de la aplicación</li></ul><p>Tu uso continuado de la aplicación después de que los cambios entren en vigor constituye la aceptación de la Política de Privacidad actualizada.</p><p>Te animamos a revisar esta Política de Privacidad periódicamente para mantenerte informado sobre cómo protegemos tu información.</p></section><section><h2>10. Contáctanos</h2><p>Si tienes preguntas, inquietudes o solicitudes sobre esta Política de Privacidad o nuestras prácticas de datos, contáctanos:</p><p><strong>Mango Labs</strong><br></br>Correo electrónico: <linkEmail>hello@mangolabs.com.br</linkEmail><br></br>Sitio web: <linkWebsite>https://mangolabs.com.br</linkWebsite></p><p>Responderemos a tu solicitud lo antes posible, normalmente dentro de 30 días.</p></section><section><h2>11. Responsable del Tratamiento</h2><p>Responsable del Tratamiento: Mango Labs</p><p>Para preguntas sobre el procesamiento de datos o para ejercer tus derechos de privacidad, contáctanos usando la información proporcionada en la Sección 10.</p></section><section><h2>12. Información Adicional</h2><h3>12.1 Acceso a la Cámara</h3><p>La aplicación solicita acceso a la cámara de tu dispositivo para escanear cuentas y recibos. El acceso a la cámara se usa solo cuando eliges escanear una cuenta. Las imágenes se envían a la API Gemini de Google para procesamiento y no son almacenadas por nosotros. Puedes revocar el acceso a la cámara en cualquier momento a través de la configuración de tu dispositivo; la función de escaneo no funcionará sin ella, pero aún puedes introducir datos de la cuenta manualmente.</p><h3>12.2 Minimización de Datos</h3><p>Recopilamos y procesamos solo la cantidad mínima de datos necesaria para proporcionar la funcionalidad de la aplicación y mejorar la experiencia del usuario.</p><h3>12.3 Sin Compartir Datos</h3><p>No vendemos, alquilamos ni compartimos tu información personal con terceros para fines de marketing. Solo compartimos datos con proveedores de servicio necesarios para la funcionalidad de la aplicación (como se describe en la Sección 5), y solo con protecciones de privacidad apropiadas.</p><h3>12.4 Permisos de la Aplicación</h3><p>La aplicación puede solicitar los siguientes permisos:</p><ul><li>Cámara: Usada para escanear cuentas y recibos para extracción automática de datos</li><li>Acceso a internet: Necesario para escanear cuentas (API Gemini) y enviar informes de error</li><li>Estado de la red: Necesario para determinar el estado en línea/sin conexión</li></ul><p>La aplicación no solicita acceso a:</p><ul><li>Servicios de ubicación</li><li>Contactos</li><li>Micrófono</li><li>Biblioteca de fotos (más allá de la captura de cámara para escaneo)</li><li>Calendario</li><li>Otras permisos sensibles</li></ul></section><footer><strong>Al usar Splitte, reconoces que has leído y entendido esta Política de Privacidad y consientes a la recopilación y uso de tu información como se describe aquí.</strong></footer>",
         "lastUpdated": "Última actualización"
+      }
+    }
+  },
+  "footer": {
+    "tagline": "Aplicaciones para la vida diaria, hechas con 🥭.",
+    "copyright": "© {year} Mango Labs. Todos los derechos reservados.",
+    "sections": {
+      "apps": "Apps",
+      "company": "Empresa"
+    },
+    "contact": "Contacto"
+  },
+  "appsPage": {
+    "title": "Nuestras apps y servicios",
+    "subtitle": "Todo lo que hemos lanzado hasta ahora: apps móviles para la vida diaria y servicios para desarrolladores que las impulsan.",
+    "learnMore": "Saber más",
+    "meta": {
+      "title": "Apps",
+      "description": "Explora las apps y servicios de Mango Labs: Xchanger, SunRouter, Splitte y la Xchanger API."
+    }
+  },
+  "appDetail": {
+    "backToApps": "Todas las apps",
+    "aboutTitle": "Acerca de",
+    "featuresTitle": "Funciones",
+    "legalTitle": "Legal",
+    "privacyPolicy": "Política de privacidad",
+    "termsOfUse": "Términos de uso",
+    "appStore": {
+      "top": "Descárgalo en el",
+      "bottom": "App Store"
+    },
+    "playStore": {
+      "top": "Disponible en",
+      "bottom": "Google Play"
+    },
+    "visitWebsite": "Visitar sitio web",
+    "platform": {
+      "ios": "iOS",
+      "android": "Android",
+      "web": "Web"
+    }
+  },
+  "catalog": {
+    "xchanger": {
+      "name": "Xchanger",
+      "tagline": "Conversor de divisas y cripto con tasas en tiempo real.",
+      "description": "Xchanger es un conversor de divisas para viajeros, traders y profesionales. Convierte más de 100 monedas del mundo y más de 200 criptomonedas con tasas de cambio en tiempo real, alertas inteligentes y una interfaz limpia y enfocada que no estorba.",
+      "features": {
+        "0": {
+          "title": "Más de 100 monedas y 200 criptos",
+          "description": "Monedas principales y regionales de todo el mundo, más de 200 criptomonedas para conversiones rápidas y precisas."
+        },
+        "1": {
+          "title": "Tasas en tiempo real",
+          "description": "Tasas de cambio en vivo mientras escribes, con actualizaciones premium cada 10 minutos."
+        },
+        "2": {
+          "title": "Alertas de tasa",
+          "description": "Configura alertas para cualquier par de divisas o cripto y recibe una notificación cuando llegue a tu objetivo."
+        },
+        "3": {
+          "title": "Diseño simple y enfocado",
+          "description": "Un diseño hermoso y sin distracciones que hace que convertir dinero sea instantáneo."
+        }
+      },
+      "meta": {
+        "title": "Xchanger — Conversor de divisas",
+        "description": "Convierte más de 100 monedas y 200 criptos con tasas en tiempo real y alertas. Disponible para iOS y Android."
+      }
+    },
+    "sunrouter": {
+      "name": "SunRouter",
+      "tagline": "El planificador de rutas inteligente para días con múltiples paradas.",
+      "description": "SunRouter es un planificador de rutas para repartidores, agentes de campo y cualquiera que maneje múltiples paradas. Planifica, optimiza y navega tus rutas con facilidad, ahorrando tiempo, combustible y esfuerzo todos los días.",
+      "features": {
+        "0": {
+          "title": "Optimización de rutas",
+          "description": "Reordena automáticamente hasta 25 paradas para encontrar la ruta más corta y rápida."
+        },
+        "1": {
+          "title": "Varios tipos de vehículo",
+          "description": "Indicaciones adaptadas para autos, motocicletas y más."
+        },
+        "2": {
+          "title": "Evitar peajes y más",
+          "description": "Evita peajes, autopistas o ferris según tus preferencias."
+        },
+        "3": {
+          "title": "Guarda tus lugares",
+          "description": "Marca direcciones frecuentes y rearma rutas en segundos."
+        }
+      },
+      "meta": {
+        "title": "SunRouter — Planificador de rutas",
+        "description": "Planifica y optimiza rutas de hasta 25 paradas. Disponible para iOS y Android."
+      }
+    },
+    "splitte": {
+      "name": "Splitte",
+      "tagline": "Divide cualquier cuenta de forma justa, ítem por ítem.",
+      "description": "Splitte es la forma más fácil de dividir cuentas con amigos, familia o colegas. Agrega ítems, asígnalos a las personas correctas y deja que Splitte calcule exactamente cuánto debe cada uno, incluyendo impuestos y propina. Se acabaron las cuentas incómodas y los pagos de más.",
+      "features": {
+        "0": {
+          "title": "División ítem por ítem",
+          "description": "Asigna cada ítem a quien lo pidió, para que cada uno pague solo lo suyo."
+        },
+        "1": {
+          "title": "Escaneo de recibos con IA",
+          "description": "Toma una foto de cualquier recibo y Splitte lee todos los ítems y precios automáticamente."
+        },
+        "2": {
+          "title": "Resumen instantáneo",
+          "description": "Un desglose claro de lo que debe cada persona, con impuestos y propina incluidos."
+        },
+        "3": {
+          "title": "Participantes guardados",
+          "description": "Mantén tus grupos frecuentes a mano y divide la próxima cuenta en segundos."
+        }
+      },
+      "meta": {
+        "title": "Splitte — Divisor de cuentas",
+        "description": "Divide cuentas ítem por ítem con escaneo de recibos con IA y resúmenes instantáneos. Disponible para iOS y Android."
+      }
+    },
+    "xchanger-api": {
+      "name": "Xchanger API",
+      "tagline": "Tasas de divisas y cripto en tiempo real vía una API REST simple.",
+      "description": "Xchanger API es el servicio que impulsa a Xchanger, disponible para tus propios productos. Obtén tasas de cambio de divisas y criptomonedas en vivo a través de endpoints REST simples y bien documentados, pensados para desarrolladores que necesitan datos confiables sin complejidad.",
+      "features": {
+        "0": {
+          "title": "Tasas en tiempo real",
+          "description": "Tasas de cambio en vivo para divisas y cripto, actualizadas continuamente."
+        },
+        "1": {
+          "title": "Amplia cobertura",
+          "description": "Más de 100 monedas del mundo y 200 criptomonedas en una sola API."
+        },
+        "2": {
+          "title": "Endpoints REST simples",
+          "description": "Respuestas JSON limpias y endpoints predecibles que integras en minutos."
+        },
+        "3": {
+          "title": "Acceso sencillo",
+          "description": "Claves de API y planes claros: empieza gratis y escala cuando crezcas."
+        }
+      },
+      "meta": {
+        "title": "Xchanger API — API de tasas de cambio",
+        "description": "Tasas de cambio de divisas y cripto en tiempo real a través de una API REST simple."
       }
     }
   }

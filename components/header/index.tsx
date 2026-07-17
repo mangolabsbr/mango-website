@@ -1,47 +1,40 @@
-import { Link } from "@/i18n/navigation";
-import { Shape1 } from "../shapes";
-import SideNav from "../side-nav";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import LocaleSwitcher from "../locale-switcher";
+import MobileNav from "./mobile-nav";
+import NavLink from "./nav-link";
 
 const Header = () => {
   const t = useTranslations("header");
 
   return (
-    <header className="py-4">
-      <div className="flex justify-between relative page-layout">
+    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
+      <div className="page-layout flex h-16 items-center justify-between">
         <Link
-          className="font-medium font-serif text-3xl text-orange-900 hover:underline flex"
           href="/"
+          className="flex items-center gap-2 font-heading text-lg font-semibold text-foreground"
         >
           <Image
             src="/logo-transparent.png"
             alt="Mango Labs"
-            width={60}
-            height={60}
-            className="-mt-4"
+            width={36}
+            height={36}
           />
           Mango Labs
         </Link>
-        <div className="flex justify-end items-center space-x-4">
-          <nav className="hidden md:block">
-            <ul className="flex space-x-6 items-center">
-              <li>
-                <Link
-                  className="hover:underline text-lg font-medium font-serif text-orange-900 bg-orange-50"
-                  href="/contact"
-                >
-                  {t("contact")}
-                </Link>
-              </li>
-            </ul>
+        <div className="flex items-center gap-2">
+          <nav className="hidden items-center gap-6 md:flex">
+            <NavLink href="/">{t("home")}</NavLink>
+            <NavLink href="/apps">{t("apps")}</NavLink>
+            <NavLink href="/contact">{t("contact")}</NavLink>
           </nav>
-          <LocaleSwitcher />
+          <div className="ml-4 flex items-center gap-1">
+            <LocaleSwitcher />
+            <MobileNav />
+          </div>
         </div>
-        <Shape1 className="absolute top-[-78px] left-[-49px] text-[#fde7ac] -z-10 h-auto w-[350px]" />
       </div>
-      <SideNav className="md:hidden absolute top-4 right-6" />
     </header>
   );
 };

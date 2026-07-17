@@ -1,0 +1,8 @@
+- Xchanger
+  - https://apps.apple.com/us/app/currency-converter-xchanger/id6757408534?l=pt-BR&platform=ipad
+  - https://play.google.com/store/apps/details?id=com.mangolabs.xchanger&hl=pt_BR
+- Sunrouter
+  - https://play.google.com/store/apps/details?id=com.mangolabs.sunrouter&hl=pt_BR
+  - https://apps.apple.com/us/app/route-planner-sunrouter/id6758227443?l=pt-BR&platform=ipad
+- Xchanger API
+  - https://www.xchangerapi.com/

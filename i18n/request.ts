@@ -1,9 +1,9 @@
-import { locales } from "@/i18n/config";
 import {
+  type GetRequestConfigParams,
   getRequestConfig,
-  GetRequestConfigParams,
-  RequestConfig,
+  type RequestConfig,
 } from "next-intl/server";
+import { locales } from "@/i18n/config";
 
 const defaultLocale = "en";
 
@@ -17,9 +17,10 @@ export default getRequestConfig(
     const requested = locale ?? (await requestLocale);
     // Use fallback instead of notFound() - notFound() cannot be called from root layout
     // when getMessages() triggers this config. The middleware ensures valid locales reach the app.
-    const resolvedLocale = requested && locales.includes(requested as (typeof locales)[number])
-      ? requested
-      : defaultLocale;
+    const resolvedLocale =
+      requested && locales.includes(requested as (typeof locales)[number])
+        ? requested
+        : defaultLocale;
 
     return {
       messages: (await import(`@/messages/${resolvedLocale}.json`)).default,

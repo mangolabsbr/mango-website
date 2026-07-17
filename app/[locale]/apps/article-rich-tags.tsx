@@ -1,5 +1,5 @@
-import { Link } from "@/i18n/navigation";
 import type { ReactNode } from "react";
+import { Link } from "@/i18n/navigation";
 
 /**
  * Rich text tag components for app legal pages (terms, privacy).
@@ -25,9 +25,7 @@ export const appsArticleRichTags = {
   pBoldMt4: (chunks: ReactNode) => (
     <span className="font-medium mt-4 block">{chunks}</span>
   ),
-  ul: (chunks: ReactNode) => (
-    <ul className="markdown">{chunks}</ul>
-  ),
+  ul: (chunks: ReactNode) => <ul className="markdown">{chunks}</ul>,
   li: (chunks: ReactNode) => <li>{chunks}</li>,
   strong: (chunks: ReactNode) => <strong>{chunks}</strong>,
   footer: (chunks: ReactNode) => (

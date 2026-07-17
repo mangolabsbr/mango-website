@@ -1,61 +1,42 @@
-import SendEmailForm from "@/components/form/send-email-form";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import SendEmailForm from "@/components/form/send-email-form";
+import { Card, CardContent } from "@/components/ui/card";
 
-export default async function ContactPage({
-  params,
-}: {
+type Props = {
   params: Promise<{ locale: string }>;
-}) {
+};
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+
+  return {
+    title: t("meta.title"),
+    description: t("meta.description"),
+  };
+}
+
+export default async function ContactPage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
 
   const t = await getTranslations("contact");
 
   return (
-    <main className="page-layout pt-20">
-      <h1 className="text-3xl font-medium font-serif text-center mb-8">
-        {t("title")}
-      </h1>
-      <SendEmailForm className="container mx-auto px-8 max-w-[600px]" />
-      {/* <h1 className="text-3xl font-medium font-serif text-center mt-20 mb-8">Or find me on social media:</h1>
-      <ul className="flex justify-center space-x-6">
-        <li>
-          <Link
-            className="text-orange-900 hover:text-orange-500 active:text-orange-500"
-            href="https://wa.me/5531999949263"
-            target="_blank"
-          >
-            <AiOutlineWhatsApp className="text-3xl" />
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="text-orange-900 hover:text-orange-500 active:text-orange-500"
-            href="https://github.com/tchesa"
-            target="_blank"
-          >
-            <FiGithub className="text-3xl" />
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="text-orange-900 hover:text-orange-500 active:text-orange-500"
-            href="https://twitter.com/tchesa"
-            target="_blank"
-          >
-            <FiTwitter className="text-3xl" />
-          </Link>
-        </li>
-        <li>
-          <Link
-            className="text-orange-900 hover:text-orange-500 active:text-orange-500"
-            href="https://www.linkedin.com/in/cesar-lima-03349665/"
-            target="_blank"
-          >
-            <FiLinkedin className="text-3xl" />
-          </Link>
-        </li>
-      </ul> */}
+    <main className="page-layout py-16">
+      <div className="mx-auto max-w-xl">
+        <div className="mb-10 text-center">
+          <h1 className="font-heading text-4xl font-semibold tracking-tight">
+            {t("title")}
+          </h1>
+          <p className="mt-3 text-muted-foreground">{t("subtitle")}</p>
+        </div>
+        <Card className="rounded-2xl">
+          <CardContent className="pt-2">
+            <SendEmailForm />
+          </CardContent>
+        </Card>
+      </div>
     </main>
   );
 }
