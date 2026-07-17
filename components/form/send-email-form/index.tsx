@@ -78,6 +78,7 @@ const SendEmailForm = ({ className }: Props) => {
             id="contact-name"
             aria-invalid={!!errors.name}
             {...register("name")}
+            autoFocus
           />
           {errors.name?.message && (
             <p className="text-sm text-destructive">{t(errors.name.message)}</p>

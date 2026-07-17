@@ -4,8 +4,10 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { FaApple, FaGooglePlay } from "react-icons/fa6";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import type { Locale } from "@/i18n/config";
 import { Link } from "@/i18n/navigation";
 import { showcasedAppList } from "@/lib/apps";
+import { alternates } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -18,6 +20,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: t("meta.title"),
     description: t("meta.description"),
+    alternates: alternates(locale as Locale, "/apps"),
   };
 }
 

@@ -8,8 +8,15 @@ import {
 } from "next-intl/server";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import JsonLd from "@/components/json-ld";
 import "../globals.css";
 import { routing } from "@/i18n/routing";
+
+const SITE_URL = "https://mangolabs.com.br";
+const SOCIAL_LINKS = [
+  "https://www.linkedin.com/company/mangolabsbr",
+  "https://github.com/mangolabsbr",
+];
 
 const poppins = Poppins({
   weight: ["500", "600", "700"],
@@ -41,11 +48,22 @@ export async function generateMetadata({
       template: `%s | ${t("title")}`,
     },
     description: t("description"),
+    applicationName: t("title"),
+    authors: [{ name: t("title"), url: "https://mangolabs.com.br" }],
+    creator: t("title"),
+    publisher: t("title"),
     openGraph: {
       siteName: t("title"),
       type: "website",
       locale,
-      images: ["/logo-transparent.png"],
+      title: t("title"),
+      description: t("description"),
+      url: "/",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
     },
   };
 }
@@ -63,12 +81,33 @@ export default async function RootLayout({ children, params }: Props) {
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const t = await getTranslations({ locale, namespace: "layout" });
+
+  const organizationLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: t("title"),
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo-transparent.png`,
+    description: t("description"),
+    sameAs: SOCIAL_LINKS,
+  };
+
+  const websiteLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: t("title"),
+    url: SITE_URL,
+    inLanguage: routing.locales,
+  };
 
   return (
     <html lang={locale}>
       <body
         className={`${poppins.variable} ${mulish.variable} flex min-h-screen flex-col font-sans antialiased`}
       >
+        <JsonLd data={organizationLd} />
+        <JsonLd data={websiteLd} />
         <NextIntlClientProvider messages={messages}>
           <Header />
           <div className="flex-1">{children}</div>

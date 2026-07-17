@@ -1,12 +1,15 @@
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
+import JsonLd from "@/components/json-ld";
 import StoreBadge from "@/components/store-badge";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import type { Locale } from "@/i18n/config";
 import { Link } from "@/i18n/navigation";
 import { type ShowcasedAppSlug, showcasedApps } from "@/lib/apps";
+import { alternates } from "@/lib/seo";
 import MobileMockup from "../mobile-mockup";
 
 type Props = {
@@ -14,6 +17,13 @@ type Props = {
 };
 
 const featureKeys = ["0", "1", "2", "3"] as const;
+
+const appCategory: Record<ShowcasedAppSlug, string> = {
+  xchanger: "FinanceApplication",
+  sunrouter: "TravelApplication",
+  splitte: "FinanceApplication",
+  "xchanger-api": "DeveloperApplication",
+};
 
 export async function appDetailMetadata(
   locale: string,
@@ -24,6 +34,7 @@ export async function appDetailMetadata(
   return {
     title: t(`${slug}.meta.title`),
     description: t(`${slug}.meta.description`),
+    alternates: alternates(locale as Locale, `/apps/${slug}`),
   };
 }
 
@@ -32,8 +43,20 @@ const AppDetailPage = async ({ slug }: Props) => {
   const t = await getTranslations("appDetail");
   const tCatalog = await getTranslations("catalog");
 
+  const appLd = {
+    "@context": "https://schema.org",
+    "@type": app.kind === "mobile" ? "MobileApplication" : "WebApplication",
+    name: tCatalog(`${slug}.name`),
+    description: tCatalog(`${slug}.description`),
+    applicationCategory: appCategory[slug],
+    operatingSystem: app.kind === "mobile" ? "iOS, Android" : "Web",
+    url: app.websiteUrl ?? app.appStoreUrl,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  };
+
   return (
     <main className="page-layout py-12">
+      <JsonLd data={appLd} />
       <Link
         href="/apps"
         className="mb-8 inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground"

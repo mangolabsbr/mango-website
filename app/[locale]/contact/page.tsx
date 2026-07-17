@@ -1,6 +1,8 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import SendEmailForm from "@/components/form/send-email-form";
 import { Card, CardContent } from "@/components/ui/card";
+import type { Locale } from "@/i18n/config";
+import { alternates } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -13,6 +15,7 @@ export async function generateMetadata({ params }: Props) {
   return {
     title: t("meta.title"),
     description: t("meta.description"),
+    alternates: alternates(locale as Locale, "/contact"),
   };
 }
 

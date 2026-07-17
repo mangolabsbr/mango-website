@@ -1,12 +1,15 @@
 import { ArrowRight, Heart, Rocket, ShieldCheck } from "lucide-react";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import type { Locale } from "@/i18n/config";
 import { Link } from "@/i18n/navigation";
 import { showcasedAppList } from "@/lib/apps";
 import { metrics, techStack } from "@/lib/metrics";
+import { alternates } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -17,6 +20,11 @@ const serviceIcons = {
   speed: Rocket,
   trust: ShieldCheck,
 } as const;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return { alternates: alternates(locale as Locale, "/") };
+}
 
 export default async function Home({ params }: Props) {
   const { locale } = await params;

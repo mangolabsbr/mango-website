@@ -1,5 +1,16 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { appsArticleRichTags } from "@/app/[locale]/apps/article-rich-tags";
+import type { Locale } from "@/i18n/config";
+import { legalMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return legalMetadata(locale as Locale, "splitte", "privacy");
+}
 
 export default async function SplittePrivacyPage({
   params,
