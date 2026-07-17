@@ -1,5 +1,6 @@
 "use client";
 
+import { Languages } from "lucide-react";
 import { useParams } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { useTransition } from "react";
@@ -43,7 +44,7 @@ const LocaleSwitcher = () => {
             isPending && "pointer-events-none opacity-50",
           )}
         >
-          {t("localeSwitcher.label")}
+          <Languages className="size-5" />
           <span className="sr-only">{t("localeSwitcher.label")}</span>
         </Button>
       </DropdownMenuTrigger>
