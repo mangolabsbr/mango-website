@@ -31,6 +31,7 @@ export type ShowcasedApp = {
   slug: ShowcasedAppSlug;
   kind: "mobile" | "web";
   icon: string;
+  screenshot?: string;
   featureIcons: LucideIcon[];
   appStoreUrl?: string;
   playStoreUrl?: string;
@@ -43,6 +44,7 @@ export const showcasedApps: Record<ShowcasedAppSlug, ShowcasedApp> = {
     slug: "xchanger",
     kind: "mobile",
     icon: "/apps/xchanger/icon.png",
+    screenshot: "/apps/xchanger/xchanger.png",
     featureIcons: [Coins, RefreshCw, Bell, Sparkles],
     appStoreUrl: "https://apps.apple.com/app/id6757408534",
     playStoreUrl:
@@ -53,6 +55,7 @@ export const showcasedApps: Record<ShowcasedAppSlug, ShowcasedApp> = {
     slug: "sunrouter",
     kind: "mobile",
     icon: "/apps/sunrouter/icon.png",
+    screenshot: "/apps/sunrouter/sunrouter-screenshot.png",
     featureIcons: [Route, Car, Gauge, Bookmark],
     appStoreUrl: "https://apps.apple.com/app/id6758227443",
     playStoreUrl:
@@ -63,6 +66,7 @@ export const showcasedApps: Record<ShowcasedAppSlug, ShowcasedApp> = {
     slug: "splitte",
     kind: "mobile",
     icon: "/apps/splitte/icon.png",
+    screenshot: "/apps/splitte/splitte-screenshot.png",
     featureIcons: [Receipt, ScanLine, Sigma, Users],
     appStoreUrl: "https://apps.apple.com/app/id6760258397",
     playStoreUrl:
