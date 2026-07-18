@@ -66,7 +66,7 @@ const MobileMockup = ({ src, className }: Props) => {
           strokeWidth="0.548923"
         />
         <g filter="url(#filter1_i_3104_170)">
-          <g clip-path="url(#clip0_3104_170)">
+          <g clipPath="url(#clip0_3104_170)">
             <rect
               x="8.15869"
               y="14.1602"
