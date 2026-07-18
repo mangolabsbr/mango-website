@@ -43,9 +43,9 @@ export default async function Home({ params }: Props) {
           className="absolute -top-40 left-1/2 -z-10 h-[560px] w-[900px] -translate-x-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,--alpha(var(--color-primary)/14%),transparent_65%)]"
         />
         <div className="page-layout flex flex-col items-center gap-8 py-20 text-center md:py-28">
-          <Badge variant="secondary" className="rounded-full px-4 py-1.5">
+          {/* <Badge variant="secondary" className="rounded-full px-4 py-1.5">
             {t("hero.badge")}
-          </Badge>
+          </Badge> */}
           <h1 className="max-w-3xl font-heading text-4xl font-semibold tracking-tight text-balance sm:text-5xl md:text-6xl">
             {t("hero.title")}
           </h1>
