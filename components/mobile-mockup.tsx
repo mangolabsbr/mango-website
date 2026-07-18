@@ -23,7 +23,7 @@ const MobileMockup = ({ src, className }: Props) => {
           rx="2.84924"
           fill="url(#paint0_linear_3104_170)"
           stroke="#D8D8D8"
-          stroke-width="0.0470949"
+          strokeWidth="0.0470949"
         />
         <rect
           x="9.23304"
@@ -33,7 +33,7 @@ const MobileMockup = ({ src, className }: Props) => {
           rx="2.84924"
           fill="url(#paint1_linear_3104_170)"
           stroke="#D8D8D8"
-          stroke-width="0.0470949"
+          strokeWidth="0.0470949"
         />
         <rect
           x="9.23304"
@@ -43,7 +43,7 @@ const MobileMockup = ({ src, className }: Props) => {
           rx="2.84924"
           fill="url(#paint2_linear_3104_170)"
           stroke="#D8D8D8"
-          stroke-width="0.0470949"
+          strokeWidth="0.0470949"
         />
         <rect
           x="9.23304"
@@ -53,7 +53,7 @@ const MobileMockup = ({ src, className }: Props) => {
           rx="2.84924"
           fill="url(#paint3_linear_3104_170)"
           stroke="#D8D8D8"
-          stroke-width="0.0470949"
+          strokeWidth="0.0470949"
         />
         <rect
           x="11.1777"
@@ -63,7 +63,7 @@ const MobileMockup = ({ src, className }: Props) => {
           rx="38.6991"
           fill="url(#paint4_linear_3104_170)"
           stroke="#D8D8D8"
-          stroke-width="0.548923"
+          strokeWidth="0.548923"
         />
         <g filter="url(#filter1_i_3104_170)">
           <g clip-path="url(#clip0_3104_170)">
@@ -82,7 +82,7 @@ const MobileMockup = ({ src, className }: Props) => {
             height="400.473"
             rx="32.6609"
             stroke="#2D2D2D"
-            stroke-width="0.548923"
+            strokeWidth="0.548923"
           />
         </g>
         <rect
@@ -111,9 +111,9 @@ const MobileMockup = ({ src, className }: Props) => {
           width="262.449"
           height="458.243"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feColorMatrix
             in="SourceAlpha"
             type="matrix"
@@ -163,9 +163,9 @@ const MobileMockup = ({ src, className }: Props) => {
           width="202.473"
           height="401.57"
           filterUnits="userSpaceOnUse"
-          color-interpolation-filters="sRGB"
+          colorInterpolationFilters="sRGB"
         >
-          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feFlood floodOpacity="0" result="BackgroundImageFix" />
           <feBlend
             mode="normal"
             in="SourceGraphic"
@@ -210,9 +210,9 @@ const MobileMockup = ({ src, className }: Props) => {
           y2="104.117"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2D2D2D" />
-          <stop offset="0.546159" stop-color="#726F6F" />
-          <stop offset="1" stop-color="#2D2D2D" />
+          <stop stopColor="#2D2D2D" />
+          <stop offset="0.546159" stopColor="#726F6F" />
+          <stop offset="1" stopColor="#2D2D2D" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_3104_170"
@@ -222,9 +222,9 @@ const MobileMockup = ({ src, className }: Props) => {
           y2="147.658"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2D2D2D" />
-          <stop offset="0.546159" stop-color="#726F6F" />
-          <stop offset="1" stop-color="#2D2D2D" />
+          <stop stopColor="#2D2D2D" />
+          <stop offset="0.546159" stopColor="#726F6F" />
+          <stop offset="1" stopColor="#2D2D2D" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_3104_170"
@@ -234,9 +234,9 @@ const MobileMockup = ({ src, className }: Props) => {
           y2="103.744"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2D2D2D" />
-          <stop offset="0.546159" stop-color="#726F6F" />
-          <stop offset="1" stop-color="#2D2D2D" />
+          <stop stopColor="#2D2D2D" />
+          <stop offset="0.546159" stopColor="#726F6F" />
+          <stop offset="1" stopColor="#2D2D2D" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_3104_170"
@@ -246,9 +246,9 @@ const MobileMockup = ({ src, className }: Props) => {
           y2="75.5701"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2D2D2D" />
-          <stop offset="0.546159" stop-color="#726F6F" />
-          <stop offset="1" stop-color="#2D2D2D" />
+          <stop stopColor="#2D2D2D" />
+          <stop offset="0.546159" stopColor="#726F6F" />
+          <stop offset="1" stopColor="#2D2D2D" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_3104_170"
@@ -258,9 +258,9 @@ const MobileMockup = ({ src, className }: Props) => {
           y2="372.308"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#2D2D2D" />
-          <stop offset="0.546159" stop-color="#726F6F" />
-          <stop offset="1" stop-color="#2D2D2D" />
+          <stop stopColor="#2D2D2D" />
+          <stop offset="0.546159" stopColor="#726F6F" />
+          <stop offset="1" stopColor="#2D2D2D" />
         </linearGradient>
         <clipPath id="clip0_3104_170">
           <rect
