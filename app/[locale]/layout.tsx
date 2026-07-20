@@ -9,8 +9,10 @@ import {
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import JsonLd from "@/components/json-ld";
+import PageViewTracker from "@/components/page-view-tracker";
 import "../globals.css";
 import { routing } from "@/i18n/routing";
+import { Analytics } from "@vercel/analytics/next";
 
 const SITE_URL = "https://mangolabs.com.br";
 const SOCIAL_LINKS = [
@@ -103,12 +105,14 @@ export default async function RootLayout({ children, params }: Props) {
 
   return (
     <html lang={locale}>
+      <Analytics />
       <body
         className={`${poppins.variable} ${mulish.variable} flex min-h-screen flex-col font-sans antialiased`}
       >
         <JsonLd data={organizationLd} />
         <JsonLd data={websiteLd} />
         <NextIntlClientProvider messages={messages}>
+          <PageViewTracker />
           <Header />
           <div className="flex-1">{children}</div>
           <Footer />
