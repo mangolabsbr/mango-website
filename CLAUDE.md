@@ -37,7 +37,7 @@ Marketing/legal website for Mango Labs apps. Next.js 16 App Router, React 19, Ty
 - One article = `content/articles/<slug>/{en,es,pt}.mdx`. Frontmatter: `title`, `description`, quoted `date` ("YYYY-MM-DD"), and `thumbnail` (a `/public` path, 1200×630). All three locales must exist; `lib/articles.ts` falls back to `en` if one is missing.
 - Routes: `/articles` (page 1), `/articles/page/<n>` (pagination, `ARTICLES_PAGE_SIZE` in `lib/articles.ts`), `/articles/<slug>`. Sorting is most-recent-first. MDX body styling lives in `app/[locale]/articles/mdx-components.tsx`; new article slugs are picked up by `app/sitemap.ts` automatically.
 - RSS feeds are served from `/feed.xml` (default locale, `app/feed.xml/route.ts`) and `/<locale>/feed.xml` (`app/[locale]/feed.xml/route.ts`), both statically generated from `lib/feed.ts`. Autodiscovery links come from the `alternates()` helper in `lib/seo.ts`.
-- Social previews (og:image/twitter:image) are generated per article by `app/[locale]/articles/[slug]/opengraph-image.tsx` (branded card via `ImageResponse`, Poppins TTF in `assets/fonts/`, traced into the serverless bundle via `outputFileTracingIncludes`). The frontmatter `thumbnail` is only used for on-site rendering, so its file size doesn't affect link previews.
+- Social previews (og:image/twitter:image) are generated per article by `app/[locale]/articles/[slug]/opengraph-image.tsx`: the frontmatter thumbnail center-cropped to 1200×630 and re-encoded as JPEG with `sharp` (thumbnails are traced into the serverless bundle via `outputFileTracingIncludes`). Thumbnail source files can be any size — crawlers only ever fetch the bounded re-encode.
 
 ### Other
 

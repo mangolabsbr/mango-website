@@ -6,13 +6,11 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-  // The article OG image route reads these from disk at request time — make
-  // sure they are bundled into the serverless function on Vercel.
+  // The article OG image route reads thumbnails from disk at request time
+  // via a dynamic path — make sure they are bundled into the serverless
+  // function on Vercel.
   outputFileTracingIncludes: {
-    "/[locale]/articles/[slug]/opengraph-image": [
-      "./assets/fonts/**",
-      "./public/logo-transparent.png",
-    ],
+    "/[locale]/articles/[slug]/opengraph-image": ["./public/articles/**"],
   },
 };
 

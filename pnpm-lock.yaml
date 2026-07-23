@@ -53,6 +53,9 @@ importers:
       shadcn:
         specifier: ^4.13.1
         version: 4.13.1(typescript@5.9.3)
+      sharp:
+        specifier: ^0.35.3
+        version: 0.35.3(@types/node@20.19.25)
       tailwind-merge:
         specifier: ^3.6.0
         version: 3.6.0
@@ -87,9 +90,6 @@ importers:
       '@types/react-dom':
         specifier: ^19
         version: 19.2.3(@types/react@19.2.7)
-      sharp:
-        specifier: ^0.35.3
-        version: 0.35.3(@types/node@20.19.25)
       tailwindcss:
         specifier: ^4.3.3
         version: 4.3.3
