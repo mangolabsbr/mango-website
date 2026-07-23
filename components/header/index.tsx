@@ -27,6 +27,7 @@ const Header = () => {
           <nav className="hidden items-center gap-6 md:flex">
             <NavLink href="/">{t("home")}</NavLink>
             <NavLink href="/apps">{t("apps")}</NavLink>
+            <NavLink href="/articles">{t("articles")}</NavLink>
             <NavLink href="/contact">{t("contact")}</NavLink>
           </nav>
           <div className="ml-4 flex items-center gap-1">

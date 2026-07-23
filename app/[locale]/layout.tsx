@@ -11,9 +11,9 @@ import Header from "@/components/header";
 import JsonLd from "@/components/json-ld";
 import PageViewTracker from "@/components/page-view-tracker";
 import "../globals.css";
+import * as Sentry from "@sentry/nextjs";
 import { Analytics } from "@vercel/analytics/next";
 import { routing } from "@/i18n/routing";
-import * as Sentry from "@sentry/nextjs";
 
 const SITE_URL = "https://mangolabs.com.br";
 const SOCIAL_LINKS = [

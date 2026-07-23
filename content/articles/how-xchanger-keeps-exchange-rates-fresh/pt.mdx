@@ -1,0 +1,18 @@
+---
+title: "Como o Xchanger mantém as taxas de câmbio atualizadas"
+description: "Um olhar sobre como nosso conversor de moedas equilibra atualização das taxas, suporte offline e bateria."
+date: "2026-06-28"
+thumbnail: "/articles/how-xchanger-keeps-exchange-rates-fresh.png"
+---
+
+As taxas de câmbio mudam a cada segundo, mas seu telefone não deveria trabalhar tanto. O trabalho do Xchanger é dar um número confiável instantaneamente — mesmo quando você está em uma feira de rua sem sinal.
+
+## Cache com honestidade
+
+O Xchanger busca as taxas quando você abre o app e mantém a última tabela conhecida no dispositivo. Se você estiver offline, ainda recebe uma resposta — junto com um registro de quando ela foi atualizada. Preferimos mostrar um honesto "atualizado há 3 horas" a fingir que um número em cache está ao vivo.
+
+## Fazer menos de propósito
+
+Deliberadamente não consultamos em segundo plano. Atualização em segundo plano parece ótima até você perceber que gasta bateria com números que você olha duas vezes por semana. As taxas atualizam quando você realmente precisa: ao abrir o app.
+
+Pequenas decisões como essas são invisíveis quando funcionam — e esse é o ponto.

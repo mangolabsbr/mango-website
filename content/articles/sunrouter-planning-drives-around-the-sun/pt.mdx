@@ -1,0 +1,16 @@
+---
+title: "SunRouter: planejando viagens ao redor do sol"
+description: "A geometria surpreendentemente complicada por trás de dizer qual lado do carro ficará na sombra."
+date: "2026-05-11"
+thumbnail: "/articles/sunrouter-planning-drives-around-the-sun.png"
+---
+
+O SunRouter responde uma única pergunta: nesta viagem, neste horário, em qual lado do carro o sol bate? Parece trivial até você tentar calcular.
+
+## Geometria encontra geografia
+
+A posição do sol depende da data, da hora e do lugar da Terra onde você está — e seu rumo muda a cada curva da rota. O SunRouter divide a rota em segmentos, calcula o azimute solar de cada um e compara com a sua direção de deslocamento. O resultado é um resumo simples: maior parte à esquerda, maior parte à direita, ou troca de lado em um ponto específico.
+
+## Precisão onde importa, aproximação onde não
+
+Usamos um algoritmo rigoroso de posição solar porque um erro de poucos graus inverte a resposta perto do nascer e do pôr do sol — exatamente quando as pessoas mais se importam. Mas não fingimos que precisão centimétrica de GPS importa para escolher um assento. Saber qual precisão vale a pena é a maior parte da engenharia.

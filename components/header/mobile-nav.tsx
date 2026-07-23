@@ -16,6 +16,7 @@ import { Link } from "@/i18n/navigation";
 const links = [
   { href: "/", key: "home" },
   { href: "/apps", key: "apps" },
+  { href: "/articles", key: "articles" },
   { href: "/contact", key: "contact" },
 ] as const;
 

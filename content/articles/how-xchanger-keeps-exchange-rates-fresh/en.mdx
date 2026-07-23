@@ -1,0 +1,18 @@
+---
+title: "How Xchanger keeps exchange rates fresh"
+description: "A look at how our currency converter balances rate freshness, offline support, and battery life."
+date: "2026-06-28"
+thumbnail: "/articles/how-xchanger-keeps-exchange-rates-fresh.png"
+---
+
+Currency rates change every second, but your phone shouldn't have to work that hard. Xchanger's job is to give you a trustworthy number instantly — even when you're standing in a street market with no signal.
+
+## Caching with honesty
+
+Xchanger fetches rates when you open the app and keeps the last known table on the device. If you're offline, you still get an answer — along with a timestamp telling you exactly how old it is. We'd rather show you an honest "updated 3 hours ago" than pretend a cached number is live.
+
+## Doing less on purpose
+
+We deliberately don't poll in the background. Background refresh sounds nice until you realize it drains battery for numbers you look at twice a week. The rates update when you actually need them: when the app opens.
+
+Small decisions like these are invisible when they work — and that's the point.

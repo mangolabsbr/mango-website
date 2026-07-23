@@ -1,0 +1,18 @@
+---
+title: "Nosso stack multiplataforma, explicado"
+description: "Como um estúdio pequeno lança apps caprichados para iOS e Android ao mesmo tempo."
+date: "2026-03-30"
+thumbnail: "/articles/our-cross-platform-stack.png"
+---
+
+As pessoas se surpreendem que um estúdio do nosso tamanho lance para iOS, Android e web simultaneamente. A resposta honesta: somos implacáveis em compartilhar código.
+
+## Uma base de código, sensação nativa
+
+Nossos apps são construídos com React Native e TypeScript. A lógica de negócio — conversões, cálculos, armazenamento — é 100% compartilhada. O que não compartilhamos é a sensação: padrões de navegação, vibrações e convenções de plataforma seguem cada sistema. O usuário nunca deveria perceber o framework.
+
+## Dependências entediantes, de propósito
+
+Cada dependência é uma conta de manutenção futura. Escolhemos bibliotecas entediantes e amplamente usadas, e mantemos a lista curta. Quando um pacote de nicho nos pouparia um dia hoje mas custaria uma migração amanhã, escrevemos as cinquenta linhas nós mesmos.
+
+O stack não impressiona em um slide de conferência. Impressiona no histórico de atualizações: equipe pequena, lançamentos constantes, nas duas lojas, sempre.
