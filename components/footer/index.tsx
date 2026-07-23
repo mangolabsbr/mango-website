@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaFacebook, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { Link } from "@/i18n/navigation";
 import { showcasedAppList } from "@/lib/apps";
 
@@ -14,6 +14,16 @@ const socialLinks = [
     label: "GitHub",
     href: "https://github.com/mangolabsbr",
     Icon: FaGithub,
+  },
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/people/Mango-Labs/61592320798007/",
+    Icon: FaFacebook,
+  },
+  {
+    label: "X",
+    href: "https://x.com/mangolabsbr",
+    Icon: FaXTwitter,
   },
 ];
 
