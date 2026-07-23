@@ -9,6 +9,9 @@ type Props = {
   params: Promise<{ locale: string; page: string }>;
 };
 
+// All valid pages are prerendered; anything else 404s from the routing layer.
+export const dynamicParams = false;
+
 /** Pages ≥ 2 only — page 1 is the `/articles` root. */
 export function generateStaticParams({
   params: { locale },

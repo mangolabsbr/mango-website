@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import sharp from "sharp";
 import type { Locale } from "@/i18n/config";
 import { routing } from "@/i18n/routing";
-import { getArticle, getArticles } from "@/lib/articles";
+import { getArticle, getArticleSlugs } from "@/lib/articles";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/jpeg";
@@ -12,12 +12,14 @@ export const alt = "Mango Labs";
 
 // Prerender every article's OG image at build time — sharp and the fs read
 // then only run during the build, so the deployed route is a static file
-// (no serverless bundling of thumbnails/sharp binaries required).
+// (no serverless bundling of thumbnails/sharp binaries required). Unknown
+// params 404 from the routing layer rather than invoking a function.
 export const dynamic = "force-static";
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
-    getArticles(locale).map(({ slug }) => ({ locale, slug })),
+    getArticleSlugs().map((slug) => ({ locale, slug })),
   );
 }
 

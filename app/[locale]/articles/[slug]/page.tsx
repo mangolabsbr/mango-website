@@ -10,7 +10,7 @@ import BlurImage from "@/components/blur-image";
 import JsonLd from "@/components/json-ld";
 import type { Locale } from "@/i18n/config";
 import { Link } from "@/i18n/navigation";
-import { getArticle, getArticles } from "@/lib/articles";
+import { getArticle, getArticleSlugs } from "@/lib/articles";
 import { absoluteUrl, alternates, ogLocale, SITE_URL } from "@/lib/seo";
 import { articleMdxComponents } from "../mdx-components";
 
@@ -18,12 +18,15 @@ type Props = {
   params: Promise<{ locale: string; slug: string }>;
 };
 
-export function generateStaticParams({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
-  return getArticles(locale as Locale).map(({ slug }) => ({ slug }));
+// Every article is prerendered (all slugs for all locales — missing locale
+// files fall back to `en` via `getArticle`). Unknown slugs must 404 from the
+// routing layer instead of invoking a serverless render: this segment's
+// module graph pulls in sharp (via `opengraph-image.tsx`), which is not
+// loadable in the deployed function and turns on-demand renders into 500s.
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return getArticleSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props) {

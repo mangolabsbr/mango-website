@@ -145,6 +145,11 @@
       "showing": "Mostrando {shown} de {total} artículos"
     }
   },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe o fue movida.",
+    "backHome": "Volver al inicio"
+  },
   "footer": {
     "tagline": "Aplicaciones para la vida diaria, hechas con 🥭.",
     "copyright": "© {year} Mango Labs. Todos los derechos reservados.",

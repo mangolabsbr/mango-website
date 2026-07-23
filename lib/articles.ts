@@ -23,6 +23,11 @@ export function getArticlesPage(locale: Locale, page: number): Article[] {
   return getArticles(locale).slice(start, start + ARTICLES_PAGE_SIZE);
 }
 
+/** Unique slugs across every locale (for prerendering fallback routes). */
+export function getArticleSlugs(): string[] {
+  return [...new Set(allArticles.map((article) => article.slug))];
+}
+
 /**
  * Finds an article by slug, falling back to the `en` version when the
  * requested locale is missing — same strategy as `i18n/request.ts`.
