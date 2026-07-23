@@ -1,8 +1,14 @@
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
-import { FaFacebook, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import {
+  FaFacebook,
+  FaGithub,
+  FaLinkedin,
+  FaRss,
+  FaXTwitter,
+} from "react-icons/fa6";
 import type { Locale } from "@/i18n/config";
-import { Link } from "@/i18n/navigation";
+import { getPathname, Link } from "@/i18n/navigation";
 import { showcasedAppList } from "@/lib/apps";
 import { getArticles } from "@/lib/articles";
 
@@ -66,6 +72,15 @@ const Footer = async () => {
                 <Icon className="size-5" />
               </a>
             ))}
+            {/* Plain anchor (not the i18n Link): the feed is an XML document,
+                not an app page, so client-side navigation makes no sense. */}
+            <a
+              href={getPathname({ locale, href: "/feed.xml" as "/" })}
+              aria-label="RSS"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <FaRss className="size-5" />
+            </a>
           </div>
         </div>
         <div>

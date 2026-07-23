@@ -37,6 +37,13 @@ export function alternates(
       ...Object.fromEntries(routing.locales.map((l) => [l, path(l)])),
       "x-default": path(routing.defaultLocale),
     },
+    // RSS autodiscovery, pointing at the locale's own feed.
+    types: {
+      "application/rss+xml": getPathname({
+        locale,
+        href: "/feed.xml" as "/",
+      }),
+    },
   };
 }
 
