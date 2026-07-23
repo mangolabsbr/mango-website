@@ -4,6 +4,21 @@ import type { Locale } from "@/i18n/config";
 import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 
+export const SITE_URL = "https://mangolabs.com.br";
+
+/** `og:locale` values expect the `language_TERRITORY` format. */
+const OG_LOCALES: Record<Locale, string> = {
+  en: "en_US",
+  es: "es_ES",
+  pt: "pt_BR",
+};
+
+export const ogLocale = (locale: Locale) => OG_LOCALES[locale];
+
+/** Absolute URL for an internal href in the given locale. */
+export const absoluteUrl = (locale: Locale, href: string) =>
+  SITE_URL + getPathname({ locale, href: href as "/" });
+
 /**
  * Builds `canonical` + `hreflang` alternates for a page. Paths are relative;
  * Next resolves them against `metadataBase` (set in the root layout). The

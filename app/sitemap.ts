@@ -3,34 +3,39 @@ import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { showcasedAppSlugs } from "@/lib/apps";
 import { getArticles } from "@/lib/articles";
-
-const BASE_URL = "https://mangolabs.com.br";
+import { SITE_URL } from "@/lib/seo";
 
 const legalAppSlugs = ["proportion", "splitte", "sunrouter", "xchanger"];
 
-const hrefs = [
-  "/",
-  "/apps",
-  "/articles",
-  "/contact",
-  ...getArticles(routing.defaultLocale).map(({ slug }) => `/articles/${slug}`),
-  ...showcasedAppSlugs.map((slug) => `/apps/${slug}`),
+type Entry = { href: string; lastModified?: string };
+
+const entries: Entry[] = [
+  { href: "/" },
+  { href: "/apps" },
+  { href: "/articles" },
+  { href: "/contact" },
+  ...getArticles(routing.defaultLocale).map(({ slug, date }) => ({
+    href: `/articles/${slug}`,
+    lastModified: date,
+  })),
+  ...showcasedAppSlugs.map((slug) => ({ href: `/apps/${slug}` })),
   ...legalAppSlugs.flatMap((slug) => [
-    `/apps/${slug}/privacy`,
-    `/apps/${slug}/terms`,
+    { href: `/apps/${slug}/privacy` },
+    { href: `/apps/${slug}/terms` },
   ]),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return hrefs.map((href) => ({
+  return entries.map(({ href, lastModified }) => ({
     url:
-      BASE_URL +
+      SITE_URL +
       getPathname({ locale: routing.defaultLocale, href: href as "/" }),
+    ...(lastModified && { lastModified }),
     alternates: {
       languages: Object.fromEntries(
         routing.locales.map((locale) => [
           locale,
-          BASE_URL + getPathname({ locale, href: href as "/" }),
+          SITE_URL + getPathname({ locale, href: href as "/" }),
         ]),
       ),
     },

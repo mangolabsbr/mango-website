@@ -1,15 +1,18 @@
 import { ArrowRight } from "lucide-react";
 import { getFormatter, getTranslations } from "next-intl/server";
 import BlurImage from "@/components/blur-image";
+import JsonLd from "@/components/json-ld";
 import Paginator from "@/components/paginator";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Locale } from "@/i18n/config";
 import { Link } from "@/i18n/navigation";
 import {
+  ARTICLES_PAGE_SIZE,
   getArticles,
   getArticlesPage,
   getArticlesPageCount,
 } from "@/lib/articles";
+import { absoluteUrl } from "@/lib/seo";
 
 /** Page 1 lives at `/articles`; later pages at `/articles/page/<n>`. */
 const pageHref = (page: number) =>
@@ -29,14 +32,30 @@ const ArticlesList = async ({ locale, page }: Props) => {
   const totalPages = getArticlesPageCount(locale);
   const totalArticles = getArticles(locale).length;
 
+  const collectionLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: t("title"),
+    description: t("meta.description"),
+    url: absoluteUrl(locale, pageHref(page)),
+    inLanguage: locale,
+    mainEntity: {
+      "@type": "ItemList",
+      itemListElement: articles.map((article, index) => ({
+        "@type": "ListItem",
+        position: (page - 1) * ARTICLES_PAGE_SIZE + index + 1,
+        name: article.title,
+        url: absoluteUrl(locale, `/articles/${article.slug}`),
+      })),
+    },
+  };
+
   return (
     <main className="page-layout py-16">
-      <div className="mb-12 max-w-2xl">
-        <h1 className="font-heading text-4xl font-semibold tracking-tight">
-          {t("title")}
-        </h1>
-        <p className="mt-3 text-lg text-muted-foreground">{t("subtitle")}</p>
-      </div>
+      <JsonLd data={collectionLd} />
+      <h1 className="mb-12 font-heading text-4xl font-semibold tracking-tight">
+        {t("title")}
+      </h1>
 
       {articles.length === 0 ? (
         <p className="text-muted-foreground">{t("empty")}</p>

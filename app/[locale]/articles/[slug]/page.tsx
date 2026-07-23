@@ -7,10 +7,11 @@ import {
   setRequestLocale,
 } from "next-intl/server";
 import BlurImage from "@/components/blur-image";
+import JsonLd from "@/components/json-ld";
 import type { Locale } from "@/i18n/config";
-import { getPathname, Link } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import { getArticle, getArticles } from "@/lib/articles";
-import { alternates } from "@/lib/seo";
+import { absoluteUrl, alternates, ogLocale, SITE_URL } from "@/lib/seo";
 import { articleMdxComponents } from "../mdx-components";
 
 type Props = {
@@ -46,11 +47,8 @@ export async function generateMetadata({ params }: Props) {
     openGraph: {
       type: "article",
       siteName: t("title"),
-      locale,
-      url: getPathname({
-        locale: locale as Locale,
-        href: `/articles/${slug}` as "/",
-      }),
+      locale: ogLocale(locale as Locale),
+      url: absoluteUrl(locale as Locale, `/articles/${slug}`),
       title: article.title,
       description: article.description,
       publishedTime: article.date,
@@ -74,10 +72,63 @@ export default async function ArticlePage({ params }: Props) {
   }
 
   const t = await getTranslations("articles");
+  const tHeader = await getTranslations("header");
+  const tLayout = await getTranslations("layout");
   const format = await getFormatter({ locale });
+
+  const organization = {
+    "@type": "Organization",
+    name: tLayout("title"),
+    url: SITE_URL,
+  };
+
+  const blogPostingLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: article.title,
+    description: article.description,
+    image: [`${SITE_URL}${article.thumbnail}`],
+    datePublished: article.date,
+    inLanguage: locale,
+    mainEntityOfPage: absoluteUrl(locale as Locale, `/articles/${slug}`),
+    author: organization,
+    publisher: {
+      ...organization,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/logo-transparent.png`,
+      },
+    },
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: tHeader("home"),
+        item: absoluteUrl(locale as Locale, "/"),
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: t("title"),
+        item: absoluteUrl(locale as Locale, "/articles"),
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+      },
+    ],
+  };
 
   return (
     <main className="page-layout py-16">
+      <JsonLd data={blogPostingLd} />
+      <JsonLd data={breadcrumbLd} />
       <article className="mx-auto max-w-3xl">
         <Link
           href="/articles"

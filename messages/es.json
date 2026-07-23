@@ -134,7 +134,6 @@
       "description": "Artículos del equipo de Mango Labs sobre creación de apps, diseño y software independiente."
     },
     "title": "Artículos",
-    "subtitle": "Notas del estudio sobre creación de apps, diseño y software independiente.",
     "empty": "Aún no hay artículos publicados — vuelve pronto.",
     "readMore": "Leer artículo",
     "backToList": "Volver a los artículos",
@@ -151,8 +150,10 @@
     "copyright": "© {year} Mango Labs. Todos los derechos reservados.",
     "sections": {
       "apps": "Apps",
-      "company": "Empresa"
+      "company": "Empresa",
+      "latestArticles": "Últimos artículos"
     },
+    "articles": "Artículos",
     "contact": "Contacto"
   },
   "appsPage": {
