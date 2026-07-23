@@ -3,11 +3,23 @@ import { join } from "node:path";
 import { notFound } from "next/navigation";
 import sharp from "sharp";
 import type { Locale } from "@/i18n/config";
-import { getArticle } from "@/lib/articles";
+import { routing } from "@/i18n/routing";
+import { getArticle, getArticles } from "@/lib/articles";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/jpeg";
 export const alt = "Mango Labs";
+
+// Prerender every article's OG image at build time — sharp and the fs read
+// then only run during the build, so the deployed route is a static file
+// (no serverless bundling of thumbnails/sharp binaries required).
+export const dynamic = "force-static";
+
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) =>
+    getArticles(locale).map(({ slug }) => ({ locale, slug })),
+  );
+}
 
 type Props = {
   params: Promise<{ locale: string; slug: string }>;
