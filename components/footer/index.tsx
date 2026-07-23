@@ -35,7 +35,7 @@ const Footer = async () => {
   return (
     <footer className="border-t border-border/60 bg-muted/40">
       <div className="page-layout grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-3">
-        <div className="space-y-3">
+        <div className="space-y-3 sm:col-span-2 lg:col-span-1">
           <Link
             href="/"
             className="flex items-center gap-2 font-heading text-lg font-semibold"
