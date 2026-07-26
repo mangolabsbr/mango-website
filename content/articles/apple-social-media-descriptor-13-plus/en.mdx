@@ -1,0 +1,28 @@
+---
+title: "Apple's new social media question can push your app to 13+"
+description: "One answer in App Store Connect decides whether your app carries a Social Media label and lands inside a parental time limit. Required from September."
+date: "2026-07-26"
+thumbnail: "/articles/apple-social-media-descriptor-13-plus.png"
+---
+
+On July 9 a new question showed up in the App Store Connect age rating questionnaire: does your app have social media capabilities? Answer yes and you get a minimum 13+ rating, a Social Media descriptor on your product page, and a slot in a parental control that can switch your app off for the day. It's optional right now. [Apple says](https://developer.apple.com/news/?id=tlur8uvi) it becomes required in September.
+
+## The definition is wider than your category
+
+Apple's wording is "the ability to redistribute, amplify, or interact with user-generated content through a social feed or similar discovery method." That applies no matter which category you picked in App Store Connect, so a Utilities app can end up wearing a Social Media label.
+
+Which sweeps in a lot more than the obvious:
+
+- **A recipe app** with public comments under each dish.
+- **A fitness app** with a leaderboard and reaction buttons.
+- **A marketplace** that shows one buyer's review to the next shopper.
+
+Where it lands you is [Time Allowances](https://developer.apple.com/news/?id=0d2gpmml), a parental control arriving in iOS 27, iPadOS 27 and macOS 27. Parents get an age-based starting point for daily time in three buckets: Entertainment, Games, and Social Media. The first two come from your App Store category. The third comes from this one answer.
+
+## The way out costs an API
+
+There is an exemption, and it isn't free. Turn the social features off for anyone under 13, and implement the Declared Age Range API so you actually know who that is. It returns an age band rather than a birthdate, along with a signal for how the age was verified, and it doesn't hand your app raw personal data. Do that and younger users can keep seeing a lower rating.
+
+The rating also stacks regionally — Australia reads social capabilities as 16+, South Korea as 15+, Brazil as A16 — so the label travels further than the US store page.
+
+Neither [Xchanger](/apps/xchanger) nor [Sunrouter](/apps/sunrouter) has a feed, so our answer is a plain no. We're setting it now anyway. From September the questionnaire blocks submissions, updates and notarization for alternative marketplaces until it's filled in, and ten minutes today beats a rejected build in the middle of a hotfix.

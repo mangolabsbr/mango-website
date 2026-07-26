@@ -1,0 +1,28 @@
+---
+title: "La nueva pregunta de Apple puede subir tu app a 13+"
+description: "Una respuesta en App Store Connect decide si tu app lleva la etiqueta Redes sociales y entra en un límite de tiempo parental. Obligatoria desde septiembre."
+date: "2026-07-26"
+thumbnail: "/articles/apple-social-media-descriptor-13-plus.png"
+---
+
+El 9 de julio apareció una pregunta nueva en el cuestionario de clasificación por edad de App Store Connect: ¿tu app tiene capacidades de redes sociales? Si respondes que sí, te llevas una clasificación mínima de 13+, un descriptor de Redes sociales en tu ficha y un hueco en un control parental que puede apagar tu app por el resto del día. Ahora mismo es opcional. [Apple dice](https://developer.apple.com/news/?id=tlur8uvi) que en septiembre pasa a ser obligatoria.
+
+## La definición es más amplia que tu categoría
+
+Apple lo formula así: "la capacidad de redistribuir, amplificar o interactuar con contenido generado por usuarios a través de un feed social o un método de descubrimiento similar". Eso se aplica sin importar la categoría que elegiste en App Store Connect, así que una app de Utilidades puede acabar con la etiqueta de Redes sociales encima.
+
+Y ahí entran muchas más cosas de las evidentes:
+
+- **Una app de recetas** con comentarios públicos debajo de cada plato.
+- **Una app de fitness** con tabla de clasificación y botones de reacción.
+- **Un marketplace** que le enseña la reseña de un comprador al siguiente.
+
+A donde te lleva es a [Time Allowances](https://developer.apple.com/news/?id=0d2gpmml), un control parental que llega con iOS 27, iPadOS 27 y macOS 27. Los padres reciben un punto de partida según la edad para el tiempo diario en tres grupos: Entretenimiento, Juegos y Redes sociales. Los dos primeros salen de tu categoría en la App Store. El tercero sale de esta única respuesta.
+
+## La salida cuesta una API
+
+Hay una excepción, y no sale gratis. Desactiva las funciones sociales para cualquiera menor de 13 años e implementa la Declared Age Range API para saber de verdad quién es quién. Devuelve una franja de edad en lugar de una fecha de nacimiento, junto con una señal de cómo se verificó esa edad, y no le entrega a tu app datos personales en bruto. Si lo haces, los usuarios más jóvenes pueden seguir viendo una clasificación más baja.
+
+La clasificación además se acumula por región — Australia lee las capacidades sociales como 16+, Corea del Sur como 15+, Brasil como A16 — así que la etiqueta viaja mucho más lejos que la ficha estadounidense.
+
+Ni [Xchanger](/apps/xchanger) ni [Sunrouter](/apps/sunrouter) tienen feed, así que nuestra respuesta es un no pelado. Aun así la vamos a dejar puesta ya. Desde septiembre el cuestionario bloquea envíos, actualizaciones y notarizaciones para mercados alternativos hasta que esté completo, y diez minutos hoy valen más que un build rechazado en mitad de un hotfix.

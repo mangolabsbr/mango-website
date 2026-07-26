@@ -1,0 +1,28 @@
+---
+title: "A nova pergunta da Apple pode jogar seu app para 13+"
+description: "Uma resposta no App Store Connect decide se seu app ganha o selo de Redes sociais e entra num limite de tempo parental. Obrigatória a partir de setembro."
+date: "2026-07-26"
+thumbnail: "/articles/apple-social-media-descriptor-13-plus.png"
+---
+
+No dia 9 de julho apareceu uma pergunta nova no questionário de classificação etária do App Store Connect: seu app tem capacidades de rede social? Se a resposta for sim, você leva classificação mínima de 13+, um descritor de Redes sociais na sua página e uma vaga num controle parental capaz de desligar seu app pelo resto do dia. Por enquanto é opcional. [A Apple diz](https://developer.apple.com/news/?id=tlur8uvi) que em setembro vira obrigatória.
+
+## A definição é mais larga que a sua categoria
+
+A redação da Apple é "a capacidade de redistribuir, amplificar ou interagir com conteúdo gerado por usuários através de um feed social ou método de descoberta semelhante". Isso vale independentemente da categoria que você escolheu no App Store Connect, então um app de Utilitários pode terminar carregando um selo de Redes sociais.
+
+E aí entra muito mais coisa do que o óbvio:
+
+- **Um app de receitas** com comentários públicos embaixo de cada prato.
+- **Um app de treino** com ranking e botões de reação.
+- **Um marketplace** que mostra a avaliação de um comprador para o próximo.
+
+O destino disso é o [Time Allowances](https://developer.apple.com/news/?id=0d2gpmml), um controle parental que chega no iOS 27, iPadOS 27 e macOS 27. Os pais recebem um ponto de partida por idade para o tempo diário em três grupos: Entretenimento, Jogos e Redes sociais. Os dois primeiros vêm da sua categoria na App Store. O terceiro vem dessa única resposta.
+
+## A saída custa uma API
+
+Existe uma exceção, e ela não é de graça. Desligue os recursos sociais para quem tem menos de 13 anos e implemente a Declared Age Range API para saber de fato quem é quem. Ela devolve uma faixa etária em vez de uma data de nascimento, junto com um sinal de como aquela idade foi verificada, e não entrega dados pessoais crus para o seu app. Fazendo isso, os usuários mais novos continuam vendo uma classificação mais baixa.
+
+A classificação também se acumula por região — a Austrália lê capacidades sociais como 16+, a Coreia do Sul como 15+, o Brasil como A16 — então o selo viaja bem mais longe que a página americana.
+
+Nem o [Xchanger](/apps/xchanger) nem o [Sunrouter](/apps/sunrouter) têm feed, então nossa resposta é um não seco. Mesmo assim vamos deixar marcado agora. A partir de setembro o questionário trava envios, atualizações e notarização para lojas alternativas até estar preenchido, e dez minutos hoje valem mais que um build recusado no meio de um hotfix.
