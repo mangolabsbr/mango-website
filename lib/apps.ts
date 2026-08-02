@@ -1,12 +1,16 @@
 import {
+  ArrowLeftRight,
   Banknote,
   Bell,
   Bookmark,
   Braces,
   Car,
   Coins,
+  Copy,
+  Divide,
   Gauge,
   KeyRound,
+  Languages,
   type LucideIcon,
   Receipt,
   RefreshCw,
@@ -18,14 +22,18 @@ import {
   Zap,
 } from "lucide-react";
 
+/** Ordered by prominence — the home page showcases the first few. */
 export const showcasedAppSlugs = [
   "xchanger",
   "sunrouter",
   "splitte",
   "xchanger-api",
+  "proportion",
 ] as const;
 
 export type ShowcasedAppSlug = (typeof showcasedAppSlugs)[number];
+
+export type Platform = "ios" | "android" | "web";
 
 export type ShowcasedApp = {
   slug: ShowcasedAppSlug;
@@ -38,6 +46,14 @@ export type ShowcasedApp = {
   websiteUrl?: string;
   hasLegalPages: boolean;
 };
+
+/** Platform badges an app is listed under, derived from where it ships. */
+export const appPlatforms = (app: ShowcasedApp): Platform[] =>
+  [
+    app.appStoreUrl && "ios",
+    app.playStoreUrl && "android",
+    app.websiteUrl && "web",
+  ].filter(Boolean) as Platform[];
 
 export const showcasedApps: Record<ShowcasedAppSlug, ShowcasedApp> = {
   xchanger: {
@@ -73,6 +89,15 @@ export const showcasedApps: Record<ShowcasedAppSlug, ShowcasedApp> = {
       "https://play.google.com/store/apps/details?id=com.mangolabs.splitte",
     hasLegalPages: true,
   },
+  proportion: {
+    slug: "proportion",
+    kind: "mobile",
+    icon: "/apps/proportion/icon.png",
+    featureIcons: [Divide, ArrowLeftRight, Copy, Languages],
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.mangolabs.proportion",
+    hasLegalPages: true,
+  },
   "xchanger-api": {
     slug: "xchanger-api",
     kind: "web",
@@ -86,3 +111,6 @@ export const showcasedApps: Record<ShowcasedAppSlug, ShowcasedApp> = {
 export const showcasedAppList = showcasedAppSlugs.map(
   (slug) => showcasedApps[slug],
 );
+
+/** The home page showcase grid is laid out for exactly four cards. */
+export const homeShowcaseAppList = showcasedAppList.slice(0, 4);

@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Locale } from "@/i18n/config";
 import { Link } from "@/i18n/navigation";
-import { type ShowcasedAppSlug, showcasedApps } from "@/lib/apps";
+import { appPlatforms, type ShowcasedAppSlug, showcasedApps } from "@/lib/apps";
 import { alternates } from "@/lib/seo";
 import MobileMockup from "../mobile-mockup";
 
@@ -22,6 +22,7 @@ const appCategory: Record<ShowcasedAppSlug, string> = {
   xchanger: "FinanceApplication",
   sunrouter: "TravelApplication",
   splitte: "FinanceApplication",
+  proportion: "UtilitiesApplication",
   "xchanger-api": "DeveloperApplication",
 };
 
@@ -40,6 +41,7 @@ export async function appDetailMetadata(
 
 const AppDetailPage = async ({ slug }: Props) => {
   const app = showcasedApps[slug];
+  const platforms = appPlatforms(app);
   const t = await getTranslations("appDetail");
   const tCatalog = await getTranslations("catalog");
 
@@ -49,8 +51,8 @@ const AppDetailPage = async ({ slug }: Props) => {
     name: tCatalog(`${slug}.name`),
     description: tCatalog(`${slug}.description`),
     applicationCategory: appCategory[slug],
-    operatingSystem: app.kind === "mobile" ? "iOS, Android" : "Web",
-    url: app.websiteUrl ?? app.appStoreUrl,
+    operatingSystem: platforms.map((platform) => t(`platform.${platform}`)),
+    url: app.websiteUrl ?? app.appStoreUrl ?? app.playStoreUrl,
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
   };
 
@@ -83,14 +85,11 @@ const AppDetailPage = async ({ slug }: Props) => {
                   {tCatalog(`${slug}.name`)}
                 </h1>
                 <div className="flex gap-1.5">
-                  {app.kind === "mobile" ? (
-                    <>
-                      <Badge variant="outline">{t("platform.ios")}</Badge>
-                      <Badge variant="outline">{t("platform.android")}</Badge>
-                    </>
-                  ) : (
-                    <Badge variant="outline">{t("platform.web")}</Badge>
-                  )}
+                  {platforms.map((platform) => (
+                    <Badge key={platform} variant="outline">
+                      {t(`platform.${platform}`)}
+                    </Badge>
+                  ))}
                 </div>
               </div>
               <p className="text-lg font-medium text-primary">

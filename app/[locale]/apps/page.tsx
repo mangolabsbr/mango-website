@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Locale } from "@/i18n/config";
 import { Link } from "@/i18n/navigation";
-import { showcasedAppList } from "@/lib/apps";
+import { appPlatforms, showcasedAppList } from "@/lib/apps";
 import { alternates } from "@/lib/seo";
 
 type Props = {
@@ -53,16 +53,11 @@ export default async function AppsPage({ params }: Props) {
                   className="rounded-2xl border border-border/60"
                 />
                 <div className="flex flex-wrap justify-end gap-1.5">
-                  {app.kind === "mobile" ? (
-                    <>
-                      <Badge variant="outline">{tDetail("platform.ios")}</Badge>
-                      <Badge variant="outline">
-                        {tDetail("platform.android")}
-                      </Badge>
-                    </>
-                  ) : (
-                    <Badge variant="outline">{tDetail("platform.web")}</Badge>
-                  )}
+                  {appPlatforms(app).map((platform) => (
+                    <Badge key={platform} variant="outline">
+                      {tDetail(`platform.${platform}`)}
+                    </Badge>
+                  ))}
                 </div>
               </div>
               <div className="flex-1 space-y-2">
