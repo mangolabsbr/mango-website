@@ -1,5 +1,43 @@
+import path from "node:path";
+import Image from "next/image";
 import type { ComponentProps, ReactNode } from "react";
+import sharp from "sharp";
 import { Link } from "@/i18n/navigation";
+
+const IMAGE_CLASS = "my-6 w-full rounded-xl border border-border/60";
+
+/**
+ * Markdown images carry no dimensions, so we read them off the file in
+ * `/public` at build time (every article page is prerendered). That gives
+ * `next/image` what it needs to reserve the space and serve a responsive,
+ * re-encoded version. Anything it can't measure falls back to a plain `img`.
+ */
+const ArticleImage = async ({ src, alt, ...props }: ComponentProps<"img">) => {
+  const source = typeof src === "string" ? src : "";
+  const size = source.startsWith("/")
+    ? await sharp(path.join(process.cwd(), "public", source))
+        .metadata()
+        .catch(() => null)
+    : null;
+
+  if (!size?.width || !size.height) {
+    return (
+      // biome-ignore lint/performance/noImgElement: unmeasurable source, so next/image can't size it.
+      <img src={source} alt={alt ?? ""} className={IMAGE_CLASS} {...props} />
+    );
+  }
+
+  return (
+    <Image
+      src={source}
+      alt={alt ?? ""}
+      width={size.width}
+      height={size.height}
+      sizes="(min-width: 768px) 768px, 100vw"
+      className={IMAGE_CLASS}
+    />
+  );
+};
 
 const ExternalOrInternalLink = ({
   href = "",
@@ -75,4 +113,5 @@ export const articleMdxComponents = {
   ),
   hr: () => <hr className="my-8 border-border/60" />,
   a: ExternalOrInternalLink,
+  img: ArticleImage,
 };
