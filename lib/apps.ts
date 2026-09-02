@@ -12,6 +12,8 @@ import {
   KeyRound,
   Languages,
   type LucideIcon,
+  Palette,
+  QrCode,
   Receipt,
   RefreshCw,
   Route,
@@ -27,6 +29,7 @@ export const showcasedAppSlugs = [
   "xchanger",
   "sunrouter",
   "splitte",
+  "menoodo",
   "xchanger-api",
   "proportion",
 ] as const;
@@ -88,6 +91,14 @@ export const showcasedApps: Record<ShowcasedAppSlug, ShowcasedApp> = {
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.mangolabs.splitte",
     hasLegalPages: true,
+  },
+  menoodo: {
+    slug: "menoodo",
+    kind: "web",
+    icon: "/apps/menoodo/icon.png",
+    featureIcons: [Sparkles, Languages, QrCode, Palette],
+    websiteUrl: "https://www.menoodo.com/",
+    hasLegalPages: false,
   },
   proportion: {
     slug: "proportion",

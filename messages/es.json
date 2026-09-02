@@ -167,7 +167,7 @@
     "learnMore": "Saber más",
     "meta": {
       "title": "Apps",
-      "description": "Explora las apps y servicios de Mango Labs: Xchanger, SunRouter, Splitte y la Xchanger API."
+      "description": "Explora las apps y servicios de Mango Labs: Xchanger, SunRouter, Splitte, Menoodo y la Xchanger API."
     }
   },
   "appDetail": {
@@ -272,6 +272,33 @@
       "meta": {
         "title": "Splitte — Divisor de cuentas",
         "description": "Divide cuentas ítem por ítem con escaneo de recibos con IA y resúmenes instantáneos. Disponible para iOS y Android."
+      }
+    },
+    "menoodo": {
+      "name": "Menoodo",
+      "tagline": "Menús digitales que los restaurantes presumen.",
+      "description": "Menoodo convierte el menú de un restaurante en una página rápida y pensada para el móvil, a la que los comensales llegan escaneando un código QR, sin instalar ninguna app. El dueño importa su menú actual con IA, lo viste con sus colores y tipografías, lo traduce a los idiomas que hablan sus clientes y actualiza precios o platos agotados en segundos. Las reseñas y las analíticas del menú vuelven al panel, en privado.",
+      "features": {
+        "0": {
+          "title": "Importa con IA",
+          "description": "Entrega un PDF, una hoja de cálculo o tu web anterior y recibe un menú editable, con platos, precios y categorías en su sitio."
+        },
+        "1": {
+          "title": "Todos los idiomas de tus comensales",
+          "description": "La traducción automática redacta el menú en los idiomas que actives, y tú apruebas cada palabra antes de publicarla."
+        },
+        "2": {
+          "title": "Códigos QR listos para la mesa",
+          "description": "Genera un código QR con tus colores y tu logo en el centro, y expórtalo para imprimir."
+        },
+        "3": {
+          "title": "Tu marca, no la nuestra",
+          "description": "Parte de un preajuste y define tus colores, tipografías y fotos: el menú en la mesa se ve como tu restaurante."
+        }
+      },
+      "meta": {
+        "title": "Menoodo — Menús digitales para restaurantes",
+        "description": "Crea el menú de tu restaurante una vez y compártelo con un código QR: multilingüe, siempre al día y con tu propia marca."
       }
     },
     "proportion": {

@@ -167,7 +167,7 @@
     "learnMore": "Learn more",
     "meta": {
       "title": "Apps",
-      "description": "Explore Mango Labs apps and services: Xchanger, SunRouter, Splitte, and the Xchanger API."
+      "description": "Explore Mango Labs apps and services: Xchanger, SunRouter, Splitte, Menoodo, and the Xchanger API."
     }
   },
   "appDetail": {
@@ -272,6 +272,33 @@
       "meta": {
         "title": "Splitte — Bill Splitter",
         "description": "Split bills item by item with AI receipt scanning and instant summaries. Available for iOS and Android."
+      }
+    },
+    "menoodo": {
+      "name": "Menoodo",
+      "tagline": "Digital menus restaurants are proud to share.",
+      "description": "Menoodo turns a restaurant's menu into a fast, mobile-first page guests reach by scanning a QR code — no app to install. Owners import their existing menu with AI, style it with their own colors and fonts, translate it into the languages their guests speak, and update prices or sold-out dishes in seconds. Reviews and menu analytics come back to the dashboard, privately.",
+      "features": {
+        "0": {
+          "title": "Import with AI",
+          "description": "Hand over a PDF, a spreadsheet or your old website and get an editable menu back — dishes, prices and categories in place."
+        },
+        "1": {
+          "title": "Every language your guests speak",
+          "description": "Auto-translation drafts the menu in the languages you enable, and you approve every word before it ships."
+        },
+        "2": {
+          "title": "QR codes, table-ready",
+          "description": "Generate a QR code in your colors, with your logo at the center, and export it for print."
+        },
+        "3": {
+          "title": "Your brand, not ours",
+          "description": "Start from a preset, then set your own colors, fonts and photos — the menu on the table looks like your restaurant."
+        }
+      },
+      "meta": {
+        "title": "Menoodo — Digital Menus for Restaurants",
+        "description": "Build your restaurant menu once and share it as a QR code — multilingual, always up to date, in your own brand."
       }
     },
     "proportion": {

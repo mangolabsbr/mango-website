@@ -22,6 +22,7 @@ const appCategory: Record<ShowcasedAppSlug, string> = {
   xchanger: "FinanceApplication",
   sunrouter: "TravelApplication",
   splitte: "FinanceApplication",
+  menoodo: "BusinessApplication",
   proportion: "UtilitiesApplication",
   "xchanger-api": "DeveloperApplication",
 };

@@ -167,7 +167,7 @@
     "learnMore": "Saiba mais",
     "meta": {
       "title": "Apps",
-      "description": "Explore os apps e serviços da Mango Labs: Xchanger, SunRouter, Splitte e a Xchanger API."
+      "description": "Explore os apps e serviços da Mango Labs: Xchanger, SunRouter, Splitte, Menoodo e a Xchanger API."
     }
   },
   "appDetail": {
@@ -272,6 +272,33 @@
       "meta": {
         "title": "Splitte — Divisor de Contas",
         "description": "Divida contas item por item com leitura de recibos por IA e resumos instantâneos. Disponível para iOS e Android."
+      }
+    },
+    "menoodo": {
+      "name": "Menoodo",
+      "tagline": "Cardápios digitais que o restaurante tem orgulho de mostrar.",
+      "description": "O Menoodo transforma o cardápio do restaurante em uma página rápida e feita para o celular, que os clientes abrem ao escanear um QR code — sem instalar nenhum app. O dono importa o cardápio atual com IA, aplica as próprias cores e fontes, traduz para os idiomas que os clientes falam e atualiza preços ou pratos esgotados em segundos. As avaliações e as métricas do cardápio voltam para o painel, de forma privada.",
+      "features": {
+        "0": {
+          "title": "Importe com IA",
+          "description": "Envie um PDF, uma planilha ou o seu site antigo e receba um cardápio editável — pratos, preços e categorias no lugar."
+        },
+        "1": {
+          "title": "Todos os idiomas dos seus clientes",
+          "description": "A tradução automática escreve o cardápio nos idiomas que você ativar, e você aprova cada palavra antes de publicar."
+        },
+        "2": {
+          "title": "QR codes prontos para a mesa",
+          "description": "Gere um QR code com as suas cores e o seu logo no centro, e exporte para impressão."
+        },
+        "3": {
+          "title": "A sua marca, não a nossa",
+          "description": "Comece por um preset e defina suas cores, fontes e fotos — o cardápio na mesa tem a cara do seu restaurante."
+        }
+      },
+      "meta": {
+        "title": "Menoodo — Cardápios digitais para restaurantes",
+        "description": "Monte o cardápio do seu restaurante uma vez e compartilhe por QR code: multilíngue, sempre atualizado e com a sua marca."
       }
     },
     "proportion": {
