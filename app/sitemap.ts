@@ -5,7 +5,13 @@ import { showcasedAppSlugs } from "@/lib/apps";
 import { getArticles } from "@/lib/articles";
 import { SITE_URL } from "@/lib/seo";
 
-const legalAppSlugs = ["proportion", "splitte", "sunrouter", "xchanger"];
+const legalAppSlugs = [
+  "proportion",
+  "splitte",
+  "sudoku",
+  "sunrouter",
+  "xchanger",
+];
 
 type Entry = { href: string; lastModified?: string };
 

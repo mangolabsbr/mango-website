@@ -45,6 +45,16 @@ export const appsArticleRichTags = {
       {chunks}
     </Link>
   ),
+  linkEmailContato: (chunks: ReactNode) => (
+    <Link
+      href="mailto:contato@mangolabs.com.br"
+      className="text-orange-700 hover:text-orange-900 underline"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {chunks}
+    </Link>
+  ),
   linkWebsite: (chunks: ReactNode) => (
     <Link
       href="https://mangolabs.com.br"
