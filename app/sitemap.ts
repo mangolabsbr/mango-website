@@ -9,6 +9,7 @@ const legalAppSlugs = [
   "proportion",
   "splitte",
   "sudoku",
+  "sudoku-colors",
   "sunrouter",
   "xchanger",
 ];

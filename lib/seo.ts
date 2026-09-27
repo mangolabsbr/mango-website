@@ -56,7 +56,10 @@ export async function legalMetadata(
   kind: LegalKind,
 ): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "appDetail" });
-  const appName = slug.charAt(0).toUpperCase() + slug.slice(1);
+  const appName = slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
   const label = kind === "privacy" ? t("privacyPolicy") : t("termsOfUse");
 
   return {
