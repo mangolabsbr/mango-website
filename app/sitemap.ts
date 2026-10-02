@@ -6,6 +6,7 @@ import { getArticles } from "@/lib/articles";
 import { SITE_URL } from "@/lib/seo";
 
 const legalAppSlugs = [
+  "mathdoku",
   "proportion",
   "splitte",
   "sudoku",
