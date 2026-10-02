@@ -317,6 +317,33 @@
         "description": "Monte o cardápio do seu restaurante uma vez e compartilhe por QR code: multilíngue, sempre atualizado e com a sua marca."
       }
     },
+    "sudoku": {
+      "name": "Sudoku",
+      "tagline": "O Sudoku clássico, lindamente simples.",
+      "description": "Sudoku é o clássico jogo de números, feito de forma calma, limpa e simples. Escolha um dos quatro níveis, preencha a grade e treine a mente em qualquer lugar, mesmo sem conexão com a internet. Cada quebra-cabeça é gerado no seu aparelho com uma única solução, e anotações, dicas, destaque inteligente e melhores pontuações já vêm embutidos. Sem conta, sem cadastro, sem distrações: abra o app e jogue, no modo claro ou escuro e em 19 idiomas.",
+      "features": {
+        "0": {
+          "title": "Quebra-cabeças infinitos",
+          "description": "Cada partida gera um novo quebra-cabeça no seu aparelho, e cada um tem exatamente uma solução."
+        },
+        "1": {
+          "title": "Quatro níveis de dificuldade",
+          "description": "Fácil, Médio, Difícil e Expert, cada um desbloqueado ao vencer partidas no nível anterior."
+        },
+        "2": {
+          "title": "Anotações, dicas e destaque",
+          "description": "Anote candidatos a lápis, receba até três dicas por partida e veja todos os números iguais ao selecionar uma célula."
+        },
+        "3": {
+          "title": "Totalmente offline",
+          "description": "Sua partida em andamento, melhores pontuações e configurações ficam no seu aparelho. Jogue em voos, no trajeto e onde não houver Wi-Fi."
+        }
+      },
+      "meta": {
+        "title": "Sudoku — Quebra-cabeça de números clássico offline",
+        "description": "Um Sudoku calmo e limpo com quatro níveis, anotações, dicas e melhores pontuações. Funciona totalmente offline em 19 idiomas. Disponível para iOS e Android."
+      }
+    },
     "proportion": {
       "name": "Proportion",
       "tagline": "Resolva qualquer regra de três em segundos.",

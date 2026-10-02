@@ -9,10 +9,13 @@ import {
   Copy,
   Divide,
   Gauge,
+  Grid3x3,
   KeyRound,
   Languages,
+  Layers,
   type LucideIcon,
   Palette,
+  PencilLine,
   QrCode,
   Receipt,
   RefreshCw,
@@ -21,6 +24,7 @@ import {
   Sigma,
   Sparkles,
   Users,
+  WifiOff,
   Zap,
 } from "lucide-react";
 
@@ -30,6 +34,7 @@ export const showcasedAppSlugs = [
   "sunrouter",
   "splitte",
   "menoodo",
+  "sudoku",
   "xchanger-api",
   "proportion",
 ] as const;
@@ -99,6 +104,16 @@ export const showcasedApps: Record<ShowcasedAppSlug, ShowcasedApp> = {
     featureIcons: [Sparkles, Languages, QrCode, Palette],
     websiteUrl: "https://www.menoodo.com/",
     hasLegalPages: false,
+  },
+  sudoku: {
+    slug: "sudoku",
+    kind: "mobile",
+    icon: "/apps/sudoku/icon.png",
+    featureIcons: [Grid3x3, Layers, PencilLine, WifiOff],
+    appStoreUrl: "https://apps.apple.com/app/id6815376814",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.mangolabs.sudoku",
+    hasLegalPages: true,
   },
   proportion: {
     slug: "proportion",

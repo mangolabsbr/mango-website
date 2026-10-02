@@ -317,6 +317,33 @@
         "description": "Build your restaurant menu once and share it as a QR code — multilingual, always up to date, in your own brand."
       }
     },
+    "sudoku": {
+      "name": "Sudoku",
+      "tagline": "Classic Sudoku, beautifully simple.",
+      "description": "Sudoku is the classic number puzzle, made calm, clean and simple. Pick one of four levels, fill the grid and train your brain anywhere — even with no internet connection. Every puzzle is generated on your device with a single solution, and notes, hints, smart highlighting and best scores are all built in. No account, no sign-up, no clutter: just open the app and play, in light or dark mode and in 19 languages.",
+      "features": {
+        "0": {
+          "title": "Endless puzzles",
+          "description": "A new puzzle is generated on your device every game, and each one has exactly one solution."
+        },
+        "1": {
+          "title": "Four difficulty levels",
+          "description": "Easy, Medium, Hard and Expert, each unlocked by winning games at the level before it."
+        },
+        "2": {
+          "title": "Notes, hints and highlighting",
+          "description": "Pencil in candidates, get up to three hints per game, and see every matching number as you select a cell."
+        },
+        "3": {
+          "title": "Fully offline",
+          "description": "Your game in progress, best scores and settings live on your device. Play on flights, commutes and anywhere without Wi-Fi."
+        }
+      },
+      "meta": {
+        "title": "Sudoku — Offline Classic Number Puzzle",
+        "description": "A calm, clean Sudoku with four levels, notes, hints and best scores. Plays fully offline in 19 languages. Available for iOS and Android."
+      }
+    },
     "proportion": {
       "name": "Proportion",
       "tagline": "Solve any rule of three in seconds.",

@@ -317,6 +317,33 @@
         "description": "Crea el menú de tu restaurante una vez y compártelo con un código QR: multilingüe, siempre al día y con tu propia marca."
       }
     },
+    "sudoku": {
+      "name": "Sudoku",
+      "tagline": "El Sudoku clásico, bellamente simple.",
+      "description": "Sudoku es el clásico juego de números, hecho tranquilo, limpio y simple. Elige uno de cuatro niveles, completa la cuadrícula y entrena tu mente donde quieras, incluso sin conexión a internet. Cada puzle se genera en tu dispositivo con una única solución, y las notas, las pistas, el resaltado inteligente y las mejores puntuaciones vienen incorporados. Sin cuenta, sin registro, sin distracciones: abre la app y juega, en modo claro u oscuro y en 19 idiomas.",
+      "features": {
+        "0": {
+          "title": "Puzles infinitos",
+          "description": "Cada partida genera un puzle nuevo en tu dispositivo, y cada uno tiene exactamente una solución."
+        },
+        "1": {
+          "title": "Cuatro niveles de dificultad",
+          "description": "Fácil, Medio, Difícil y Experto; cada uno se desbloquea ganando partidas en el nivel anterior."
+        },
+        "2": {
+          "title": "Notas, pistas y resaltado",
+          "description": "Anota candidatos a lápiz, recibe hasta tres pistas por partida y ve todos los números iguales al seleccionar una celda."
+        },
+        "3": {
+          "title": "Totalmente sin conexión",
+          "description": "Tu partida en curso, tus mejores puntuaciones y tus ajustes se guardan en tu dispositivo. Juega en vuelos, trayectos y donde no haya Wi-Fi."
+        }
+      },
+      "meta": {
+        "title": "Sudoku — Puzle de números clásico sin conexión",
+        "description": "Un Sudoku tranquilo y limpio con cuatro niveles, notas, pistas y mejores puntuaciones. Funciona totalmente sin conexión en 19 idiomas. Disponible para iOS y Android."
+      }
+    },
     "proportion": {
       "name": "Proportion",
       "tagline": "Resuelve cualquier regla de tres en segundos.",
