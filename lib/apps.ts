@@ -114,6 +114,7 @@ export const showcasedApps: Record<ShowcasedAppSlug, ShowcasedApp> = {
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.mangolabs.sudoku",
     hasLegalPages: true,
+    screenshot: "/apps/sudoku/sudoku-screenshot.png",
   },
   proportion: {
     slug: "proportion",
