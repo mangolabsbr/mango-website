@@ -12,6 +12,7 @@ const legalAppSlugs = [
   "sudoku",
   "sudoku-colors",
   "sunrouter",
+  "word-search-infinity",
   "words-infinity",
   "xchanger",
 ];
