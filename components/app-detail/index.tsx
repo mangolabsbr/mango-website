@@ -24,6 +24,7 @@ const appCategory: Record<ShowcasedAppSlug, string> = {
   splitte: "FinanceApplication",
   menoodo: "BusinessApplication",
   sudoku: "GameApplication",
+  "sudoku-colors": "GameApplication",
   proportion: "UtilitiesApplication",
   "xchanger-api": "DeveloperApplication",
 };

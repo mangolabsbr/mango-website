@@ -368,6 +368,33 @@
         "description": "Um Sudoku calmo e limpo com quatro níveis, anotações, dicas e melhores pontuações. Funciona totalmente offline em 19 idiomas. Disponível para iOS e Android."
       }
     },
+    "sudoku-colors": {
+      "name": "Sudoku Colors",
+      "tagline": "O Sudoku clássico, resolvido em cores.",
+      "description": "Sudoku Colors mantém o quebra-cabeça clássico e troca os números por cores. Preencha a grade para que cada linha, coluna e caixa 3×3 contenha cada uma das nove cores exatamente uma vez: as mesmas regras, a mesma lógica, mas o tabuleiro ganha cor conforme você resolve. Escolha um dos quatro níveis, use anotações, desfazer e dicas quando precisar, e bata sua melhor pontuação. Sua partida é salva automaticamente, os modos de assistência de cor mantêm a paleta distinguível para pessoas com daltonismo, e tudo vem no modo claro ou escuro e em 19 idiomas.",
+      "features": {
+        "0": {
+          "title": "Cores no lugar de números",
+          "description": "Cada linha, coluna e caixa 3×3 tem cada uma das nove cores exatamente uma vez. A mesma lógica do Sudoku, uma nova forma de enxergá-la."
+        },
+        "1": {
+          "title": "Quatro níveis de dificuldade",
+          "description": "Fácil, Médio, Difícil e Expert. Cada quebra-cabeça é gerado do zero e tem exatamente uma solução."
+        },
+        "2": {
+          "title": "Anotações, desfazer e dicas",
+          "description": "Marque as cores candidatas, desfaça ou apague qualquer jogada e receba até três dicas por partida quando travar."
+        },
+        "3": {
+          "title": "Modos de assistência de cor",
+          "description": "Paletas escolhidas para continuarem distinguíveis com protanopia, deuteranopia e tritanopia, com símbolos opcionais em cada cor."
+        }
+      },
+      "meta": {
+        "title": "Sudoku Colors — Quebra-cabeça de lógica com cores",
+        "description": "O Sudoku clássico com cores no lugar de números. Quatro níveis, anotações, dicas, melhores pontuações e modos de assistência de cor, em 19 idiomas. Disponível para iOS e Android."
+      }
+    },
     "proportion": {
       "name": "Proportion",
       "tagline": "Resolva qualquer regra de três em segundos.",
