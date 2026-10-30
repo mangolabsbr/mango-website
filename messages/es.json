@@ -368,6 +368,60 @@
         "description": "Un Sudoku tranquilo y limpio con cuatro niveles, notas, pistas y mejores puntuaciones. Funciona totalmente sin conexión en 19 idiomas. Disponible para iOS y Android."
       }
     },
+    "mathdoku": {
+      "name": "Mathdoku",
+      "tagline": "El Sudoku se une a las matemáticas.",
+      "description": "Mathdoku es un puzle de lógica numérica para quienes disfrutan del Sudoku pero quieren un poco de aritmética. Completa cada fila y columna con los números del 1 al N, sin repetir, y luego haz que las jaulas cuadren: los números de cada grupo de borde grueso deben sumar, restar, multiplicar o dividir para alcanzar su objetivo. 336 puzles seleccionados a mano te llevan de 3×3 a 9×9, y todos tienen un camino lógico hasta el final, sin necesidad de adivinar. Sin anuncios, sin cuenta, totalmente sin conexión, en modo claro u oscuro y en 19 idiomas.",
+      "features": {
+        "0": {
+          "title": "336 puzles, siete tamaños",
+          "description": "Empieza con un 3×3 y avanza hasta el 9×9. Cada tamaño tiene 48 niveles ordenados de fácil a difícil."
+        },
+        "1": {
+          "title": "Cuatro operaciones, una a una",
+          "description": "Los primeros niveles solo usan sumas; después llegan la resta, la multiplicación y la división, para que la dificultad suba a tu ritmo."
+        },
+        "2": {
+          "title": "Notas, pistas y deshacer",
+          "description": "Anota candidatos a lápiz, recibe tres pistas por nivel, deshaz y borra libremente, y ve los errores en rojo al instante."
+        },
+        "3": {
+          "title": "Sin anuncios, sin conexión",
+          "description": "Sin cuenta y sin internet. Tu progreso se guarda automáticamente en tu dispositivo para que sigas donde lo dejaste."
+        }
+      },
+      "meta": {
+        "title": "Mathdoku — Puzle de lógica: Sudoku y matemáticas",
+        "description": "336 puzles de jaulas seleccionados a mano, de 3×3 a 9×9, con notas, pistas y mejores puntuaciones. Sin anuncios, sin conexión y en 19 idiomas. Disponible para iOS y Android."
+      }
+    },
+    "words-infinity": {
+      "name": "Words Infinity",
+      "tagline": "El juego de adivinar palabras que nunca termina.",
+      "description": "Words Infinity es el juego de adivinar palabras que nunca termina. Encuentra la palabra oculta en seis intentos y, en lugar de esperar a mañana, pasa directamente al siguiente nivel con una palabra nueva y un tablero limpio. Verde significa que la letra está en el lugar correcto, amarillo que va en otra posición y gris que no está en la palabra. La partida sigue hasta que falles una: ¿hasta dónde puedes llegar? Elige entre tres dificultades, persigue un multiplicador que no para de crecer y juega en 13 idiomas, totalmente sin conexión y sin cuenta.",
+      "features": {
+        "0": {
+          "title": "Niveles infinitos",
+          "description": "Resuelve una palabra y la siguiente ya te espera. Sin límite diario: una partida dura mientras sigas acertando."
+        },
+        "1": {
+          "title": "Tres dificultades, multiplicador creciente",
+          "description": "Fácil (4 letras), Medio (5) y Difícil (6), cada una con su mejor puntuación. El multiplicador crece cada nivel, hasta 3x."
+        },
+        "2": {
+          "title": "13 idiomas",
+          "description": "Diccionarios reales en 13 idiomas. El idioma de las palabras puede ser distinto al de la app, para practicar uno que estés aprendiendo."
+        },
+        "3": {
+          "title": "Juega sin conexión",
+          "description": "Sin cuenta y sin registro. Tu partida, tus mejores puntuaciones y tus ajustes se guardan en tu dispositivo. Las clasificaciones son opcionales."
+        }
+      },
+      "meta": {
+        "title": "Words Infinity — Juego infinito de adivinar palabras",
+        "description": "Adivina la palabra en seis intentos y sigue jugando: niveles infinitos, tres dificultades y un multiplicador de hasta 3x. Sin conexión y en 13 idiomas. Disponible para iOS y Android."
+      }
+    },
     "proportion": {
       "name": "Proportion",
       "tagline": "Resuelve cualquier regla de tres en segundos.",

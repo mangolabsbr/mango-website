@@ -7,8 +7,8 @@ const MobileMockup = ({ src, className }: Props) => {
   return (
     <svg
       width="263"
-      height="459"
-      viewBox="0 0 263 459"
+      height="496"
+      viewBox="0 0 263 496"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -59,7 +59,7 @@ const MobileMockup = ({ src, className }: Props) => {
           x="11.1777"
           y="5.88402"
           width="218.94"
-          height="418.671"
+          height="455.4"
           rx="38.6991"
           fill="url(#paint4_linear_3104_170)"
           stroke="#D8D8D8"
@@ -67,19 +67,20 @@ const MobileMockup = ({ src, className }: Props) => {
         />
         <g filter="url(#filter1_i_3104_170)">
           <g clipPath="url(#clip0_3104_170)">
-            <rect
-              x="8.15869"
-              y="14.1602"
-              width="220.118"
-              height="403.458"
-              fill="url(#pattern0_3104_170)"
+            <image
+              x="19.686"
+              y="13.9492"
+              width="201.924"
+              height="437.75"
+              preserveAspectRatio="xMidYMid slice"
+              href={src}
             />
           </g>
           <rect
             x="19.9605"
             y="14.2236"
             width="201.375"
-            height="400.473"
+            height="437.2"
             rx="32.6609"
             stroke="#2D2D2D"
             strokeWidth="0.548923"
@@ -109,7 +110,7 @@ const MobileMockup = ({ src, className }: Props) => {
           x="5.43594e-05"
           y="7.62939e-06"
           width="262.449"
-          height="458.243"
+          height="494.97"
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
@@ -161,7 +162,7 @@ const MobileMockup = ({ src, className }: Props) => {
           x="19.686"
           y="13.9492"
           width="202.473"
-          height="401.57"
+          height="438.3"
           filterUnits="userSpaceOnUse"
           colorInterpolationFilters="sRGB"
         >
@@ -191,17 +192,6 @@ const MobileMockup = ({ src, className }: Props) => {
             result="effect1_innerShadow_3104_170"
           />
         </filter>
-        <pattern
-          id="pattern0_3104_170"
-          patternContentUnits="objectBoundingBox"
-          width="1"
-          height="1"
-        >
-          <use
-            xlinkHref="#image0_3104_170"
-            transform="matrix(0.000855777 0 0 0.000499726 0.04765 -0.0074901)"
-          />
-        </pattern>
         <linearGradient
           id="paint0_linear_3104_170"
           x1="229.335"
@@ -267,18 +257,11 @@ const MobileMockup = ({ src, className }: Props) => {
             x="19.686"
             y="13.9492"
             width="201.924"
-            height="401.022"
+            height="437.75"
             rx="32.9354"
             fill="white"
           />
         </clipPath>
-        <image
-          id="image0_3104_170"
-          width="1080"
-          height="2306"
-          preserveAspectRatio="none"
-          href={src}
-        />
       </defs>
     </svg>
   );

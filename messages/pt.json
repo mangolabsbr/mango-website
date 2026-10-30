@@ -368,6 +368,60 @@
         "description": "Um Sudoku calmo e limpo com quatro níveis, anotações, dicas e melhores pontuações. Funciona totalmente offline em 19 idiomas. Disponível para iOS e Android."
       }
     },
+    "mathdoku": {
+      "name": "Mathdoku",
+      "tagline": "O Sudoku encontra a matemática.",
+      "description": "Mathdoku é um quebra-cabeça de lógica numérica para quem gosta de Sudoku mas quer um pouco de aritmética na mistura. Preencha cada linha e coluna com os números de 1 a N, sem repetir, e depois faça as gaiolas fecharem: os números de cada grupo com borda grossa precisam somar, subtrair, multiplicar ou dividir para chegar ao alvo. São 336 quebra-cabeças escolhidos a dedo, de 3×3 a 9×9, e todos têm um caminho lógico até o fim, sem precisar chutar. Sem anúncios, sem conta, totalmente offline, no modo claro ou escuro e em 19 idiomas.",
+      "features": {
+        "0": {
+          "title": "336 quebra-cabeças, sete tamanhos",
+          "description": "Comece no 3×3 e avance até o 9×9. Cada tamanho tem 48 níveis ordenados do fácil ao difícil."
+        },
+        "1": {
+          "title": "Quatro operações, uma de cada vez",
+          "description": "Os primeiros níveis usam só adição; depois entram subtração, multiplicação e divisão, para a dificuldade subir no seu ritmo."
+        },
+        "2": {
+          "title": "Anotações, dicas e desfazer",
+          "description": "Anote candidatos a lápis, receba três dicas por nível, desfaça e apague à vontade e veja os erros em vermelho na hora."
+        },
+        "3": {
+          "title": "Sem anúncios, totalmente offline",
+          "description": "Sem conta e sem internet. Seu progresso é salvo automaticamente no aparelho, para você continuar de onde parou."
+        }
+      },
+      "meta": {
+        "title": "Mathdoku — Quebra-cabeça de lógica: Sudoku com matemática",
+        "description": "336 quebra-cabeças de gaiolas escolhidos a dedo, de 3×3 a 9×9, com anotações, dicas e melhores pontuações. Sem anúncios, offline e em 19 idiomas. Disponível para iOS e Android."
+      }
+    },
+    "words-infinity": {
+      "name": "Words Infinity",
+      "tagline": "O jogo de adivinhar palavras que nunca acaba.",
+      "description": "Words Infinity é o jogo de adivinhar palavras que nunca acaba. Descubra a palavra escondida em seis tentativas e, em vez de esperar até amanhã, vá direto para o próximo nível com uma palavra nova e um tabuleiro limpo. Verde indica que a letra está no lugar certo, amarelo que ela pertence a outra posição e cinza que não está na palavra. A partida continua até você errar uma: até onde você consegue chegar? Escolha entre três dificuldades, persiga um multiplicador que só cresce e jogue em 13 idiomas, totalmente offline e sem conta.",
+      "features": {
+        "0": {
+          "title": "Níveis infinitos",
+          "description": "Resolva uma palavra e a próxima já está esperando. Sem limite diário: uma partida dura enquanto você continuar acertando."
+        },
+        "1": {
+          "title": "Três dificuldades, multiplicador crescente",
+          "description": "Fácil (4 letras), Médio (5) e Difícil (6), cada uma com sua melhor pontuação. O multiplicador cresce a cada nível, até 3x."
+        },
+        "2": {
+          "title": "13 idiomas",
+          "description": "Dicionários reais em 13 idiomas. O idioma das palavras pode ser diferente do idioma do app, para praticar um que você está aprendendo."
+        },
+        "3": {
+          "title": "Jogue offline, em qualquer lugar",
+          "description": "Sem conta e sem cadastro. Sua partida, melhores pontuações e configurações ficam no seu aparelho. Os rankings são opcionais."
+        }
+      },
+      "meta": {
+        "title": "Words Infinity — Jogo infinito de adivinhar palavras",
+        "description": "Adivinhe a palavra em seis tentativas e continue: níveis infinitos, três dificuldades e multiplicador de até 3x. Offline e em 13 idiomas. Disponível para iOS e Android."
+      }
+    },
     "proportion": {
       "name": "Proportion",
       "tagline": "Resolva qualquer regra de três em segundos.",

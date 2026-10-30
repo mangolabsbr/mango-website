@@ -368,6 +368,60 @@
         "description": "A calm, clean Sudoku with four levels, notes, hints and best scores. Plays fully offline in 19 languages. Available for iOS and Android."
       }
     },
+    "mathdoku": {
+      "name": "Mathdoku",
+      "tagline": "Sudoku meets math.",
+      "description": "Mathdoku is a number logic puzzle for people who like Sudoku but want a little arithmetic in the mix. Fill every row and column with the numbers 1 to N, with no repeats, then make the cages work: the numbers inside each thick-bordered group must add, subtract, multiply or divide to hit its target. 336 hand-picked puzzles take you from 3×3 to 9×9, and every one has a logical path to the end — no guessing required. No ads, no account, fully offline, in light or dark mode and in 19 languages.",
+      "features": {
+        "0": {
+          "title": "336 puzzles, seven grid sizes",
+          "description": "Start on a 3×3 and work up to 9×9. Each size has 48 levels sorted from easy to hard."
+        },
+        "1": {
+          "title": "Four operations, one at a time",
+          "description": "The first levels use addition only, then subtraction, multiplication and division join in, so the difficulty ramps up at your pace."
+        },
+        "2": {
+          "title": "Notes, hints and undo",
+          "description": "Pencil in candidates, get three hints per level, undo and erase freely, and see mistakes in red the moment they happen."
+        },
+        "3": {
+          "title": "No ads, fully offline",
+          "description": "No account and no internet needed. Your progress is saved automatically on your device, so you can pick up where you left off."
+        }
+      },
+      "meta": {
+        "title": "Mathdoku — Sudoku Meets Math Logic Puzzle",
+        "description": "336 hand-picked cage puzzles from 3×3 to 9×9 with notes, hints and best scores. No ads, fully offline, in 19 languages. Available for iOS and Android."
+      }
+    },
+    "words-infinity": {
+      "name": "Words Infinity",
+      "tagline": "The word guessing game that never ends.",
+      "description": "Words Infinity is the word guessing game that never ends. Find the hidden word in six tries and, instead of waiting until tomorrow, move straight to the next level with a new word and a clean board. Green means the letter is in the right spot, yellow means it belongs somewhere else, gray means it's not in the word. The run goes on until you miss one — how far can you get? Pick from three difficulties, chase a growing score multiplier and play in 13 languages, fully offline and with no account.",
+      "features": {
+        "0": {
+          "title": "Endless levels",
+          "description": "Solve a word and the next one is already waiting. No daily limit: one run lasts as long as you keep guessing right."
+        },
+        "1": {
+          "title": "Three difficulties, growing multiplier",
+          "description": "Easy (4 letters), Medium (5) and Hard (6), each with its own best score. The multiplier grows every level, up to 3x."
+        },
+        "2": {
+          "title": "13 languages",
+          "description": "Real dictionaries in 13 languages. The word language can differ from the app language, so you can practice one you're learning."
+        },
+        "3": {
+          "title": "Play offline, anywhere",
+          "description": "No account and no sign-up. Your run, best scores and settings are saved on your device. Leaderboards are optional."
+        }
+      },
+      "meta": {
+        "title": "Words Infinity — Endless Word Guessing Game",
+        "description": "Guess the word in six tries and keep going: endless levels, three difficulties and a score multiplier up to 3x. Offline, in 13 languages. Available for iOS and Android."
+      }
+    },
     "proportion": {
       "name": "Proportion",
       "tagline": "Solve any rule of three in seconds.",
