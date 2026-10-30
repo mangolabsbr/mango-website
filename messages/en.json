@@ -422,6 +422,33 @@
         "description": "Guess the word in six tries and keep going: endless levels, three difficulties and a score multiplier up to 3x. Offline, in 13 languages. Available for iOS and Android."
       }
     },
+    "sudoku-colors": {
+      "name": "Sudoku Colors",
+      "tagline": "Classic Sudoku, solved in color.",
+      "description": "Sudoku Colors keeps the classic puzzle and swaps the numbers for colors. Fill the grid so every row, column and 3×3 box contains each of the nine colors exactly once — same rules, same logic, but the board fills in color as you solve. Pick one of four levels, use notes, undo and hints when you need them, and chase a new best score. Your game saves automatically, color assist modes keep the palette distinguishable for color vision deficiencies, and it all comes in light or dark mode and in 19 languages.",
+      "features": {
+        "0": {
+          "title": "Colors instead of numbers",
+          "description": "Every row, column and 3×3 box holds each of the nine colors exactly once. Same Sudoku logic, a fresh way to see it."
+        },
+        "1": {
+          "title": "Four difficulty levels",
+          "description": "Easy, Medium, Hard and Expert. Every puzzle is freshly generated and has exactly one solution."
+        },
+        "2": {
+          "title": "Notes, undo and hints",
+          "description": "Mark candidate colors, undo or erase any move, and get up to three hints per game when you're stuck."
+        },
+        "3": {
+          "title": "Color assist modes",
+          "description": "Palettes chosen to stay distinguishable for protanopia, deuteranopia and tritanopia, with optional symbols on every color."
+        }
+      },
+      "meta": {
+        "title": "Sudoku Colors — Color Logic Puzzle",
+        "description": "Classic Sudoku with colors instead of numbers. Four levels, notes, hints, best scores and color assist modes, in 19 languages. Available for iOS and Android."
+      }
+    },
     "proportion": {
       "name": "Proportion",
       "tagline": "Solve any rule of three in seconds.",

@@ -422,6 +422,33 @@
         "description": "Adivina la palabra en seis intentos y sigue jugando: niveles infinitos, tres dificultades y un multiplicador de hasta 3x. Sin conexión y en 13 idiomas. Disponible para iOS y Android."
       }
     },
+    "sudoku-colors": {
+      "name": "Sudoku Colors",
+      "tagline": "El Sudoku clásico, resuelto en colores.",
+      "description": "Sudoku Colors mantiene el rompecabezas clásico y cambia los números por colores. Completa la cuadrícula para que cada fila, columna y caja de 3×3 contenga cada uno de los nueve colores exactamente una vez: las mismas reglas, la misma lógica, pero el tablero se llena de color mientras resuelves. Elige uno de los cuatro niveles, usa notas, deshacer y pistas cuando las necesites, y supera tu mejor puntuación. Tu partida se guarda automáticamente, los modos de asistencia de color mantienen la paleta distinguible para personas con daltonismo, y todo está disponible en modo claro u oscuro y en 19 idiomas.",
+      "features": {
+        "0": {
+          "title": "Colores en lugar de números",
+          "description": "Cada fila, columna y caja de 3×3 contiene cada uno de los nueve colores exactamente una vez. La misma lógica del Sudoku, una nueva forma de verla."
+        },
+        "1": {
+          "title": "Cuatro niveles de dificultad",
+          "description": "Fácil, Medio, Difícil y Experto. Cada rompecabezas se genera desde cero y tiene exactamente una solución."
+        },
+        "2": {
+          "title": "Notas, deshacer y pistas",
+          "description": "Marca los colores candidatos, deshaz o borra cualquier jugada y recibe hasta tres pistas por partida cuando te atasques."
+        },
+        "3": {
+          "title": "Modos de asistencia de color",
+          "description": "Paletas elegidas para seguir siendo distinguibles con protanopia, deuteranopia y tritanopia, con símbolos opcionales en cada color."
+        }
+      },
+      "meta": {
+        "title": "Sudoku Colors — Rompecabezas de lógica con colores",
+        "description": "El Sudoku clásico con colores en lugar de números. Cuatro niveles, notas, pistas, mejores puntuaciones y modos de asistencia de color, en 19 idiomas. Disponible para iOS y Android."
+      }
+    },
     "proportion": {
       "name": "Proportion",
       "tagline": "Resuelve cualquier regla de tres en segundos.",

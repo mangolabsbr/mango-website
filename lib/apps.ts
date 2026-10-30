@@ -9,6 +9,7 @@ import {
   Coins,
   Copy,
   Divide,
+  Eye,
   Gauge,
   Grid3x3,
   InfinityIcon,
@@ -41,6 +42,7 @@ export const showcasedAppSlugs = [
   "sudoku",
   "mathdoku",
   "words-infinity",
+  "sudoku-colors",
   "xchanger-api",
   "proportion",
 ] as const;
@@ -142,6 +144,17 @@ export const showcasedApps: Record<ShowcasedAppSlug, ShowcasedApp> = {
     appStoreUrl: "https://apps.apple.com/app/id6819404698",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.mangolabs.wordsinfinity",
+    hasLegalPages: true,
+  },
+  "sudoku-colors": {
+    slug: "sudoku-colors",
+    kind: "mobile",
+    icon: "/apps/sudoku-colors/icon.png",
+    screenshot: "/apps/sudoku-colors/sudoku-colors-screenshot.png",
+    featureIcons: [Palette, Layers, PencilLine, Eye],
+    appStoreUrl: "https://apps.apple.com/app/id6815864434",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.mangolabs.sudokucolors",
     hasLegalPages: true,
   },
   proportion: {

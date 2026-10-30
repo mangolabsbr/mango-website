@@ -26,6 +26,7 @@ const appCategory: Record<ShowcasedAppSlug, string> = {
   sudoku: "GameApplication",
   mathdoku: "GameApplication",
   "words-infinity": "GameApplication",
+  "sudoku-colors": "GameApplication",
   proportion: "UtilitiesApplication",
   "xchanger-api": "DeveloperApplication",
 };
