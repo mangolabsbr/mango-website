@@ -422,6 +422,33 @@
         "description": "Adivina la palabra en seis intentos y sigue jugando: niveles infinitos, tres dificultades y un multiplicador de hasta 3x. Sin conexión y en 13 idiomas. Disponible para iOS y Android."
       }
     },
+    "word-search-infinity": {
+      "name": "Word Search Infinity",
+      "tagline": "La clásica sopa de letras, ahora infinita.",
+      "description": "Word Search Infinity es la clásica sopa de letras, en una versión tranquila, limpia y sin fin. Cada nivel esconde seis palabras de un tema en un tablero de letras nuevo: en horizontal, en vertical o en diagonal, del derecho o al revés. Encuéntralas todas y el siguiente nivel ya te espera. Sin cronómetro y sin game over, solo un tablero nuevo cada vez, generado en tu dispositivo. Descubre palabras de 23 temas, completa tu catálogo tema a tema y mira cómo el juego se vuelve más difícil cuando las palabras que ya encontraste vuelven ocultas. Totalmente sin conexión, sin cuenta, en modo claro u oscuro y en 13 idiomas.",
+      "features": {
+        "0": {
+          "title": "Niveles infinitos",
+          "description": "Cada tablero se genera en tu dispositivo, así que siempre hay una cuadrícula nueva esperando y no hay dos niveles iguales. Sin cronómetro ni game over."
+        },
+        "1": {
+          "title": "23 temas, en todas las direcciones",
+          "description": "Animales, comida, espacio, series de TV y más, con palabras escondidas en horizontal, vertical, diagonal e incluso al revés."
+        },
+        "2": {
+          "title": "Pistas y catálogo de palabras",
+          "description": "Tres pistas por nivel marcan la primera letra de una palabra que falta. Cada palabra que encuentras se guarda por tema."
+        },
+        "3": {
+          "title": "Sin conexión, en 13 idiomas",
+          "description": "Sin cuenta y sin internet. Listas de palabras escritas para cada idioma, y tu nivel se guarda automáticamente."
+        }
+      },
+      "meta": {
+        "title": "Word Search Infinity — Sopa de letras infinita",
+        "description": "La clásica sopa de letras con niveles infinitos, 23 temas, pistas y un catálogo de palabras por completar. Sin cronómetro, sin conexión y en 13 idiomas. Disponible para iOS y Android."
+      }
+    },
     "sudoku-colors": {
       "name": "Sudoku Colors",
       "tagline": "El Sudoku clásico, resuelto en colores.",

@@ -3,6 +3,7 @@ import {
   Banknote,
   Bell,
   Bookmark,
+  BookOpen,
   Braces,
   Calculator,
   Car,
@@ -37,11 +38,12 @@ import {
 export const showcasedAppSlugs = [
   "xchanger",
   "sunrouter",
-  "splitte",
-  "menoodo",
   "sudoku",
+  "menoodo",
+  "splitte",
   "mathdoku",
   "words-infinity",
+  "word-search-infinity",
   "sudoku-colors",
   "xchanger-api",
   "proportion",
@@ -144,6 +146,16 @@ export const showcasedApps: Record<ShowcasedAppSlug, ShowcasedApp> = {
     appStoreUrl: "https://apps.apple.com/app/id6819404698",
     playStoreUrl:
       "https://play.google.com/store/apps/details?id=com.mangolabs.wordsinfinity",
+    hasLegalPages: true,
+  },
+  "word-search-infinity": {
+    slug: "word-search-infinity",
+    kind: "mobile",
+    icon: "/apps/word-search-infinity/icon.png",
+    featureIcons: [InfinityIcon, Layers, BookOpen, WifiOff],
+    appStoreUrl: "https://apps.apple.com/app/id6821736206",
+    playStoreUrl:
+      "https://play.google.com/store/apps/details?id=com.mangolabs.wordsearchinfinity",
     hasLegalPages: true,
   },
   "sudoku-colors": {

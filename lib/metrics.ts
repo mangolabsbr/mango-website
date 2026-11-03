@@ -5,7 +5,7 @@ export const metrics = [
   { key: "downloads", value: "12K+" },
   { key: "rating", value: "4.9" },
   { key: "activeUsers", value: "1K+" },
-  { key: "apps", value: "10" },
+  { key: "apps", value: "11" },
 ] as const;
 
 // TODO(user): confirm the tech stack list shown on the home page.

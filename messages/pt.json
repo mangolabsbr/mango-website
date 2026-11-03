@@ -422,6 +422,33 @@
         "description": "Adivinhe a palavra em seis tentativas e continue: níveis infinitos, três dificuldades e multiplicador de até 3x. Offline e em 13 idiomas. Disponível para iOS e Android."
       }
     },
+    "word-search-infinity": {
+      "name": "Word Search Infinity",
+      "tagline": "O clássico caça-palavras, agora infinito.",
+      "description": "Word Search Infinity é o clássico caça-palavras, em uma versão calma, limpa e sem fim. Cada nível esconde seis palavras de um tema em uma grade de letras nova: na horizontal, na vertical ou na diagonal, de frente para trás ou de trás para frente. Encontre todas e o próximo nível já está esperando. Sem cronômetro e sem game over, só um tabuleiro novo a cada vez, gerado no seu aparelho. Descubra palavras de 23 temas, complete seu catálogo tema por tema e veja o jogo ficar mais difícil quando as palavras que você já encontrou voltam escondidas. Totalmente offline, sem conta, no modo claro ou escuro e em 13 idiomas.",
+      "features": {
+        "0": {
+          "title": "Níveis infinitos",
+          "description": "Cada tabuleiro é gerado no seu aparelho, então sempre há uma grade nova esperando e nenhum nível é igual ao outro. Sem cronômetro e sem game over."
+        },
+        "1": {
+          "title": "23 temas, em todas as direções",
+          "description": "Animais, comida, espaço, séries de TV e mais, com palavras escondidas na horizontal, vertical, diagonal e até de trás para frente."
+        },
+        "2": {
+          "title": "Dicas e catálogo de palavras",
+          "description": "Três dicas por nível circulam a primeira letra de uma palavra que falta. Cada palavra encontrada é guardada por tema."
+        },
+        "3": {
+          "title": "Offline, em 13 idiomas",
+          "description": "Sem conta e sem internet. Listas de palavras escritas para cada idioma, e seu nível é salvo automaticamente."
+        }
+      },
+      "meta": {
+        "title": "Word Search Infinity — Caça-palavras infinito",
+        "description": "O clássico caça-palavras com níveis infinitos, 23 temas, dicas e um catálogo de palavras para completar. Sem cronômetro, offline e em 13 idiomas. Disponível para iOS e Android."
+      }
+    },
     "sudoku-colors": {
       "name": "Sudoku Colors",
       "tagline": "O Sudoku clássico, resolvido em cores.",

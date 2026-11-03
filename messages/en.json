@@ -422,6 +422,33 @@
         "description": "Guess the word in six tries and keep going: endless levels, three difficulties and a score multiplier up to 3x. Offline, in 13 languages. Available for iOS and Android."
       }
     },
+    "word-search-infinity": {
+      "name": "Word Search Infinity",
+      "tagline": "The classic word search, made endless.",
+      "description": "Word Search Infinity is the classic word search, made calm, clean and endless. Every level hides six words from a theme in a fresh grid of letters — across, down or diagonal, forwards or backwards. Find them all and the next level is already waiting. There's no timer and no game over, just a new board every time, generated on your device. Pick up words from 23 themes, fill your catalog theme by theme and watch the game get trickier as the words you've found come back masked. Fully offline, no account, in light or dark mode and in 13 languages.",
+      "features": {
+        "0": {
+          "title": "Endless levels",
+          "description": "Every board is generated on your device, so there's always a new grid waiting and no two levels are alike. No timer, no game over."
+        },
+        "1": {
+          "title": "23 themes, every direction",
+          "description": "Animals, food, space, TV shows and more, with words hidden across, down, diagonally and even backwards."
+        },
+        "2": {
+          "title": "Hints and a word catalog",
+          "description": "Three hints per level circle the first letter of a missing word. Every word you find is collected by theme."
+        },
+        "3": {
+          "title": "Offline, in 13 languages",
+          "description": "No account and no internet needed. Word lists written for each language, and your level is saved automatically."
+        }
+      },
+      "meta": {
+        "title": "Word Search Infinity — Endless Word Search Puzzle",
+        "description": "The classic word search with endless levels, 23 themes, hints and a word catalog to complete. No timer, fully offline, in 13 languages. Available for iOS and Android."
+      }
+    },
     "sudoku-colors": {
       "name": "Sudoku Colors",
       "tagline": "Classic Sudoku, solved in color.",
