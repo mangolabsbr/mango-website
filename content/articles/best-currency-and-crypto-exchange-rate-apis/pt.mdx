@@ -1,0 +1,260 @@
+---
+title: "As melhores APIs de câmbio e cripto em 2026"
+description: "Nove APIs de cotação comparadas em preço por requisição, velocidade de atualização, cobertura de cripto e o que o plano grátis realmente deixa fazer, com uma indicação para cada tipo de projeto."
+date: "2026-11-03"
+thumbnail: "/articles/best-currency-and-crypto-exchange-rate-apis.jpg"
+---
+
+Mais cedo ou mais tarde quase todo produto precisa converter uma moeda em outra. Um checkout que mostra preços locais, uma fatura em euros, uma tela de carteira que mistura bitcoin e dólar. E assim que você procura uma API de câmbio, encontra dois mundos que mal conversam: APIs de forex que tratam cripto como detalhe, e APIs de cripto que tratam moeda fiduciária como uma lista de moedas de cotação.
+
+A gente passou por isso construindo o [Xchanger](/apps/xchanger), nosso app de conversão de moedas, que precisa das duas coisas no mesmo campo de digitação. Então revisei as APIs que mais aparecem, li as páginas de preço e a documentação, e fiz algumas chamadas em cada uma. A mesma transparência da última vez: uma delas é nossa, a [Xchanger API](/apps/xchanger-api), então não sou neutro. Tentei deixar os fatos verificáveis e as opiniões marcadas como opiniões, e listei o que pode tirar a nossa própria API da disputa para você.
+
+Os preços e limites abaixo foram conferidos em novembro de 2026. Eles mudam, então confira a página de cada fornecedor antes de fechar qualquer coisa.
+
+## No que eu prestei atenção
+
+Todas devolvem um número para USD em EUR. A diferença está em tudo em volta desse número:
+
+- **Fiat, cripto ou as duas.** Se seus usuários têm BTC e recebem em BRL, ou você acha uma API que cubra as duas coisas, ou cola duas e administra dois conjuntos de chaves, limites e quedas.
+- **Preço por requisição.** Os planos são vendidos como cotas mensais, então a comparação útil é quanto custa um milhão de chamadas, não o preço da vitrine.
+- **O quão fresca é a cotação.** Diária, de hora em hora, a cada 10 minutos, a cada 60 segundos. Um app de viagem se vira bem com de hora em hora. Um fluxo de pagamento, provavelmente não.
+- **O que o plano grátis realmente permite.** Moeda base presa em USD ou EUR, sem uso comercial, atribuição obrigatória. Isso pesa mais que o número da cota.
+- **Histórico.** Se você precisa de gráficos ou faturas antigas, os endpoints de histórico e de série temporal decidem a escolha, e normalmente ficam atrás de um plano pago.
+
+Enfim, vamos a elas.
+
+## Xchanger API
+
+![A página inicial da Xchanger API, Real-time exchange-rate data, one API call away, com botões para testar grátis e ler a documentação](/articles/best-currency-and-crypto-exchange-rate-apis/xchanger-api.webp)
+
+Esta é nossa, então leia sabendo disso. A [Xchanger API](/apps/xchanger-api) é o serviço que faz o app Xchanger funcionar, aberto para os produtos de outras pessoas. A ideia é estreita de propósito: cotações fiat e cripto atrás de uma única chave, qualquer par que você quiser, por um preço que não pune quem cresce.
+
+Uma chamada fica assim:
+
+```bash
+curl "https://backend-ejsq.onrender.com/api/currency/exchange-rate?from=USD&to=EUR" \
+  -H "x-api-key: YOUR_API_KEY"
+```
+
+```json
+{
+  "data": {
+    "from": "USD",
+    "to": "EUR",
+    "rate": 0.92,
+    "updated": "2026-06-09T12:00:00.000Z"
+  }
+}
+```
+
+Tem um endpoint `/convert` equivalente que recebe um `amount`, e um geral que converte entre uma moeda fiat e um criptoativo numa única chamada, então BTC para BRL não exige duas requisições e uma conta do seu lado.
+
+**Melhor para:** apps e projetos pessoais que precisam de fiat e cripto, querem qualquer par no plano grátis e se importam mais com o custo por chamada do que com a cotação segundo a segundo.
+
+Prós:
+
+- **Fiat e cripto numa API só**: 172 moedas fiduciárias e 514 criptomoedas, e qualquer par entre elas, inclusive fiat para cripto.
+- **Sem moeda base presa**: toda chamada recebe um `from` e um `to`, em todos os planos, inclusive no grátis.
+- **Barata em volume**: o Pro dá um milhão de requisições por mês por $10. Entre os planos com cota fixa, nenhuma outra desta lista chega perto por chamada.
+- **Todos os endpoints no plano grátis**, sem cartão, com chaves de API, log de requisições e painel de uso incluídos.
+- **JSON simples e erros claros**: toda resposta traz um timestamp `updated`, e os erros vêm com um código como `UNKNOWN_ASSET` em vez de um 400 seco.
+
+Contras:
+
+- **As cotações atualizam a cada 10 minutos**, em todos os planos. Se você precisa de atualização a cada 60 segundos, hoje não existe plano que entregue isso.
+- **Ainda não há endpoints de histórico nem de série temporal.** Se você precisa de gráficos ou cotações passadas, continue descendo.
+- **Um par por chamada.** Não existe um endpoint de "me dá todas as cotações contra USD", então uma tabela completa significa uma requisição por moeda.
+- **É nova.** Foi lançada este ano, não tem SDKs oficiais (qualquer cliente HTTP serve) nem SLA de disponibilidade.
+- **Sem metais preciosos**, fora tokens lastreados em ouro como PAXG e XAUT.
+
+**Preços:** grátis com 1.000 requisições/mês; Pro $10/mês (cerca de $100/ano no plano anual) com 1.000.000 de requisições/mês; Enterprise sob consulta. Em vários países o preço aparece em moeda local (no Brasil, R$ 25/mês), e o primeiro pagamento tem garantia de reembolso de 30 dias.
+
+## Open Exchange Rates
+
+![A página inicial da Open Exchange Rates, Our currency data API powers the Internet's most dynamic startups, brands and organisations, com um exemplo da Shopify](/articles/best-currency-and-crypto-exchange-rate-apis/open-exchange-rates.webp)
+
+A [Open Exchange Rates](https://openexchangerates.org/) existe desde 2011 e provavelmente é o nome que a maioria dos desenvolvedores já conhece. Está por trás de muitos plugins de e-commerce, e a documentação e as bibliotecas cliente mostram essa maturidade.
+
+**Melhor para:** produtos já estabelecidos que querem um fornecedor com estrada e não se importam de pagar por atualizações mais frequentes.
+
+Prós:
+
+- **Madura e muito integrada**, com várias bibliotecas e exemplos da comunidade.
+- **Metais preciosos incluídos** (ouro, prata, platina, paládio).
+- **Um caminho de upgrade claro**: as atualizações vão de hora em hora para a cada 30 minutos e a cada 5 minutos conforme você sobe de plano, e o VIP adiciona bid/ask, OHLC e SLA.
+
+Contras:
+
+- **O plano grátis só aceita USD como base** e é pensado para uso pessoal, em pequena escala ou open source. Apps comerciais precisam pagar.
+- **Em cripto, basicamente só tem Bitcoin.**
+- **Série temporal e conversão ficam nos planos de cima** ($47 e $97 por mês).
+
+**Preços:** grátis (1.000 requisições/mês, de hora em hora); Developer $12/mês (10.000); Enterprise $47/mês (100.000); Unlimited $97/mês; VIP sob consulta.
+
+## Fixer
+
+![A página inicial da Fixer, Foreign exchange rates and currency conversion JSON API, com uma resposta JSON de exemplo](/articles/best-currency-and-crypto-exchange-rate-apis/fixer.webp)
+
+A [Fixer](https://fixer.io/) faz parte da família de APIs da APILayer e tem um dos históricos mais longos desta lista, desde 1999. É uma API de forex sólida e sem graça, e isso é um elogio.
+
+**Melhor para:** ferramentas financeiras e contábeis que precisam de histórico longo e atualização rápida, e têm orçamento para os planos de cima.
+
+Prós:
+
+- **Histórico desde janeiro de 1999**, com mais de 15 fontes, entre elas o Banco Central Europeu.
+- **Atualização a cada 60 segundos** no Professional Plus e no Enterprise, além de endpoints de flutuação e bid/ask.
+- **HTTPS em todos os planos**, inclusive no grátis (algumas análises antigas ainda dizem o contrário).
+
+Contras:
+
+- **O plano grátis é minúsculo**: 100 chamadas por mês, sem uso comercial e sem trocar a moeda base.
+- **Os recursos são bem escalonados**: conversão a partir do Basic, série temporal a partir do Professional, flutuação a partir do Professional Plus.
+- **Cara em volume**: 500.000 chamadas custam $99,99 por mês.
+
+**Preços:** grátis (100 chamadas); Basic $14,99/mês (10.000); Professional $59,99/mês (100.000); Professional Plus $99,99/mês (500.000), um pouco menos no plano anual.
+
+## ExchangeRate-API
+
+![A página inicial da ExchangeRate-API, The Accurate and Reliable Exchange Rate API, com a ilustração de um desenvolvedor relaxando na mesa](/articles/best-currency-and-crypto-exchange-rate-apis/exchangerate-api.webp)
+
+A [ExchangeRate-API](https://www.exchangerate-api.com/) é a camarada. Preço simples, qualquer moeda base em todos os planos e um endpoint sem chave que você pode chamar agora mesmo, sem cadastro.
+
+**Melhor para:** apps pequenos e dashboards em que cotação diária ou de hora em hora basta e a simplicidade ganha.
+
+Prós:
+
+- **Um endpoint aberto sem chave** com cotações diárias, que pode ser usado comercialmente desde que você mostre a atribuição.
+- **Qualquer moeda base em todos os planos**, e o controle da cota é descrito como flexível.
+- **Preço previsível**, com o plano anual custando dez vezes o mensal.
+
+Contras:
+
+- **Sem cripto e sem metais.** 165 moedas fiduciárias e só.
+- **O plano grátis atualiza uma vez por dia.** De hora em hora começa no Pro, a cada 5 minutos no Business.
+- **Histórico só nos planos pagos**, e o conjunto completo de moedas só vai até 2021.
+
+**Preços:** grátis (1.500 requisições/mês, diário); Pro $10/mês (30.000, de hora em hora); Business $30/mês (125.000, a cada 5 minutos).
+
+## currencyapi
+
+![A página inicial da currencyapi, Currency API for live and historical exchange rates, com uma demonstração ao vivo de cotações contra o USD](/articles/best-currency-and-crypto-exchange-rate-apis/currencyapi.webp)
+
+A [currencyapi](https://currencyapi.com/) é um serviço austríaco com um conjunto de recursos bem equilibrado: 171 moedas fiduciárias, algumas cripto e os quatro metais preciosos, com histórico diário desde 1999 até no plano grátis.
+
+**Melhor para:** produtos que precisam de atualização rápida e algum histórico por um preço intermediário.
+
+Prós:
+
+- **Atualização a cada 60 segundos** a partir do plano Medium.
+- **Dados históricos em todos os planos**, inclusive no grátis, desde 1999.
+- **Qualquer moeda base**, metais incluídos, e novos endpoints de flutuação e médias.
+
+Contras:
+
+- **O plano grátis tem 300 requisições por mês**, atualização diária e só uso pessoal.
+- **Pouca cripto**: 16 ativos.
+- **Conversão e intervalos são pagos**, a partir do Small e do Medium respectivamente.
+
+**Preços:** grátis (300 requisições/mês); Small $9,99/mês (15.000); Medium $39,99/mês (600.000); Large $79,99/mês (1.700.000), mais impostos.
+
+## CurrencyFreaks
+
+![A página inicial da CurrencyFreaks, Free Currency API, Real-Time Exchange Rates and Currency Conversion for 1000+ Currencies, com uma resposta de exemplo](/articles/best-currency-and-crypto-exchange-rate-apis/currencyfreaks.webp)
+
+A [CurrencyFreaks](https://currencyfreaks.com/) é o que mais se aproxima, do lado do forex, de "fiat e cripto num lugar só". Lista 166 moedas fiduciárias, 876 criptomoedas e quatro metais, e responde em XML se você ainda precisa disso.
+
+**Melhor para:** projetos que querem bastante cobertura de cripto numa API estilo forex e aguentam cotação diária no plano grátis.
+
+Prós:
+
+- **A maior lista de cripto entre as APIs de forex** daqui, além de metais.
+- **Histórico longo**, com fechamento diário desde 1984 nos planos pagos.
+- **Sem limite por hora ou por dia**, só a cota mensal, e SSL no plano grátis.
+
+Contras:
+
+- **O plano grátis só aceita USD como base** e atualiza a cada 24 horas.
+- **Histórico, conversão e outras bases são pagos.** Série temporal e flutuação exigem o plano de $99,99.
+- **Atualização a cada 60 segundos sai cara**, nesse mesmo plano de cima.
+
+**Preços:** grátis (1.000 chamadas/mês); Starter $9,99/mês (15.000, de hora em hora); Growth $49,99/mês (150.000, a cada 10 minutos); Professional $99,99/mês (550.000, a cada 60 segundos).
+
+## Frankfurter
+
+![A página inicial da Frankfurter, Exchange rate and currency data API, com uma resposta de exemplo das últimas cotações](/articles/best-currency-and-crypto-exchange-rate-apis/frankfurter.webp)
+
+A [Frankfurter](https://frankfurter.dev/) é grátis e open source, e cresceu bastante. Começou como uma camada fina sobre as cotações diárias do Banco Central Europeu; a nova API v2 puxa dados de 106 bancos centrais e fontes oficiais e cobre 228 moedas, com histórico desde 1948.
+
+**Melhor para:** projetos open source, ferramentas internas e qualquer caso em que cotações oficiais diárias sejam exatamente o que você quer.
+
+Prós:
+
+- **Grátis, sem chave de API e sem cota**, só proteção contra abuso.
+- **Fontes oficiais**, e dá para filtrar por fornecedor se você precisa, por exemplo, especificamente das cotações do BCE.
+- **Dá para hospedar você mesmo** com Docker, se preferir não depender do servidor de outra pessoa.
+
+Contras:
+
+- **Só atualização diária.** Serve para fatura, não para preço ao vivo.
+- **Quase nada de cripto**: cinco moedas, de uma única fonte.
+- **Sem endpoint de conversão, sem SLA, sem suporte.** Você multiplica a cotação por conta própria, e se quebrar, é uma issue no GitHub.
+
+**Preços:** grátis.
+
+## CoinGecko API
+
+![A página da API da CoinGecko, Build, Analyze, and Scale with Crypto's Most Trusted Data API, com uma demonstração ao vivo da API](/articles/best-currency-and-crypto-exchange-rate-apis/coingecko.webp)
+
+Agora o lado cripto. A [CoinGecko](https://www.coingecko.com/en/api) é a resposta padrão para preço de cripto, e o plano grátis Demo ficou mais generoso este ano, com 10.000 chamadas por mês e o limite por minuto subindo de 30 para 100.
+
+**Melhor para:** produtos focados em cripto que precisam da cauda longa de tokens, exchanges e dados onchain.
+
+Prós:
+
+- **Cobertura enorme**: dezenas de milhares de moedas, mais de 2.000 exchanges e tokens onchain em centenas de redes.
+- **Um plano grátis generoso**, e dá até para fazer algumas chamadas sem chave.
+- **Muitos extras**: WebSocket e webhooks nos planos pagos, além de endpoints de mercado, de exchanges e de RWA.
+
+Contras:
+
+- **Não tem fiat para fiat.** Fiat é moeda de cotação para preço de cripto; para USD em EUR, você precisa passar pelas cotações do BTC por conta própria.
+- **Atribuição obrigatória**, inclusive nos planos pagos, e o uso comercial não fica claro no Demo.
+- **O plano grátis só volta 365 dias**, e o salto de preço depois do Basic é grande ($35 para $129).
+
+**Preços:** Demo grátis (10.000 chamadas/mês); Basic $35/mês (100.000); Analyst $129/mês (500.000); Lite $499/mês; Pro $999/mês, uns 20% a menos no plano anual.
+
+## CoinMarketCap API
+
+![A página da API da CoinMarketCap, The Ultimate Cryptocurrency API from the Industry Authority, com 16 anos de dados históricos e mais de 941 exchanges](/articles/best-currency-and-crypto-exchange-rate-apis/coinmarketcap.webp)
+
+A [CoinMarketCap](https://coinmarketcap.com/api/) é a grande rival da CoinGecko, e no plano grátis é a mais liberal das duas: o Basic gratuito permite uso comercial e a página de preços não exige atribuição.
+
+**Melhor para:** apps cripto comerciais que querem um plano grátis com o qual dê para lançar de verdade.
+
+Prós:
+
+- **Uso comercial no plano grátis**, com 15.000 créditos por mês.
+- **Conversão fiat para fiat funciona**: a ferramenta de conversão de preço aceita 93 moedas fiduciárias e 4 metais dos dois lados.
+- **O plano pago de cripto mais barato daqui**: Builder por $29 por mês.
+
+Contras:
+
+- **50 chamadas por minuto e uma moeda de conversão por chamada** no plano grátis.
+- **Só no servidor**: chamadas pelo navegador falham por CORS.
+- **Histórico OHLCV só a partir do plano Startup, de $79.**
+
+**Preços:** Basic grátis (15.000 créditos/mês); Builder $29/mês (150.000); Startup $79/mês (450.000); Growth $299/mês; Professional $699/mês.
+
+## E aí, qual escolher?
+
+É para cá que eu mandaria cada tipo de projeto:
+
+- **Você precisa de histórico longo ou atualização a cada 60 segundos, e tem orçamento.** Fixer ou currencyapi. A currencyapi é mais barata e tem histórico no plano grátis; a Fixer tem mais estrada.
+- **Você quer um fornecedor conhecido e só fiat.** Open Exchange Rates. Assine o Developer assim que o uso for comercial.
+- **Você quer cotação fiat simples, diária ou de hora em hora.** ExchangeRate-API, ou Frankfurter se grátis e open source pesam mais que suporte.
+- **Seu produto é cripto em primeiro lugar e precisa de todo token e exchange.** CoinGecko, ou CoinMarketCap se você precisa de uso comercial no plano grátis.
+- **Você precisa de fiat e cripto juntos, qualquer par, e muitas requisições por pouco dinheiro.** Foi para isso que fizemos a Xchanger API. Comece pelo plano grátis e veja se cotações a cada 10 minutos são frescas o bastante para você.
+
+O fio que liga tudo isso: decida o quão fresca sua cotação precisa ser antes de comparar preços. A maior parte do custo nessas páginas de preço é velocidade de atualização, e muito produto paga por cotação a cada 60 segundos para depois guardar em cache por uma hora.
+
+Se você testar a [Xchanger API](/apps/xchanger-api) e sentir falta de algo, como um endpoint de histórico ou uma moeda que a gente não tem, [conta pra gente](/contact). É esse tipo de retorno que decide o que construímos em seguida.

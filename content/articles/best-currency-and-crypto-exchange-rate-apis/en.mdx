@@ -1,0 +1,260 @@
+---
+title: "The best currency and crypto exchange rate APIs in 2026"
+description: "Nine exchange rate APIs compared on price per request, update speed, crypto coverage and what the free plan really lets you do, with a pick for each kind of project."
+date: "2026-11-03"
+thumbnail: "/articles/best-currency-and-crypto-exchange-rate-apis.jpg"
+---
+
+Sooner or later almost every product needs to turn one currency into another. A checkout that shows local prices, an invoice in euros, a portfolio screen that mixes bitcoin and dollars. And the moment you go looking for an exchange rate API, you find two worlds that barely talk to each other: forex APIs that treat crypto as an afterthought, and crypto APIs that treat fiat as a list of quote currencies.
+
+We hit this ourselves while building [Xchanger](/apps/xchanger), our currency converter app, which needs both in the same input field. So I went through the APIs that come up most often, read their pricing pages and docs, and made a few calls to each. Same disclosure as last time: one of them is ours, [Xchanger API](/apps/xchanger-api), so I'm not neutral. I've tried to keep the facts checkable and the opinions labelled, and I've listed the things that might rule our own API out for you.
+
+Prices and limits below were checked in November 2026. They move, so check the vendor's page before you commit.
+
+## What I was looking at
+
+Every one of these returns a number for USD to EUR. The differences are in everything around that number:
+
+- **Fiat, crypto, or both.** If your users hold BTC and get paid in BRL, you either find one API that covers both or you glue two together and handle two sets of keys, limits and outages.
+- **Price per request.** Plans are sold as monthly quotas, so the useful comparison is what a million calls costs, not the sticker price.
+- **How fresh the rate is.** Daily, hourly, every 10 minutes, every 60 seconds. A travel app is fine with hourly. A payments flow probably isn't.
+- **What the free plan really allows.** Base currency locked to USD or EUR, no commercial use, attribution required. These matter more than the quota number.
+- **History.** If you need charts or past invoices, historical and time-series endpoints are the deciding factor, and they're usually behind a paid tier.
+
+Anyway, here they are.
+
+## Xchanger API
+
+![The Xchanger API home page, Real-time exchange-rate data, one API call away, with buttons to try it for free and read the docs](/articles/best-currency-and-crypto-exchange-rate-apis/xchanger-api.webp)
+
+This one is ours, so read accordingly. [Xchanger API](/apps/xchanger-api) is the service that powers the Xchanger app, opened up for other people's products. The idea is narrow on purpose: fiat and crypto rates behind one key, any pair you like, at a price that doesn't punish you for growing.
+
+A call looks like this:
+
+```bash
+curl "https://backend-ejsq.onrender.com/api/currency/exchange-rate?from=USD&to=EUR" \
+  -H "x-api-key: YOUR_API_KEY"
+```
+
+```json
+{
+  "data": {
+    "from": "USD",
+    "to": "EUR",
+    "rate": 0.92,
+    "updated": "2026-06-09T12:00:00.000Z"
+  }
+}
+```
+
+There's a matching `/convert` endpoint that takes an `amount`, plus a general one that converts between a fiat currency and a crypto asset in a single call, so BTC to BRL doesn't need two requests and some arithmetic on your side.
+
+**Best for:** apps and side projects that need both fiat and crypto, want any pair on the free plan, and care more about cost per call than about second-by-second freshness.
+
+Pros:
+
+- **Fiat and crypto in one API**: 172 fiat currencies and 514 cryptocurrencies, and any pair between them, including fiat to crypto.
+- **No base currency lock**: every call takes a `from` and a `to`, on every plan, the free one included.
+- **Cheap at volume**: Pro gives you a million requests a month for $10. Among the plans with a fixed quota, nothing else here comes close per call.
+- **Every endpoint on the free plan**, no card needed, with API keys, request logs and a usage dashboard included.
+- **Plain JSON and clear errors**: every response carries an `updated` timestamp, and errors come back with a code like `UNKNOWN_ASSET` instead of a bare 400.
+
+Cons:
+
+- **Rates refresh every 10 minutes**, on every plan. If you need 60-second updates, there's no tier that gives you that today.
+- **No historical or time-series endpoints yet.** If you need charts or past rates, look further down.
+- **One pair per call.** There's no "give me every rate against USD" endpoint, so a full rates table means one request per currency.
+- **It's new.** It only launched this year, there are no official SDKs (any HTTP client works) and no uptime SLA.
+- **No precious metals**, apart from gold-backed tokens like PAXG and XAUT.
+
+**Pricing:** Free with 1,000 requests/month; Pro $10/month (about $100/year on annual billing) with 1,000,000 requests/month; Enterprise on request. Prices are shown in local currency in several countries, and the first payment has a 30-day money-back guarantee.
+
+## Open Exchange Rates
+
+![The Open Exchange Rates home page, Our currency data API powers the Internet's most dynamic startups, brands and organisations, with a Shopify example](/articles/best-currency-and-crypto-exchange-rate-apis/open-exchange-rates.webp)
+
+[Open Exchange Rates](https://openexchangerates.org/) has been around since 2011 and is probably the name most developers already know. It sits behind a lot of e-commerce plugins, and the docs and client libraries show that maturity.
+
+**Best for:** established products that want a long-running vendor, and are fine paying for a fresh update cycle.
+
+Pros:
+
+- **Mature and widely integrated**, with plenty of community libraries and examples.
+- **Precious metals included** (gold, silver, platinum, palladium).
+- **A clear upgrade path**: updates go from hourly to every 30 minutes to every 5 minutes as you move up, and the VIP tier adds bid/ask, OHLC and an SLA.
+
+Cons:
+
+- **The free plan is USD-base only** and meant for personal, small-scale or open-source use. Commercial apps are asked to pay.
+- **Crypto is basically just Bitcoin.**
+- **Time-series and convert are on the upper tiers** ($47 and $97 a month).
+
+**Pricing:** free (1,000 requests/month, hourly); Developer $12/month (10,000); Enterprise $47/month (100,000); Unlimited $97/month; VIP on request.
+
+## Fixer
+
+![The Fixer home page, Foreign exchange rates and currency conversion JSON API, with a sample JSON response](/articles/best-currency-and-crypto-exchange-rate-apis/fixer.webp)
+
+[Fixer](https://fixer.io/) is part of APILayer's family of APIs and has one of the longest historical records here, going back to 1999. It's a solid, boring forex API, which is a compliment.
+
+**Best for:** finance and accounting tools that need deep history and fast updates, and have the budget for the upper tiers.
+
+Pros:
+
+- **History back to January 1999**, sourced from more than 15 providers including the European Central Bank.
+- **60-second updates** on Professional Plus and Enterprise, plus fluctuation and bid/ask endpoints.
+- **HTTPS on every plan**, the free one included (older reviews still say otherwise).
+
+Cons:
+
+- **The free plan is tiny**: 100 calls a month, non-commercial, no base currency switching.
+- **Features are tiered hard**: convert from Basic, time-series from Professional, fluctuation from Professional Plus.
+- **Expensive at volume**: 500,000 calls costs $99.99 a month.
+
+**Pricing:** free (100 calls); Basic $14.99/month (10,000); Professional $59.99/month (100,000); Professional Plus $99.99/month (500,000), a bit less on annual billing.
+
+## ExchangeRate-API
+
+![The ExchangeRate-API home page, The Accurate and Reliable Exchange Rate API, with an illustration of a developer relaxing at a desk](/articles/best-currency-and-crypto-exchange-rate-apis/exchangerate-api.webp)
+
+[ExchangeRate-API](https://www.exchangerate-api.com/) is the friendly one. Simple pricing, any base currency on every plan, and a keyless endpoint you can call right now without signing up.
+
+**Best for:** small apps and dashboards where daily or hourly rates are enough and simplicity wins.
+
+Pros:
+
+- **A keyless open endpoint** with daily rates, usable commercially as long as you show the attribution.
+- **Any base currency on every plan**, and quota enforcement is described as relaxed.
+- **Predictable pricing**, with annual billing at ten times the monthly price.
+
+Cons:
+
+- **No crypto, no metals.** 165 fiat currencies and that's it.
+- **The free plan updates once a day.** Hourly starts at Pro, 5-minute at Business.
+- **History is paid-only**, and the full set of currencies only goes back to 2021.
+
+**Pricing:** free (1,500 requests/month, daily); Pro $10/month (30,000, hourly); Business $30/month (125,000, every 5 minutes).
+
+## currencyapi
+
+![The currencyapi home page, Currency API for live and historical exchange rates, with a live demo of rates against USD](/articles/best-currency-and-crypto-exchange-rate-apis/currencyapi.webp)
+
+[currencyapi](https://currencyapi.com/) is an Austrian service with a nicely balanced feature set: 171 fiat currencies, a handful of crypto and all four precious metals, with daily history since 1999 even on the free plan.
+
+**Best for:** products that need fast updates and some history at a mid-range price.
+
+Pros:
+
+- **60-second updates** from the Medium plan up.
+- **Historical data on every plan**, free included, back to 1999.
+- **Any base currency**, metals included, and new fluctuation and average endpoints.
+
+Cons:
+
+- **The free plan is 300 requests a month**, daily updates, private use only.
+- **Crypto is limited** to 16 assets.
+- **Convert and range endpoints are paid**, from Small and Medium respectively.
+
+**Pricing:** free (300 requests/month); Small $9.99/month (15,000); Medium $39.99/month (600,000); Large $79.99/month (1,700,000), plus VAT.
+
+## CurrencyFreaks
+
+![The CurrencyFreaks home page, Free Currency API, Real-Time Exchange Rates and Currency Conversion for 1000+ Currencies, with a sample response](/articles/best-currency-and-crypto-exchange-rate-apis/currencyfreaks.webp)
+
+[CurrencyFreaks](https://currencyfreaks.com/) is the closest thing on the forex side to "fiat and crypto in one place". It lists 166 fiat currencies, 876 cryptocurrencies and four metals, and it'll answer in XML if you still need that.
+
+**Best for:** projects that want broad crypto coverage from a forex-style API and can live with daily rates on the free plan.
+
+Pros:
+
+- **The widest crypto list among the forex APIs** here, plus metals.
+- **Deep history**, with end-of-day rates back to 1984 on paid plans.
+- **No hourly or daily throttling**, only the monthly quota, and SSL on the free plan.
+
+Cons:
+
+- **The free plan is USD-base only** and updates every 24 hours.
+- **Historical data, conversion and other bases are paid.** Time-series and fluctuation need the $99.99 plan.
+- **60-second updates are expensive**, on that same top plan.
+
+**Pricing:** free (1,000 calls/month); Starter $9.99/month (15,000, hourly); Growth $49.99/month (150,000, every 10 minutes); Professional $99.99/month (550,000, every 60 seconds).
+
+## Frankfurter
+
+![The Frankfurter home page, Exchange rate and currency data API, with a sample response for the latest rates](/articles/best-currency-and-crypto-exchange-rate-apis/frankfurter.webp)
+
+[Frankfurter](https://frankfurter.dev/) is free and open source, and it has grown a lot. It started as a thin wrapper around the European Central Bank's daily rates; the new v2 API pulls from 106 central banks and official sources and covers 228 currencies, with history back to 1948.
+
+**Best for:** open-source projects, internal tools and anything where daily official rates are exactly what you want.
+
+Pros:
+
+- **Free, no API key, no quotas**, only abuse protection.
+- **Official sources**, and you can filter by provider if you need, say, ECB rates specifically.
+- **Self-hostable** with Docker, if you'd rather not depend on someone else's server.
+
+Cons:
+
+- **Daily updates only.** Fine for invoices, not for live prices.
+- **Almost no crypto**: five coins, from a single source.
+- **No convert endpoint, no SLA, no support.** You multiply the rate yourself, and if it breaks, it's a GitHub issue.
+
+**Pricing:** free.
+
+## CoinGecko API
+
+![The CoinGecko API page, Build, Analyze, and Scale with Crypto's Most Trusted Data API, with a live API demo](/articles/best-currency-and-crypto-exchange-rate-apis/coingecko.webp)
+
+Over to the crypto side. [CoinGecko](https://www.coingecko.com/en/api) is the default answer for crypto prices, and its free Demo plan got more generous this year, with 10,000 calls a month and the per-minute limit raised from 30 to 100.
+
+**Best for:** crypto-first products that need the long tail of tokens, exchanges and onchain data.
+
+Pros:
+
+- **Huge coverage**: tens of thousands of coins, 2,000+ exchanges and onchain tokens across hundreds of networks.
+- **A generous free plan**, and you can even make a few calls without a key.
+- **Lots of extras**: WebSocket and webhooks on paid plans, plus market, exchange and RWA endpoints.
+
+Cons:
+
+- **No fiat-to-fiat.** Fiat is a quote currency for crypto prices; USD to EUR means going through BTC rates yourself.
+- **Attribution is required**, on paid plans too, and commercial use isn't clearly granted on Demo.
+- **The free plan only reaches 365 days back**, and the price jump after Basic is steep ($35 to $129).
+
+**Pricing:** Demo free (10,000 calls/month); Basic $35/month (100,000); Analyst $129/month (500,000); Lite $499/month; Pro $999/month, about 20% less on annual billing.
+
+## CoinMarketCap API
+
+![The CoinMarketCap API page, The Ultimate Cryptocurrency API from the Industry Authority, with 16 years of historical data and 941+ exchanges tracked](/articles/best-currency-and-crypto-exchange-rate-apis/coinmarketcap.webp)
+
+[CoinMarketCap](https://coinmarketcap.com/api/) is CoinGecko's big rival, and on the free side it's the more permissive of the two: commercial use is allowed on the free Basic plan and there's no attribution requirement on the pricing page.
+
+**Best for:** commercial crypto apps that want a free tier they can actually ship with.
+
+Pros:
+
+- **Commercial use on the free plan**, with 15,000 credits a month.
+- **Fiat-to-fiat conversion works**: its price-conversion tool accepts 93 fiat currencies and 4 metals on both sides.
+- **The cheapest paid crypto plan here**: Builder at $29 a month.
+
+Cons:
+
+- **50 calls a minute and one convert currency per call** on the free plan.
+- **Server-side only**: browser calls fail on CORS.
+- **OHLCV history starts at the $79 Startup plan.**
+
+**Pricing:** Basic free (15,000 credits/month); Builder $29/month (150,000); Startup $79/month (450,000); Growth $299/month; Professional $699/month.
+
+## So which one?
+
+Here's where I'd point different projects:
+
+- **You need deep history or 60-second updates, and have a budget.** Fixer or currencyapi. currencyapi is cheaper and has history on the free plan; Fixer has the longer track record.
+- **You want a well-known vendor and fiat only.** Open Exchange Rates. Pay for Developer as soon as you're commercial.
+- **You want simple daily or hourly fiat rates.** ExchangeRate-API, or Frankfurter if free and open source matter more than support.
+- **You're crypto-first and need every token and exchange.** CoinGecko, or CoinMarketCap if you need commercial use on the free plan.
+- **You need fiat and crypto together, any pair, and lots of requests for little money.** That's what we built Xchanger API for. Start on the free plan and see whether 10-minute rates are fresh enough for you.
+
+The thread through all of this: decide how fresh your rates really need to be before comparing prices. Most of the cost on these pricing pages is update speed, and a lot of products pay for 60-second rates and then cache them for an hour.
+
+If you try [Xchanger API](/apps/xchanger-api) and something is missing, like a historical endpoint you need or a currency we don't list, [tell us](/contact). That's the kind of feedback that decides what we build next.
